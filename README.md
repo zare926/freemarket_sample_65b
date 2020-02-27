@@ -62,7 +62,6 @@
 |buy_date|date|null: false|
 |user_id|references|null: false,foreign_key: true|
 |item_id|references|null: false|
-|address_id|references|null: false|
 |creditCard_id|references|null: false|
 ### Association
 - belongs_to :user
