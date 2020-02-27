@@ -49,7 +49,7 @@
 |shipping_date|integer|null: false|
 |price|integer|null: false|
 |user_id|references|null: false,foreign_key: true|
-|category_id|string|foreign_key: true|
+|category_id|references|foreign_key: true|
 ### Association
 - has_many :comments
 - has_many :images
