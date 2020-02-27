@@ -4,58 +4,66 @@
 65期チームB
 
 # DB設計
+
+## ER図
+[[ER図](https://gyazo.com/48b7b3529fbc0c36536608c1e936161f)
+
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false|
 |family_name|string|null: false|
-|first_name|stirng|null: false|
-|family_name_kana|string|null:false|
-|first_name_kana|string|null:false|
-|birth_day|date|null:false|
+|first_name|string|null: false|
+|family_name_kana|string|null: false|
+|first_name_kana|string|null: false|
+|birth_day|date|null: false|
 |password|string|null: false|
-|email|string|null: false, unique: true|
-|destination_family_name|string|null:false|
-|destination_first_name|string|null:false|
-|destination_family_name_kana|string|null:false|
-|destination_first_name_kana|string|null:false|
-|postcode|integer|null:false|
-|prefecture|string|null:false|
-|address_city|string|null:false|
-|address_block|integer|null:false|
-|address_building|string||
-|phone_number integer||
+|email|string|null:false, unique :true|
+|destination_family_name|string|null: false|
+|destination_first_name|string|null: false|
+|destination_family_name_kana|string	null: false|
+|destination_first_name_kana|string|null: false|
+|postcode|integer|null: false|
+|prefecture|string|null: false|
+|address_city|string|null: false|
+|address_block|string|null: false|
+|address_building|string|
+|phone_number|integer|null: false|
 ### Association
-- has_many :items
+- has_many :item
 - has_many :comments
-- has_many :buy_items
+- has_many :buy_item
+- has_many :image
+- has_many :credit_card
 
 ## itemsテーブル(商品出品テーブル)
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, index: true|
-|image|string|null: false|
+|name|string|null: false, index :true|
+|status|integer|default: 0|
 |description|text|null: false|
-|state|string|null: false|
-|postage|string|null: false|
+|state|integer|null: false|
+|postage|integer|null: false|
 |prefecture|string|null: false|
-|shipping_date|string|null: false|
-|price|string|null: false|
+|shipping_date|integer|null: false|
+|price|integer|null: false|
 |category_id|string|foreign_key: true|
-|saler_id|references|null: false, foreign_key: true|
-|buyer_id|references|null: false, foreign_key: true|
+|user_id|references|null: false,foreign_key: true|
+|brand|string||
 ### Association
 - has_many :comments
+- has_many :images
 - belongs_to :user
 - belongs_to :category
 
 ## buy_itemsテーブル(商品購入テーブル)
 |Column|Type|Options|
 |------|----|-------|
-|card_num|string||
-|month|string||
-|year|string||
-|code|string||
+|item_id|references|null: false|
+|address_id|references|null: false|
+|buy_date|date|null: false|
+|creditCard_id|references|null: false|
+|user_id|references|null: false,foreign_key: true|
 ### Association
 - belongs_to :user
 
@@ -63,7 +71,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |category|string|null: false|
-|ancestry|stringindex|
+|ancestry|string|index|
 ### Association
 - has_many :items
 
@@ -75,4 +83,20 @@
 |user_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- belongs_to :items
+- belongs_to :item
+
+## credit_cardsテーブル(ユーザーのクレジットカード情報)
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false|
+### Association
+- belongs_to :user
+このテーブルは、Paijpを検証してから不要かを決める。
+
+## imagesテーブル(商品プレビューテーブル)
+|Column|Type|Options|
+|------|----|-------|
+|item_id|references|null: false|
+### Association
+- belongs_to :user
+- belongs_to :item
