@@ -21,7 +21,7 @@
 |email|string|null:false, unique :true|
 |destination_family_name|string|null: false|
 |destination_first_name|string|null: false|
-|destination_family_name_kana|string	null: false|
+|destination_family_name_kana|string|null: false|
 |destination_first_name_kana|string|null: false|
 |postcode|integer|null: false|
 |prefecture|string|null: false|
@@ -70,7 +70,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |category|string|null: false|
-|ancestry|string|index|
+|ancestry|string|index: true|
 ### Association
 - has_many :items
 
