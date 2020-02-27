@@ -6,7 +6,7 @@
 # DB設計
 
 ## ER図
-[ER図](https://gyazo.com/48b7b3529fbc0c36536608c1e936161f)
+[ER図](https://gyazo.com/eeb977c4e264ef5e7fc327e2766553b3)
 
 ## usersテーブル
 |Column|Type|Options|
