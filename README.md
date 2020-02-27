@@ -6,7 +6,7 @@
 # DB設計
 
 ## ER図
-[[ER図](https://gyazo.com/48b7b3529fbc0c36536608c1e936161f)
+[ER図](https://gyazo.com/48b7b3529fbc0c36536608c1e936161f)
 
 ## usersテーブル
 |Column|Type|Options|
@@ -27,7 +27,7 @@
 |prefecture|string|null: false|
 |address_city|string|null: false|
 |address_block|string|null: false|
-|address_building|string|
+|address_building|string||
 |phone_number|integer|null: false|
 ### Association
 - has_many :item
@@ -42,14 +42,14 @@
 |name|string|null: false, index :true|
 |status|integer|default: 0|
 |description|text|null: false|
+|brand|string||
 |state|integer|null: false|
 |postage|integer|null: false|
 |prefecture|string|null: false|
 |shipping_date|integer|null: false|
 |price|integer|null: false|
-|category_id|string|foreign_key: true|
 |user_id|references|null: false,foreign_key: true|
-|brand|string||
+|category_id|string|foreign_key: true|
 ### Association
 - has_many :comments
 - has_many :images
@@ -59,11 +59,11 @@
 ## buy_itemsテーブル(商品購入テーブル)
 |Column|Type|Options|
 |------|----|-------|
+|buy_date|date|null: false|
+|user_id|references|null: false,foreign_key: true|
 |item_id|references|null: false|
 |address_id|references|null: false|
-|buy_date|date|null: false|
 |creditCard_id|references|null: false|
-|user_id|references|null: false,foreign_key: true|
 ### Association
 - belongs_to :user
 
