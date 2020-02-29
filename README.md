@@ -25,6 +25,7 @@
 - has_many :buy_items
 - has_many :images
 - has_many :credit_cards
+- has_one :address
 
 ## itemsテーブル(商品出品テーブル)
 |Column|Type|Options|
@@ -91,7 +92,7 @@
 - belongs_to :user
 - belongs_to :item
 
-## addressテーブル
+## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |address_family_name|string|null: false|
