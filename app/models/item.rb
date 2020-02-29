@@ -9,34 +9,34 @@ class Item < ApplicationRecord
 
 
   validates :category_id,
-    presence: true
-    acceptance: true
+    presence: true,
+    acceptance: true,
     presence: { message: "選択してください" }
 
   validates :state,
     presence: true,
-    acceptance: true
+    acceptance: true,
     presence: { message: "選択してください" }
 
   validates :postage,
-    presence: true
-    acceptance: true
+    presence: true,
+    acceptance: true,
     presence: { message: "選択してください" }
 
   validates :prefecture
-    presence: true
-    acceptance: true
+    presence: true,
+    acceptance: true,
     presence: { message: "選択してください"}
 
   validates :shipping_date,
-    presence: true
-    acceptance: true
+    presence: true,
+    acceptance: true,
     presence: { message: "選択してください" }
 
   validates :price,
-    presence: true
-    acceptance: true
-    numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
+    presence: true,
+    acceptance: true,
+    numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 },
     presence: { message: "300以上9999999以下で入力してください" }
 
   has_many :comments
