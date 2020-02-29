@@ -23,7 +23,7 @@ class Item < ApplicationRecord
     acceptance: true,
     presence: { message: "選択してください" }
 
-  validates :prefecture
+  validates :prefecture,
     presence: true,
     acceptance: true,
     presence: { message: "選択してください"}
