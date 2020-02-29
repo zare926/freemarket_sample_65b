@@ -30,11 +30,11 @@
 |address_building|string||
 |phone_number|integer|null: false|
 ### Association
-- has_many :item
+- has_many :items
 - has_many :comments
-- has_many :buy_item
-- has_many :image
-- has_many :credit_card
+- has_many :buy_items
+- has_many :images
+- has_many :credit_cards
 
 ## itemsテーブル(商品出品テーブル)
 |Column|Type|Options|
