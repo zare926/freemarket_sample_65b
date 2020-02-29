@@ -1,3 +1,133 @@
-// Place all the styles related to the items controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.header{
+  height: 100px;
+  width: 100vw;
+  background-color: gray;
+  text-align: center;
+  &-logo{
+    padding-top: 30px;
+  }
+}
+
+.contents{
+  height: auto;
+  width: 100vw;
+  background-color: lightblue;
+  font-family: Arial, Helvetica, sans-serif;
+  &__head{
+    height: 100px;
+    width: 300px;
+    background-color: lightcoral;
+    margin:  0 auto; 
+    text-align: center;
+    line-height: 100px;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0px 150px;
+  }
+  &__item{
+    height: 200px;
+    width: 300px;
+    background-color: orange;
+    margin:  0 auto; 
+    display: flex;
+    justify-content: center;
+    padding: 0px 150px;
+    &__image{
+      height: 130px;
+      width: 50%;
+      text-align: center;
+      border:solid 1px white;
+      margin-top: 20px;
+      padding-top: 20px;
+    }
+    &__info{
+      height: 130px;
+      width: 50%;
+      padding: 10px 10px;
+      border:solid 1px white;
+      margin-left: 10px;
+      margin-top: 20px;
+      &__name{
+        height: 30px;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+        border:solid 1px white;
+        line-height: 30px;
+      }
+      &__price{
+        height: 30px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        border:solid 1px white;
+        font-weight: bold;
+        font-size: 10px;
+        margin-top: 10px;
+        line-height: 30px;
+      }
+    }
+  }
+  &__form{
+    height: auto;
+    width: 300px;
+    background-color: palegreen;
+    padding: 10px 150px;
+    margin: 0 auto;
+    &__amount{
+      height: auto;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 25px 0px;
+      &-head{
+        font-size: 20px;
+        font-weight: 600;
+      }
+      &-price{
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+    &__credit_card{
+      height: auto;
+      width: 100%;
+      padding: 15px 0px;
+      font-size: 12px;
+      &-head{
+        font-size: 15px;
+        font-weight: bold;
+      }
+    }
+    &__shipping{
+      height: 100px;
+      width: 100%;
+      padding: 15px 0px;
+      font-size: 12px;
+      &__head{
+        font-size: 15px;
+        font-weight: bold;
+      }
+    }
+    &__submit{
+      height: 50px;
+      width: 100%;
+      padding: 15px 0px;
+      text-align: center;
+      line-height: 50px;
+      &-btn{
+        color: white;
+        background-color: #48D1CC;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 10px 100px;
+      }
+    }
+  }
+}
+
+.footer{
+  height: 200px;
+  width: 100vw;
+  background-color: purple;
+}
