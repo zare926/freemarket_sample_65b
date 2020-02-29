@@ -95,6 +95,7 @@
 ## imagesテーブル(商品プレビューテーブル)
 |Column|Type|Options|
 |------|----|-------|
+|user_id|references|null: false|
 |item_id|references|null: false|
 ### Association
 - belongs_to :user
