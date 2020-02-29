@@ -16,19 +16,9 @@
 |first_name|string|null: false|
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
-|birth_day|date|null: false|
+|birth_date|date|null: false|
 |password|string|null: false|
 |email|string|null:false, unique :true|
-|destination_family_name|string|null: false|
-|destination_first_name|string|null: false|
-|destination_family_name_kana|string|null: false|
-|destination_first_name_kana|string|null: false|
-|postcode|integer|null: false|
-|prefecture|string|null: false|
-|address_city|string|null: false|
-|address_block|string|null: false|
-|address_building|string||
-|phone_number|integer|null: false|
 ### Association
 - has_many :items
 - has_many :comments
@@ -100,3 +90,19 @@
 ### Association
 - belongs_to :user
 - belongs_to :item
+
+## addressテーブル
+|Column|Type|Options|
+|------|----|-------|
+|address_family_name|string|null: false|
+|address_first_name|string|null: false|
+|address_family_name_kana|string|null: false|
+|address_first_name_kana|string|null: false|
+|postcode|integer|null: false|
+|prefecture|string|null: false|
+|address_city|string|null: false|
+|address_block|string|null: false|
+|address_building|string||
+|phone_number|integer|null: false|
+### Association
+- belongs_to :user
