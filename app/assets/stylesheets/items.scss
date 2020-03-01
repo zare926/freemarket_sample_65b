@@ -1,123 +1,107 @@
-$mainWhiteColor: #FFF;
-$mainGrayColor: #f8f8f8;
-$mainBlueColor: #48D1CC;
-$fontSizeBig: 20px;
-$fontSizeMiddle: 15px;
-$fontSizeSmall: 12px;
-$fontSizeVerySmall: 10px;
+$mainWhiteColor     : #FFF;
+$mainGrayColor      : #f8f8f8;
+$mainBlueColor      : #48D1CC;
+$fontSizeBig        : 20px;
+$fontSizeMiddle     : 15px;
+$fontSizeSmall      : 12px;
+$fontSizeVerySmall  : 10px;
+
+@mixin body {
+  width : 300px;
+  padding: 0px 150px;
+  background-color: $mainGrayColor;
+  margin:  0 auto; 
+}
+
+@mixin bottomLine {
+  border: solid 1px $mainBlueColor;
+  border-width:0 0 1px 0;
+}
 
 .header{
-  height: 100px;
-  width: 100vw;
+  height: 80px;
+  width : 100vw;
   text-align: center;
   background-color: $mainWhiteColor;
-  &-logo{
-    padding-top: 30px;
-  }
+  padding-top: 30px;
 }
 
 .contents{
   height: 800px;
-  width: 100vw;
+  width : 100vw;
   font-family: Arial, Helvetica, sans-serif;
   background-color: $mainWhiteColor;
   &__head{
+    @include body;
+    @include bottomLine;
     height: 100px;
-    width: 300px;
     line-height: 100px;
     font-size: 30px;
-    padding: 0px 150px;
-    margin:  0 auto; 
     text-align: center;
     font-weight: bold;
-    background-color: $mainGrayColor;
-    border: solid 1px $mainBlueColor;
-    border-width:0 0 1px 0;
   }
   &__item{
+    @include body;
+    @include bottomLine;
     height: 200px;
-    width: 300px;
-    padding: 0px 150px;
-    margin:  0 auto; 
     display: flex;
     justify-content: center;
-    background-color: $mainGrayColor;
-    border: solid 1px $mainBlueColor;
-    border-width:0 0 1px 0;
     &__image{
-      height: 130px;
-      width: 50%;
-      margin-top: 20px;
-      padding-top: 20px;
+      width : 50%;
+      margin-top: 40px;
       text-align: center;
     }
     &__info{
       height: 130px;
-      width: 50%;
-      padding: 10px 10px;
-      margin: 20px 0 0 10px;
+      width : 50%;
+      margin: 30px 0 0 20px;
       &__name{
-        height: 30px;
-        width: 100%;
-        margin-top: 20px;
-        line-height: 30px;
+        width : 100%;
+        font-size: $fontSizeMiddle;
+        margin-top: 30px;
         text-align: center;
       }
       &__price{
-        height: 30px;
-        width: 100%;
+        width : 100%;
         font-size: $fontSizeSmall;
-        margin-top: 10px;
-        line-height: 30px;
+        font-weight: bold;
+        margin-top: 15px;
         display: flex;
         justify-content: center;
-        font-weight: bold;
       }
     }
   }
   &__form{
+    @include body;
     height: auto;
-    width: 300px;
-    padding: 10px 150px;
     margin-bottom: 50px;
-    margin: 0 auto;
-    background-color: $mainGrayColor;
     &__amount{
+      @include bottomLine;
       height: auto;
-      width: 100%;
-      padding: 25px 0px;
+      width : 100%;
+      padding: 35px 0px 20px 0;
       display: flex;
       justify-content: space-between;
-      border: solid 1px $mainBlueColor;
-      border-width:0 0 1px 0;
-      &-head{
-        font-size: $fontSizeBig;
-        font-weight: 600;
-      }
-      &-price{
-        font-size: $fontSizeBig;
-        font-weight: 600;
-      }
+      font-size: $fontSizeBig;
+      font-weight: 600;
     }
     &__credit_card{
+      @include bottomLine;
       height: 80px;
-      width: 100%;
+      width : 100%;
       padding: 15px 0px;
       font-size: $fontSizeSmall;
-      border: solid 1px $mainBlueColor;
-      border-width:0 0 1px 0;
       &-head{
         font-size: $fontSizeMiddle;
         font-weight: bold;
       }
     }
     &__shipping{
+      @include bottomLine;
       height: 80px;
-      width: 100%;
+      width : 100%;
       padding: 15px 0px;
       font-size: $fontSizeSmall;
-      border: solid 1px $mainBlueColor;
-      border-width:0 0 1px 0;
       &__head{
         font-size: $fontSizeMiddle;
         font-weight: bold;
@@ -126,7 +110,7 @@ $fontSizeVerySmall: 10px;
     }
     &__submit{
       height: 50px;
-      width: 100%;
+      width : 100%;
       padding: 25px 0 15px 0px;
       line-height: 50px;
       text-align: center;
@@ -143,6 +127,6 @@ $fontSizeVerySmall: 10px;
 
 .footer{
   height: 200px;
-  width: 100vw;
+  width : 100vw;
   background-color: purple;
 }
