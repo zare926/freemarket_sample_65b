@@ -1,0 +1,106 @@
+.container
+  .item__box--container
+    %h1.item__name Tシャツセット
+    .content.clearfix
+      .item__content
+        .owl-carousel.owl-loaded.owl-drag
+          .owl-stage-outer
+            .owl-stage
+              .owl-item.active
+                .owl-item-inner
+                  = image_tag src= 'https://www.image.tshirt.st/uploads/2017/12/16144138/085cvt01-01_2.jpg', size: '300x300'
+          .owl-bots
+            .owl-bot
+              .owl-bot-inner
+                = image_tag src= 'https://www.image.tshirt.st/uploads/2017/12/16144138/085cvt01-01_2.jpg', size: '60x60', class: 'bot-list'
+            .owl-bot
+              .owl-bot-inner
+                = image_tag src= 'https://www.rikut.shop/phone/data/artworks-webshop/product/0033-ts-dry-b.jpg', size: '60x60', class: 'bot-list'
+            .owl-bot
+              .owl-bot-inner
+                = image_tag src= 'https://www.pokemoncenter-online.com/sp/static/product_image/4521329291956/4521329291956.jpg', size: '60x60', class: 'bot-list'
+            .owl-bot
+              .owl-bot-inner
+                = image_tag src= 'https://img04.shop-pro.jp/PA01025/117/product/130932803.png?cmsp_timestamp=20180427181601', size: '60x60', class: 'bot-list'
+            .owl-bot
+              .owl-bot-inner
+                = image_tag src= 'https://cdn.thumb.punyus.jp/res/up/punyus/shp/__basethum900__/punyus/PN18AW/1-50/019/20180808-0014.jpg', size: '60x60', class: 'bot-list'
+            .owl-bot
+              .owl-bot-inner
+                = image_tag src= 'https://im.belluna.jp/belluna/ph/O/4008/1006614008/DLARGE.JPG', size: '60x60', class: 'bot-list'
+      %section.visible-sp
+      %table.item-detail-table
+        %tbody
+          %tr
+            %th 出品者
+            %td
+              = link_to '/' do
+                テストユーザー
+              %div
+                .item-user-ratings
+                  %i.fas.fa-smile
+                  %span 1
+                .item-user-ratings
+                  %i.fas.fa-meh
+                  %span 1
+                .item-user-ratings
+                  %i.fas.fa-frown
+                  %span 1
+          %tr
+            %th カテゴリー
+            %td
+              = link_to '/' do
+                Tシャツ
+              = link_to '/' do
+                >Tシャツ
+              = link_to '/' do
+                >Tシャツ
+          %tr
+            %th 商品のサイズ
+            %td FREE
+          %tr
+            %th 商品の状態
+            %td 新品未使用
+          %tr
+            %th 配送料の負担
+            %td 送料込み（出品者負担）
+          %tr
+            %th 配送の方法
+            %td らくらくメルカリ便
+          %tr
+            %th 配送元地域
+            %td 東京都
+          %tr
+            %th 配送日の目安
+            %td 2~3日で配送
+    .item-price-box.text-center
+      %span.item-price.bold
+        ¥10,000
+      %span.item-tax
+        (税込) 
+      %span.item-shipping-fee
+        送料込み
+    .item-buy-btn
+      = link_to '/' do
+        購入画面に進む
+    .item-description.f14
+      %p.item-description-inner
+        Tシャツです。
+    .item-btn-container.clearfix
+      .item-btn-left
+        %button.item-btn.item-btn-like
+          .icon-like-border
+          %span
+            いいね!
+          %span.fade-in-down
+            0
+        .item-btn.item-btn-report.clearfix
+        = link_to '/' do
+          %i.icon-flag
+          %span
+            不適切な商品の警告
+      .item-btn-right
+        = link_to '/' do
+          %i.icon-lock
+          %span
+            あんしん・あんぜんへの取り組み
