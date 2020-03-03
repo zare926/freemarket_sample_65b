@@ -85,13 +85,13 @@ $fontSizeVerySmall  : 10px;
       font-size: $fontSizeBig;
       font-weight: 600;
     }
-    &__credit_card{
+    &__creditCard{
       @include bottomLine;
       height: 80px;
       width : 100%;
       padding: 15px 0px;
       font-size: $fontSizeSmall;
-      &-head{
+      &__head{
         font-size: $fontSizeMiddle;
         font-weight: bold;
       }
@@ -128,5 +128,5 @@ $fontSizeVerySmall  : 10px;
 .footer{
   height: 200px;
   width : 100vw;
-  background-color: purple;
+  background-color: $mainBlueColor;
 }
