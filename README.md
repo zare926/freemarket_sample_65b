@@ -1,24 +1,109 @@
-# README
+# メルカリ コピーサイト
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 製作
+65期チームB
 
-Things you may want to cover:
+# DB設計
 
-* Ruby version
+## ER図
+[ER図](https://gyazo.com/eeb977c4e264ef5e7fc327e2766553b3)
 
-* System dependencies
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false|
+|family_name|string|null: false|
+|first_name|string|null: false|
+|family_name_kana|string|null: false|
+|first_name_kana|string|null: false|
+|birth_date|date|null: false|
+|password|string|null: false|
+|email|string|null:false, unique :true|
+### Association
+- has_many :items
+- has_many :comments
+- has_many :buy_items
+- has_many :images
+- has_many :credit_cards
+- has_one :address
 
-* Configuration
+## itemsテーブル(商品出品テーブル)
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, index :true|
+|status|integer|default: 0|
+|description|text|null: false|
+|brand|string||
+|state|integer|null: false|
+|postage|integer|null: false|
+|prefecture|string|null: false|
+|shipping_date|integer|null: false|
+|price|integer|null: false|
+|user_id|references|null: false,foreign_key: true|
+|category_id|references|foreign_key: true|
+### Association
+- has_many :comments
+- has_many :images
+- belongs_to :user
+- belongs_to :category
 
-* Database creation
+## buy_itemsテーブル(商品購入テーブル)
+|Column|Type|Options|
+|------|----|-------|
+|buy_date|date|null: false|
+|user_id|references|null: false,foreign_key: true|
+|item_id|references|null: false|
+|creditCard_id|references|null: false|
+### Association
+- belongs_to :user
 
-* Database initialization
+## categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|category|string|null: false|
+|ancestry|string|index: true|
+### Association
+- has_many :items
 
-* How to run the test suite
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|
+|item_id|references|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- belongs_to :item
 
-* Services (job queues, cache servers, search engines, etc.)
+## credit_cardsテーブル(ユーザーのクレジットカード情報)
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false|
+### Association
+- belongs_to :user
+このテーブルは、Paijpを検証してから不要かを決める。
 
-* Deployment instructions
+## imagesテーブル(商品プレビューテーブル)
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false|
+|item_id|references|null: false|
+### Association
+- belongs_to :user
+- belongs_to :item
 
-* ...
+## addressesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|address_family_name|string|null: false|
+|address_first_name|string|null: false|
+|address_family_name_kana|string|null: false|
+|address_first_name_kana|string|null: false|
+|postcode|integer|null: false|
+|prefecture|string|null: false|
+|address_city|string|null: false|
+|address_block|string|null: false|
+|address_building|string||
+|phone_number|integer|null: false|
+### Association
+- belongs_to :user
