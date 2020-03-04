@@ -6,5 +6,10 @@ Rails.application.routes.draw do
       get 'confirm'
     end
   end
-  resources :users
+  resources :users do
+    collection do
+      get 'signout'
+      get 'card'
+    end
+  end
 end
