@@ -330,6 +330,9 @@
                   %span 1
   %nav.kind__list
     %ul
-      %li{itemtype:'/'}
-        = link_to 'https://www.mercari.com/jp/'
-          %span{itemprop:'title'}メルカリ
+      %li
+        = link_to 'https://www.mercari.com/jp/' do
+          %span メルカリ
+        %i.icon__right
+      %li
+        %span Tシャツ
