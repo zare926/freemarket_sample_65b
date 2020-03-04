@@ -1,3 +1,180 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+*{
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #eee;
+  color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.contents {
+  margin: 40px auto 0;
+  width: 1020px;
+}
+
+ul, li {
+  list-style: none;
+  border-top: 1px solid #eee;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tab_item{
+  border: 0;
+  line-height: 72px;
+  position: relative;
+  width: calc(100%/2);
+  text-align: center;
+  font-weight: bold;
+  float: left;
+  background-color: #ddd;
+  display: block;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.tab_item:hover {
+  opacity: 0.75;
+}
+input[name="tab_item"],[name="tab_buy"] {
+  display: none;
+}
+.tab_content {
+  display: none;
+  clear: both;
+  overflow: hidden;
+}
+#nontification:checked ~ #nontification_content,
+#todo:checked ~ #todo_content {
+  display: block;
+}
+
+#torihiki:checked ~ #torihiki_content,
+#kako:checked ~ #kako_content {
+  display: block;
+}
+
+.mypage-tabs input:checked + .tab_item {
+  background-color: #fff;
+  border-top: 2px solid #ea352d;
+}
+
+.mypage-go-list{
+  text-align: center;
+  background-color: #ddd;
+  height: 56px;
+  line-height: 56px;
+}
+
+.side-content{
+  float: left;
+  width: 280px;
+  margin-right: 40px;
+  .mypage-nav{
+    margin: 0 auto;
+    &__head{
+      margin-top: 40px;
+    }
+  }
+  .mypage-nav {
+    &__btn {
+      background-color: #fff;
+      font-size: 14px;
+      min-height: 48px;
+      line-height: 48px;
+      position: relative;
+      display: block;
+      padding: 2px 16px;
+      justify-content: space-around;
+      text-decoration: none;
+    }
+    &__icon{
+      font-size: 16px;
+    }
+  }
+}
+
+.right-content{
+  float: left;
+
+  &__top{
+    height: 200px;
+    min-width: 700px;
+    flex-direction: column;
+    text-align: center;
+    background-image: url(https://www.pakutaso.com/shared/img/thumb/boke12151240_TP_V.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+
+    .user-icon{
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      margin: 0 auto;
+    }
+
+    .mypage-number {
+      font-size: 14px;
+      span {
+        font-size: 16px;
+        margin: 0 10px;
+      }
+    }
+  }
+  &__middle{
+    height: 100%;
+    .mypage-item-link{
+      min-height: 100px;
+      padding: 16px;
+      display: block;
+      figure {
+        position: relative;
+        float: left;
+      }
+      &__img{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 48px;
+        height: 48px;
+      }
+      &__body{
+        margin: 0 40px 0 68px;
+        position: absolute;
+
+        time{
+          float: left;
+        }
+      }
+    }
+  }
+
+  &__bottom{
+    margin: 40px 0 0 0;
+  }
+}
