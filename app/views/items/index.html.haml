@@ -157,4 +157,102 @@
           %textarea{type:'text',name:'body',class:'textarea'}
           %button{type:'submit',class:'comment__submit'}
             %span コメントする
-
+  %ul.item__link.clearfix
+    %li.item__link--prev
+      = link_to '/' do
+        %i.icon__left
+        トレーナー
+    %li.item__link--next
+      = link_to '/' do
+        Yシャツ
+        %i.icon__right
+  .social__media--area
+    -# 謎の空間
+    .social-text
+    -# あとでfontawesomeでicon追加
+    %ul.social__box
+      %li
+        = link_to 'https://www.facebook.com/', class: 'social__btn' do
+          %i.icon-facebook
+      %li
+        = link_to 'https://twitter.com/', class: 'social__btn' do
+          %i.icon-twitter
+      %li
+        = link_to 'https://line.me/ja/', class: 'social__btn' do
+          %i.icon-line
+      %li
+        = link_to 'https://www.pinterest.jp/', class: 'social__btn' do
+          %i.icon-pinterest
+  .user__other--items
+    -# eachであとで短くする
+    %section.items__box--container.clearfix.user__other--items
+      %h2.item__box--head
+        = link_to '/' do
+          まずはプロフィールを読んでください
+      .items__box.clearfix
+        %section.items__box--item
+          = link_to '/' do
+            %figure.items__box--item-photo
+              = image_tag scr='https://image.rakuten.co.jp/jam-ing/cabinet/uploadbox2/02408/wan5691-1.jpg',alt:'ベティトレーナー',class:'other__item'
+            .items__box--body
+              %h3.items__box--name.haert-icon ベティトレーナー
+              .item__price--box
+                .item__price ¥8,000
+                .haert-icon
+                  %i.icon__good--num
+                  %span 1
+        %section.items__box--item
+          = link_to '/' do
+            %figure.items__box--item-photo
+              = image_tag scr='https://image.rakuten.co.jp/jam-ing/cabinet/uploadbox2/02408/wan5691-1.jpg',alt:'ベティトレーナー',class:'other__item'
+            .items__box--body
+              %h3.items__box--name.haert-icon ベティトレーナー
+              .item__price--box
+                .item__price ¥8,000
+                .haert-icon
+                  %i.icon__good--num
+                  %span 1
+        %section.items__box--item
+          = link_to '/' do
+            %figure.items__box--item-photo
+              = image_tag scr='https://image.rakuten.co.jp/jam-ing/cabinet/uploadbox2/02408/wan5691-1.jpg',alt:'ベティトレーナー',class:'other__item'
+            .items__box--body
+              %h3.items__box--name.haert-icon ベティトレーナー
+              .item__price--box
+                .item__price ¥8,000
+                .haert-icon
+                  %i.icon__good--num
+                  %span 1
+        %section.items__box--item
+          = link_to '/' do
+            %figure.items__box--item-photo
+              = image_tag scr='https://image.rakuten.co.jp/jam-ing/cabinet/uploadbox2/02408/wan5691-1.jpg',alt:'ベティトレーナー',class:'other__item'
+            .items__box--body
+              %h3.items__box--name.haert-icon ベティトレーナー
+              .item__price--box
+                .item__price ¥8,000
+                .haert-icon
+                  %i.icon__good--num
+                  %span 1
+        %section.items__box--item
+          = link_to '/' do
+            %figure.items__box--item-photo
+              = image_tag scr='https://image.rakuten.co.jp/jam-ing/cabinet/uploadbox2/02408/wan5691-1.jpg',alt:'ベティトレーナー',class:'other__item'
+            .items__box--body
+              %h3.items__box--name.haert-icon ベティトレーナー
+              .item__price--box
+                .item__price ¥8,000
+                .haert-icon
+                  %i.icon__good--num
+                  %span 1
+        %section.items__box--item
+          = link_to '/' do
+            %figure.items__box--item-photo
+              = image_tag scr='https://image.rakuten.co.jp/jam-ing/cabinet/uploadbox2/02408/wan5691-1.jpg',alt:'ベティトレーナー',class:'other__item'
+            .items__box--body
+              %h3.items__box--name.haert-icon ベティトレーナー
+              .item__price--box
+                .item__price ¥8,000
+                .haert-icon
+                  %i.icon__good--num
+                  %span 1
