@@ -1,6 +1,18 @@
 $offwhite:#EEEEEE;
 $white:#fff;
 $white2:#f5f5f5;
+$gray:#aaa;
+i{
+  display: inline-block;
+  font-family: 'icon-font';
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
 
 li{
   list-style: none;
@@ -44,6 +56,7 @@ h2{
           &--main{
             position: relative;
             overflow: hidden;
+            height: 300px;
             .item-stage{
               position: relative;
               &_outside{
@@ -126,6 +139,18 @@ h2{
                 .item__user--ratings{
                   display: inline-block;
                   margin: 8px 0 0 16px;
+                  .fa-laugh{
+                    color: #ef5185;
+                  }
+                  .fa-meh{
+                    color: #fba933;
+                  }
+                  .fa-frown{
+                    color: #6ab5d8;
+                  }
+                }
+                .item__user--ratings i{
+                  font-size: 16px;
                 }
               }
             }
@@ -194,14 +219,20 @@ h2{
     }
     .item__btn{
       margin: 16px 0 0;
-      &--left{
+      &--left i{
+        font-size: 14px;
+      }
+      .item__btn--left span{
+        font-size: 14px;
+      }
+      .item__btn--left{
         float: left;
         .good-btn{
           color: #333;
           border: 1px solid $white2;
           background: $white2;
           display: inline-block;
-          padding: 8px 16px;
+          padding:4px 16px;
           border-radius: 40px;
           -webkit-transition: all ease-out .3s;
           transition: all ease-out .3s;
@@ -212,12 +243,17 @@ h2{
           border: 1px solid $white2;
           background: $white2;
           display: inline-block;
-          padding: 8px 16px;
+          padding:4px 8px;
           border-radius: 40px;
           -webkit-transition: all ease-out .3s;
           transition: all ease-out .3s;
           text-decoration: none;
-          margin: 0 0 0 8px;
+          margin: 0 0 0 16px;
+        }
+        & span{
+          display: inline-block;
+          margin: 1px 0 0 8px;
+          vertical-align: middle;
         }
       }
       .item__btn--right{
@@ -229,6 +265,11 @@ h2{
           font-size: 14px;
           vertical-align: middle;
           color: #0099e8;
+        }
+        & span{
+          display: inline-block;
+          margin: 1px 0 0 8px;
+          vertical-align: middle;
         }
       }
     }
@@ -243,7 +284,6 @@ h2{
         .comment__items{
           margin : 0;
           padding: 0;
-          .clearfix{
             .comment__user{
               float: left;
               position: relative;
@@ -275,14 +315,13 @@ h2{
                   }
                 }
               }
-
             }
             .comment__body span{
               margin: 8px 0 0;
             }
             .comment__body time{
               display: block;
-              color: #aaa;
+              color: $gray;
             }
             .comment__body{
               width: 568px;
@@ -293,16 +332,15 @@ h2{
               border-radius: 15px;
               line-height: 1.5;
               word-break: break-all;
-              &--text{
-              }
+              height: auto;
               .comment__icon div{
                 cursor: pointer;
                 display: block;
-                color: #aaa;
+                color: $gray;
                 text-decoration: none;
-              .comment_icon i{
-                vertical-align: middle;
-              }
+                .comment_icon i{
+                  vertical-align: middle;
+               }
               }
               .comment__icon{
                 margin: 8px 0 0;
@@ -315,15 +353,26 @@ h2{
                 .comment__icon--right{
                   float: right;
                 }
+                & button{
+                  cursor: pointer;
+                  border: 0;
+                  outline: 0;
+                  background-color: transparent;
+                  color: inherit;
+                }
               }
+              .fa-caret-left{
+                position: absolute;
+                top: 8px;
+                left: -9px;
+                color: #eef0f4;
+             }
             }
-          }
         }
         .comment__items li:first-child{
           margin: 1.5em 0 0;
         }
         .comment__items li{
-          list-style: none;
           margin: 60px 0 0;
         }
         .comment__items ul {
@@ -351,8 +400,8 @@ h2{
           font-size: 0;
           text-align: center;
           // 本当は別クラスが良い
-          background: #aaa;
-          border: 1px solid #aaa;
+          background: $gray;
+          border: 1px solid $gray;
           color: $white;
           // ここも
           display: block;
@@ -401,16 +450,16 @@ h2{
     }
   }
   .social__media--area{
-    margin: 24px 0 0;
     background: $white;
-    padding: 16px 0 8px;
+    margin: 24px auto;
+    padding: 32px 0 24px;
+    width: 700px;
     .social-text{
       text-align: center;
     }
     .social__box{
       margin: 16px 0 0;
       text-align: center;
-      font-size: 0;
     }
     & li{
       display: inline-block;
@@ -426,6 +475,28 @@ h2{
       height: 44px;
       border-radius: 4px;
       line-height: 44px;
+    }
+    & li a{
+      display: block;
+      .fab{
+        font-size: 44px;
+      }
+      .fa-facebook-square{
+        color: #385185;
+        background: white;
+      }
+      .fa-twitter-square{
+        color: #5d9dc9;
+        background: white;
+      }
+      .fa-line{
+        color: #00c137;
+        background: white;
+      }
+      .fa-pinterest-square{
+        color: #aa262a;
+        background: white;
+      }
     }
   }
   .user__other--items{
@@ -472,41 +543,41 @@ h2{
               transition: opacity .3s;
               vertical-align: middle;
             }
-            .items__box--body{
-              padding: 16px;
-              height: 78px;
-              .items__box--name{
-                overflow: hidden;
-                position: relative;
-                font-weight: 400;
-                height: 3em;
-                line-height: 1.5;
-                word-break: break-word;
-                white-space: normal;
-              }
-              .haert-icon{
+          .items__box--body{
+            padding: 16px;
+            height: 78px;
+            .items__box--name{
+              overflow: hidden;
+              position: relative;
+              font-weight: 400;
+              height: 3em;
+              line-height: 1.5;
+              word-break: break-word;
+              white-space: normal;
+            }
+            .haert-icon{
+              font-size: 16px;
+              font-weight: 400;
+              color: #333;
+            }
+            .item__price--box{
+              display: flex;
+              -webkit-box-align: center;
+              align-items: center;
+              -webkit-box-pack: justify;
+              justify-content: space-between;
+              margin: 8px 0 0;
+              .item__price{
                 font-size: 16px;
-                font-weight: 400;
+                font-weight: 600;
                 color: #333;
-              }
-              .item__price--box{
-                display: flex;
-                -webkit-box-align: center;
-                align-items: center;
-                -webkit-box-pack: justify;
-                justify-content: space-between;
-                margin: 8px 0 0;
-                .item__price{
-                  font-size: 16px;
-                  font-weight: 600;
-                  color: #333;
-                  .haert-icon{
-                    .icon__good--num{
-                    }
+                .haert-icon{
+                  .icon__good--num{
                   }
                 }
               }
             }
+          }
         }
       }
     }
@@ -517,10 +588,11 @@ h2{
     position: relative;
     border-top: 1px solid #eee;
     z-index: 1;
+    width: 1020px;
+    margin: 0 auto;
   }
   & ul{
     overflow: visible;
-    width: 700px;
     margin: 0 auto;
     padding: 16px 0;
     white-space: normal;

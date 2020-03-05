@@ -4,7 +4,7 @@
     .content.clearfix
       .item-photo
         .item-photo__area
-          .item-phot__area--main
+          .item-photo__area--main
             .item-stage
               .item-stage__outside.active
                 .item-stage__inner
@@ -38,7 +38,7 @@
                 テストユーザー
               %div
                 .item__user--ratings
-                  %i.fas.fa-smile
+                  %i.fas.fa-laugh
                   %span 1
                 .item__user--ratings
                   %i.fas.fa-meh
@@ -50,11 +50,15 @@
             %th カテゴリー
             %td
               = link_to '/' do
-                Tシャツ
+                %div Tシャツ
               = link_to '/' do
-                >Tシャツ
+                .item__sub--category
+                  %i.fas.fa-chevron-right
+                  Tシャツ
               = link_to '/' do
-                >Tシャツ
+                .item__sub--category
+                  %i.fas.fa-chevron-right
+                  Tシャツ
           %tr
             %th 商品のサイズ
             %td FREE
@@ -92,18 +96,18 @@
     .item__btn.clearfix
       .item__btn--left
         = link_to '/', class: 'good-btn' do
-          .icon-like-border
+          %i.far.fa-heart
           %span
             いいね!
           %span.fade-in-down
             0
         = link_to '/', class: 'warning-btn' do
-          %i.icon-flag
+          %i.far.fa-flag
           %span
             不適切な商品の警告
       .item__btn--right
         = link_to '/',class: 'safety-btn' do
-          %i.icon-lock
+          %i.fas.fa-lock
           %span
             あんしん・あんぜんへの取り組み
   .comment__box--container
@@ -118,18 +122,21 @@
                   = image_tag scr='https://www.silhouette-illust.com/wp-content/uploads/2016/11/18448-300x300.jpg' , class: 'user-icon', size: '40x40'
                 %figcaption.user__name 太郎
             .comment__body
-              .comment__body--text ほしい！
+              .comment__body--text
+                ほしい！
+                %br
+                悩む！
               .comment__icon.clearfix
                 %time.comment__time
-                  %i.comment__time--icon
+                  %i.far.fa-clock
                   %span 1時間前
                 .comment__icon--right
                   -# あとでリンク足す
                   %form{action: '/', method: 'POST'}
                     %button{type: 'submit'}
-                      %i.icon-flag
+                      %i.far.fa-flag
                 -# あとでアイコン入れる
-              %i.icon-balloon
+              %i.fas.fa-caret-left
             -# 一時的にコメント２段用
           %li.clearfix
             = link_to '/', class: 'comment__user' do
@@ -141,13 +148,13 @@
               .comment__body--text 値下げ！
               .comment__icon.clearfix
                 %time.comment__time
-                  %i.comment__time--icon
+                  %i.far.fa-clock
                   %span 1時間前
                 .comment__icon--right
                   %form{action: '/', method: 'POST'}
                     %button{type: 'submit'}
-                      %i.icon-flag
-              %i.icon-balloon
+                      %i.far.fa-flag
+              %i.fas.fa-caret-left
       .comment__box--area
         %form{action: '/', method: 'POST',class: 'comment__form'}
           %input{type:'hidden', name:'__csrf_value', value: 'test'}
@@ -160,12 +167,12 @@
   %ul.item__link.clearfix
     %li.item__link--prev
       = link_to '/' do
-        %i.icon__left
+        %i.fas.fa-chevron-left
         トレーナー
     %li.item__link--next
       = link_to '/' do
         Yシャツ
-        %i.icon__right
+        %i.fas.fa-chevron-right
   .social__media--area
     -# 謎の空間
     .social-text
@@ -173,16 +180,16 @@
     %ul.social__box
       %li
         = link_to 'https://www.facebook.com/', class: 'social__btn' do
-          %i.icon-facebook
+          %i.fab.fa-facebook-square
       %li
         = link_to 'https://twitter.com/', class: 'social__btn' do
-          %i.icon-twitter
+          %i.fab.fa-twitter-square
       %li
         = link_to 'https://line.me/ja/', class: 'social__btn' do
-          %i.icon-line
+          %i.fab.fa-line
       %li
         = link_to 'https://www.pinterest.jp/', class: 'social__btn' do
-          %i.icon-pinterest
+          %i.fab.fa-pinterest-square
   .user__other--items
     -# eachであとで短くする
     %section.items__box--container.clearfix.user__other--items
@@ -199,7 +206,7 @@
               .item__price--box
                 .item__price ¥8,000
                 .haert-icon
-                  %i.icon__good--num
+                  %i.far.fa-heart
                   %span 1
         %section.items__box--item
           = link_to '/' do
@@ -210,7 +217,7 @@
               .item__price--box
                 .item__price ¥8,000
                 .haert-icon
-                  %i.icon__good--num
+                  %i.far.fa-heart
                   %span 1
         %section.items__box--item
           = link_to '/' do
@@ -221,7 +228,7 @@
               .item__price--box
                 .item__price ¥8,000
                 .haert-icon
-                  %i.icon__good--num
+                  %i.far.fa-heart
                   %span 1
         %section.items__box--item
           = link_to '/' do
@@ -232,7 +239,7 @@
               .item__price--box
                 .item__price ¥8,000
                 .haert-icon
-                  %i.icon__good--num
+                  %i.far.fa-heart
                   %span 1
         %section.items__box--item
           = link_to '/' do
@@ -243,7 +250,7 @@
               .item__price--box
                 .item__price ¥8,000
                 .haert-icon
-                  %i.icon__good--num
+                  %i.far.fa-heart
                   %span 1
         %section.items__box--item
           = link_to '/' do
@@ -254,7 +261,7 @@
               .item__price--box
                 .item__price ¥8,000
                 .haert-icon
-                  %i.icon__good--num
+                  %i.far.fa-heart
                   %span 1
     %section.items__box--container.clearfix.user__other--items
       %h2.item__box--head
@@ -271,7 +278,7 @@
               .item__price--box
                 .item__price ¥8,000
                 .haert-icon
-                  %i.icon__good--num
+                  %i.far.fa-heart
                   %span 1
         %section.items__box--item
           = link_to '/' do
@@ -282,7 +289,7 @@
               .item__price--box
                 .item__price ¥8,000
                 .haert-icon
-                  %i.icon__good--num
+                  %i.far.fa-heart
                   %span 1
         %section.items__box--item
           = link_to '/' do
@@ -293,7 +300,7 @@
               .item__price--box
                 .item__price ¥8,000
                 .haert-icon
-                  %i.icon__good--num
+                  %i.far.fa-heart
                   %span 1
         %section.items__box--item
           = link_to '/' do
@@ -304,7 +311,7 @@
               .item__price--box
                 .item__price ¥8,000
                 .haert-icon
-                  %i.icon__good--num
+                  %i.far.fa-heart
                   %span 1
         %section.items__box--item
           = link_to '/' do
@@ -315,7 +322,7 @@
               .item__price--box
                 .item__price ¥8,000
                 .haert-icon
-                  %i.icon__good--num
+                  %i.far.fa-heart
                   %span 1
         %section.items__box--item
           = link_to '/' do
@@ -326,13 +333,13 @@
               .item__price--box
                 .item__price ¥8,000
                 .haert-icon
-                  %i.icon__good--num
+                  %i.far.fa-heart
                   %span 1
   %nav.kind__list
     %ul
       %li
         = link_to 'https://www.mercari.com/jp/' do
           %span メルカリ
-        %i.icon__right
+        %i.fas.fa-chevron-right
       %li
         %span Tシャツ
