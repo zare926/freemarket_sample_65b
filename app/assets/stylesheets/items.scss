@@ -1,3 +1,6 @@
+body{ 
+  font-family: Arial, Helvetica, sans-serif; 
+}
 $offwhite:#EEEEEE;
 $white:#fff;
 $white2:#f5f5f5;
@@ -5,7 +8,6 @@ $gray:#aaa;
 i{
   display: inline-block;
   font-family: 'icon-font';
-  speak: none;
   font-style: normal;
   font-weight: 400;
   font-variant: normal;
@@ -30,7 +32,7 @@ h2{
   clear: both;
 }
 .container{
-  background-color: $offwhite;
+  background-color: $white2;
   .item__box--container{
     padding: 24px 40px 40px;
     margin: 40px auto 0;
@@ -45,7 +47,7 @@ h2{
       margin: 16px 0 0;
       width: 620px;
       .item-photo{
-        background-color: $offwhite;
+        background-color: $white2;
         float: left;
         min-width: 300px;
         max-width: 300px;
@@ -129,7 +131,7 @@ h2{
             border: 1px solid $white2;
             th{
               border: 1px solid $white2;
-              background-color: $offwhite;
+              background-color: $white2;
               padding: 8px;
             }
             td{
@@ -201,9 +203,6 @@ h2{
     .item-user__comment{
       padding: 24px 0 0;
       line-height: 1.5;
-      &--inner{
-
-      }
     }
     .f14{
       font-size: 14px;
@@ -311,8 +310,6 @@ h2{
                   height: 40px;
                   overflow: hidden;
                   border-radius: 50%;
-                  .user-icon{
-                  }
                 }
               }
             }
@@ -571,10 +568,6 @@ h2{
                 font-size: 16px;
                 font-weight: 600;
                 color: #333;
-                .haert-icon{
-                  .icon__good--num{
-                  }
-                }
               }
             }
           }
@@ -588,14 +581,16 @@ h2{
     position: relative;
     border-top: 1px solid #eee;
     z-index: 1;
-    width: 1020px;
     margin: 0 auto;
   }
-  & ul{
+  .kind__list ul{
     overflow: visible;
     margin: 0 auto;
     padding: 16px 0;
     white-space: normal;
+    @media (min-width: 1068px){
+      width: 1020px;
+    }
   }
   .kind__list li{
     text-overflow: ellipsis;
@@ -606,5 +601,8 @@ h2{
   }
   .kind__list li:last-child{
     font-weight: 600;
+  }
+  .kind__list span{
+    color: #333;
   }
 }
