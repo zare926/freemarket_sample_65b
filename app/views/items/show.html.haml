@@ -4,32 +4,32 @@
     .content.clearfix
       .item-photo
         .item-photo__area
-          .item-phot__area--main
+          .item-photo__area--main
             .item-stage
               .item-stage__outside.active
                 .item-stage__inner
-                  = image_tag src= 'https://www.image.tshirt.st/uploads/2017/12/16144138/085cvt01-01_2.jpg', size: '300x300'
-          .owl-bots
-            .owl-bot
+                  = image_tag src= 'https://www.image.tshirt.st/uploads/2017/12/16144138/085cvt01-01_2.jpg', size: '300x300', class: 'main_screen'
+          .item-photolist
+            .item-selectlist.active
               .owl-bot-inner
-                = image_tag src= 'https://www.image.tshirt.st/uploads/2017/12/16144138/085cvt01-01_2.jpg', size: '60x60', class: 'bot-list'
-            .owl-bot
-              .owl-bot-inner
-                = image_tag src= 'https://www.rikut.shop/phone/data/artworks-webshop/product/0033-ts-dry-b.jpg', size: '60x60', class: 'bot-list'
-            .owl-bot
-              .owl-bot-inner
-                = image_tag src= 'https://www.pokemoncenter-online.com/sp/static/product_image/4521329291956/4521329291956.jpg', size: '60x60', class: 'bot-list'
-            .owl-bot
-              .owl-bot-inner
-                = image_tag src= 'https://img04.shop-pro.jp/PA01025/117/product/130932803.png?cmsp_timestamp=20180427181601', size: '60x60', class: 'bot-list'
-            .owl-bot
-              .owl-bot-inner
-                = image_tag src= 'https://cdn.thumb.punyus.jp/res/up/punyus/shp/__basethum900__/punyus/PN18AW/1-50/019/20180808-0014.jpg', size: '60x60', class: 'bot-list'
-            .owl-bot
-              .owl-bot-inner
-                = image_tag src= 'https://im.belluna.jp/belluna/ph/O/4008/1006614008/DLARGE.JPG', size: '60x60', class: 'bot-list'
+                = image_tag src= 'https://www.image.tshirt.st/uploads/2017/12/16144138/085cvt01-01_2.jpg', size: '60x60', class: 'item-list'
+            .item-selectlist
+              .item-selectlist__inner
+                = image_tag src= 'https://www.rikut.shop/phone/data/artworks-webshop/product/0033-ts-dry-b.jpg', size: '60x60', class: 'item-list'
+            .item-selectlist
+              .item-selectlist__inner
+                = image_tag src= 'https://www.pokemoncenter-online.com/sp/static/product_image/4521329291956/4521329291956.jpg', size: '60x60', class: 'item-list'
+            .item-selectlist
+              .item-selectlist__inner
+                = image_tag src= 'https://img04.shop-pro.jp/PA01025/117/product/130932803.png?cmsp_timestamp=20180427181601', size: '60x60', class: 'item-list'
+            .item-selectlist
+              .item-selectlist__inner
+                = image_tag src= 'https://cdn.thumb.punyus.jp/res/up/punyus/shp/__basethum900__/punyus/PN18AW/1-50/019/20180808-0014.jpg', size: '60x60', class: 'item-list'
+            .item-selectlist
+              .item-selectlist__inner
+                = image_tag src= 'https://im.belluna.jp/belluna/ph/O/4008/1006614008/DLARGE.JPG', size: '60x60', class: 'item-list'
       %section.visible-sp
-      %table.item-detail-table
+      %table.item-info__table
         %tbody
           %tr
             %th 出品者
@@ -37,24 +37,28 @@
               = link_to '/' do
                 テストユーザー
               %div
-                .item-user-ratings
-                  %i.fas.fa-smile
+                .item__user--ratings
+                  %i.fas.fa-laugh
                   %span 1
-                .item-user-ratings
+                .item__user--ratings
                   %i.fas.fa-meh
                   %span 1
-                .item-user-ratings
+                .item__user--ratings
                   %i.fas.fa-frown
                   %span 1
           %tr
             %th カテゴリー
             %td
               = link_to '/' do
-                Tシャツ
+                %div Tシャツ
               = link_to '/' do
-                >Tシャツ
+                .item__sub--category
+                  %i.fas.fa-chevron-right
+                  Tシャツ
               = link_to '/' do
-                >Tシャツ
+                .item__sub--category
+                  %i.fas.fa-chevron-right
+                  Tシャツ
           %tr
             %th 商品のサイズ
             %td FREE
@@ -66,41 +70,276 @@
             %td 送料込み（出品者負担）
           %tr
             %th 配送の方法
-            %td らくらくメルカリ便
+            %td らくらくFURIMA便
           %tr
             %th 配送元地域
             %td 東京都
           %tr
             %th 配送日の目安
             %td 2~3日で配送
-    .item-price-box.text-center
+    .item-price__box.text-center
       %span.item-price.bold
         ¥10,000
       %span.item-tax
         (税込) 
       %span.item-shipping-fee
         送料込み
-    .item-buy-btn
-      = link_to '/' do
-        購入画面に進む
-    .item-description.f14
-      %p.item-description-inner
+    = link_to '/', class: 'buy-btn' do
+      購入画面に進む
+    .item-user__comment.f14
+      %p.item-user__comment--inner
         Tシャツです。
-    .item-btn-container.clearfix
-      .item-btn-left
-        %button.item-btn.item-btn-like
-          .icon-like-border
+        %br
+        どうか大切に着てやってほしいです
+        %br
+        よろしくお願いします。
+    .item__btn.clearfix
+      .item__btn--left
+        = link_to '/', class: 'good-btn' do
+          %i.far.fa-heart
           %span
             いいね!
           %span.fade-in-down
             0
-        .item-btn.item-btn-report.clearfix
-        = link_to '/' do
-          %i.icon-flag
+        = link_to '/', class: 'warning-btn' do
+          %i.far.fa-flag
           %span
             不適切な商品の警告
-      .item-btn-right
-        = link_to '/' do
-          %i.icon-lock
+      .item__btn--right
+        = link_to '/',class: 'safety-btn' do
+          %i.fas.fa-lock
           %span
             あんしん・あんぜんへの取り組み
+  .comment__box--container
+    .comment__box
+      .comment__box--area
+        %ul.comment__items
+          %li.clearfix
+            = link_to '/', class: 'comment__user' do
+              -# あとでfigureを足す
+              .comment__usericon--area
+                %div
+                  = image_tag scr='https://www.silhouette-illust.com/wp-content/uploads/2016/11/18448-300x300.jpg' , class: 'user-icon', size: '40x40'
+                %figcaption.user__name 太郎
+            .comment__body
+              .comment__body--text
+                ほしい！
+                %br
+                悩む！
+              .comment__icon.clearfix
+                %time.comment__time
+                  %i.far.fa-clock
+                  %span 1時間前
+                .comment__icon--right
+                  -# あとでリンク足す
+                  %form{action: '/', method: 'POST'}
+                    %button{type: 'submit'}
+                      %i.far.fa-flag
+                -# あとでアイコン入れる
+              %i.fas.fa-caret-left
+            -# 一時的にコメント２段用
+          %li.clearfix
+            = link_to '/', class: 'comment__user' do
+              .comment__usericon--area
+                %div
+                  = image_tag scr='https://www.silhouette-ac.com/sozai/m/137/53/137538m.jpg' , class: 'user-icon', size: '40x40'
+                %figcaption.user__name 二郎
+            .comment__body
+              .comment__body--text 値下げ！
+              .comment__icon.clearfix
+                %time.comment__time
+                  %i.far.fa-clock
+                  %span 1時間前
+                .comment__icon--right
+                  %form{action: '/', method: 'POST'}
+                    %button{type: 'submit'}
+                      %i.far.fa-flag
+              %i.fas.fa-caret-left
+      .comment__box--area
+        %form{action: '/', method: 'POST',class: 'comment__form'}
+          %input{type:'hidden', name:'__csrf_value', value: 'test'}
+          %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉使いなどは利用制限や退会処分となることがあります。
+          %input{type:'hidden', name:'item_id',value:'test'}
+          %input{type:'hidden', name:'redirect_url_key',value:'test'}
+          %textarea{type:'text',name:'body',class:'textarea'}
+          %button{type:'submit',class:'comment__submit'}
+            %span コメントする
+  %ul.item__link.clearfix
+    %li.item__link--prev
+      = link_to '/' do
+        %i.fas.fa-chevron-left
+        トレーナー
+    %li.item__link--next
+      = link_to '/' do
+        Yシャツ
+        %i.fas.fa-chevron-right
+  .social__media--area
+    -# 謎の空間
+    .social-text
+    -# あとでfontawesomeでicon追加
+    %ul.social__box
+      %li
+        = link_to 'https://www.facebook.com/', class: 'social__btn' do
+          %i.fab.fa-facebook-square
+      %li
+        = link_to 'https://twitter.com/', class: 'social__btn' do
+          %i.fab.fa-twitter-square
+      %li
+        = link_to 'https://line.me/ja/', class: 'social__btn' do
+          %i.fab.fa-line
+      %li
+        = link_to 'https://www.pinterest.jp/', class: 'social__btn' do
+          %i.fab.fa-pinterest-square
+  .user__other--items
+    -# eachであとで短くする
+    %section.items__box--container.clearfix.user__other--items
+      %h2.item__box--head
+        = link_to '/' do
+          ***まずはプロフィールを読んでください
+      .items__box.clearfix
+        %section.items__box--item
+          = link_to '/' do
+            %figure.items__box--item-photo
+              = image_tag scr='https://image.rakuten.co.jp/jam-ing/cabinet/uploadbox2/02408/wan5691-1.jpg',alt:'ベティトレーナー',class:'other__item'
+            .items__box--body
+              %h3.items__box--name.haert-icon ベティトレーナー
+              .item__price--box
+                .item__price ¥8,000
+                .haert-icon
+                  %i.far.fa-heart
+                  %span 1
+        %section.items__box--item
+          = link_to '/' do
+            %figure.items__box--item-photo
+              = image_tag scr='https://image.rakuten.co.jp/jam-ing/cabinet/uploadbox2/02408/wan5691-1.jpg',alt:'ベティトレーナー',class:'other__item'
+            .items__box--body
+              %h3.items__box--name.haert-icon ベティトレーナー
+              .item__price--box
+                .item__price ¥8,000
+                .haert-icon
+                  %i.far.fa-heart
+                  %span 1
+        %section.items__box--item
+          = link_to '/' do
+            %figure.items__box--item-photo
+              = image_tag scr='https://image.rakuten.co.jp/jam-ing/cabinet/uploadbox2/02408/wan5691-1.jpg',alt:'ベティトレーナー',class:'other__item'
+            .items__box--body
+              %h3.items__box--name.haert-icon ベティトレーナー
+              .item__price--box
+                .item__price ¥8,000
+                .haert-icon
+                  %i.far.fa-heart
+                  %span 1
+        %section.items__box--item
+          = link_to '/' do
+            %figure.items__box--item-photo
+              = image_tag scr='https://image.rakuten.co.jp/jam-ing/cabinet/uploadbox2/02408/wan5691-1.jpg',alt:'ベティトレーナー',class:'other__item'
+            .items__box--body
+              %h3.items__box--name.haert-icon ベティトレーナー
+              .item__price--box
+                .item__price ¥8,000
+                .haert-icon
+                  %i.far.fa-heart
+                  %span 1
+        %section.items__box--item
+          = link_to '/' do
+            %figure.items__box--item-photo
+              = image_tag scr='https://image.rakuten.co.jp/jam-ing/cabinet/uploadbox2/02408/wan5691-1.jpg',alt:'ベティトレーナー',class:'other__item'
+            .items__box--body
+              %h3.items__box--name.haert-icon ベティトレーナー
+              .item__price--box
+                .item__price ¥8,000
+                .haert-icon
+                  %i.far.fa-heart
+                  %span 1
+        %section.items__box--item
+          = link_to '/' do
+            %figure.items__box--item-photo
+              = image_tag scr='https://image.rakuten.co.jp/jam-ing/cabinet/uploadbox2/02408/wan5691-1.jpg',alt:'ベティトレーナー',class:'other__item'
+            .items__box--body
+              %h3.items__box--name.haert-icon ベティトレーナー
+              .item__price--box
+                .item__price ¥8,000
+                .haert-icon
+                  %i.far.fa-heart
+                  %span 1
+    %section.items__box--container.clearfix.user__other--items
+      %h2.item__box--head
+        = link_to '/' do
+          Tシャツその他の商品
+      .items__box.clearfix
+        -#あとでeachで短くする
+        %section.items__box--item
+          = link_to '/' do
+            %figure.items__box--item-photo
+              = image_tag scr='https://image.rakuten.co.jp/jam-ing/cabinet/uploadbox2/02408/wan5691-1.jpg',alt:'ベティトレーナー',class:'other__item'
+            .items__box--body
+              %h3.items__box--name.haert-icon ベティトレーナー
+              .item__price--box
+                .item__price ¥8,000
+                .haert-icon
+                  %i.far.fa-heart
+                  %span 1
+        %section.items__box--item
+          = link_to '/' do
+            %figure.items__box--item-photo
+              = image_tag scr='https://image.rakuten.co.jp/jam-ing/cabinet/uploadbox2/02408/wan5691-1.jpg',alt:'ベティトレーナー',class:'other__item'
+            .items__box--body
+              %h3.items__box--name.haert-icon ベティトレーナー
+              .item__price--box
+                .item__price ¥8,000
+                .haert-icon
+                  %i.far.fa-heart
+                  %span 1
+        %section.items__box--item
+          = link_to '/' do
+            %figure.items__box--item-photo
+              = image_tag scr='https://image.rakuten.co.jp/jam-ing/cabinet/uploadbox2/02408/wan5691-1.jpg',alt:'ベティトレーナー',class:'other__item'
+            .items__box--body
+              %h3.items__box--name.haert-icon ベティトレーナー
+              .item__price--box
+                .item__price ¥8,000
+                .haert-icon
+                  %i.far.fa-heart
+                  %span 1
+        %section.items__box--item
+          = link_to '/' do
+            %figure.items__box--item-photo
+              = image_tag scr='https://image.rakuten.co.jp/jam-ing/cabinet/uploadbox2/02408/wan5691-1.jpg',alt:'ベティトレーナー',class:'other__item'
+            .items__box--body
+              %h3.items__box--name.haert-icon ベティトレーナー
+              .item__price--box
+                .item__price ¥8,000
+                .haert-icon
+                  %i.far.fa-heart
+                  %span 1
+        %section.items__box--item
+          = link_to '/' do
+            %figure.items__box--item-photo
+              = image_tag scr='https://image.rakuten.co.jp/jam-ing/cabinet/uploadbox2/02408/wan5691-1.jpg',alt:'ベティトレーナー',class:'other__item'
+            .items__box--body
+              %h3.items__box--name.haert-icon ベティトレーナー
+              .item__price--box
+                .item__price ¥8,000
+                .haert-icon
+                  %i.far.fa-heart
+                  %span 1
+        %section.items__box--item
+          = link_to '/' do
+            %figure.items__box--item-photo
+              = image_tag scr='https://image.rakuten.co.jp/jam-ing/cabinet/uploadbox2/02408/wan5691-1.jpg',alt:'ベティトレーナー',class:'other__item'
+            .items__box--body
+              %h3.items__box--name.haert-icon ベティトレーナー
+              .item__price--box
+                .item__price ¥8,000
+                .haert-icon
+                  %i.far.fa-heart
+                  %span 1
+  %nav.kind__list
+    %ul
+      %li
+        = link_to 'https://www.mercari.com/jp/' do
+          %span FURIMA
+        %i.fas.fa-chevron-right
+      %li
+        %span Tシャツ
