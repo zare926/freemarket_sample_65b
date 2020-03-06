@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
       username == 'saisyukadai' && password == '1028'
     end
   end
+  
   before_action :configure_permitted_parameters, if: :devise_controller?
   
 
