@@ -8,7 +8,9 @@ class ApplicationController < ActionController::Base
     authenticate_or_request_with_http_basic do |username, password|
       username == 'saisyukadai' && password == '1028'
     end
+  end
   before_action :configure_permitted_parameters, if: :devise_controller?
+  
 
   protected
 
