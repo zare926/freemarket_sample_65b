@@ -1,10 +1,13 @@
-body{ 
-  font-family: Arial, Helvetica, sans-serif; 
-}
 $offwhite:#EEEEEE;
 $white:#fff;
 $white2:#f5f5f5;
 $gray:#aaa;
+html{
+  background-color: $white2;
+}
+body{ 
+  font-family: Arial, Helvetica, sans-serif; 
+}
 i{
   display: inline-block;
   font-family: 'icon-font';
@@ -32,7 +35,6 @@ h2{
   clear: both;
 }
 .container{
-  background-color: $white2;
   .item__box--container{
     padding: 24px 40px 40px;
     margin: 40px auto 0;
