@@ -46,7 +46,7 @@ h2{
       line-height: 1.4;
     }
     .content{
-      margin: 16px 0 0;
+      margin-top: 16px;
       width: 620px;
       .item-photo{
         background-color: $white2;
@@ -170,22 +170,19 @@ h2{
         border: 1px solid $white2;
         border-collapse: collapse;
       }
-      .item-info-table a {
-        margin: 0;
-      }
     }
-    .item-price__box{
-      margin: 24px 0 0;
+    .user--item{
+      margin-top: 24px;
       text-align: center;
-      .item-price{
+      &__price{
         font-size: 32px;
-        margin: 0 8px 0 0;
+        margin-right: 8px;
         font-weight: 600;
       }
-      .item-tax{
+      &__tax{
         font-size: 10px;
       }
-      .item-sipping__fee{
+      &__sipping-fee{
         font-size: 16;
         display: inline-block;
       }
@@ -219,7 +216,7 @@ h2{
       vertical-align: middle;
     }
     .item__btn{
-      margin: 16px 0 0;
+      margin-top: 16px;
       &--left i{
         font-size: 14px;
       }
@@ -249,7 +246,7 @@ h2{
           -webkit-transition: all ease-out .3s;
           transition: all ease-out .3s;
           text-decoration: none;
-          margin: 0 0 0 16px;
+          margin-left: 16px;
         }
         & span{
           display: inline-block;
@@ -258,7 +255,7 @@ h2{
         }
       }
       .item__btn--right{
-        margin: 8px 0 0;
+        margin-top: 8px;
         float: right;
         .safety-btn{
           text-decoration: none;
@@ -282,132 +279,125 @@ h2{
       &--area{
         padding: 24px;
         background-color: $white;
-        .comment__items{
-          margin : 0;
-          padding: 0;
-            .comment__user{
-              float: left;
-              position: relative;
-              top: -20px;
-              display: inline-block;
-              color: #333;
-            }
-            .comment__user figcaption{
-              width: 600px;
-              min-width: 600px;
-              overflow: hidden;
-              position: absolute;
-              top: 0;
-              left: 56px;
-              max-width: 100%;
-              height: 1.2em;
-              white-space: nowrap;
-              text-overflow: ellipsis;
-              font-weight: 600;
-              line-height: 1;
-              &icon--area{
-                margin: 0;
-                div{
-                  width: 40px;
-                  height: 40px;
-                  overflow: hidden;
-                  border-radius: 50%;
-                }
-              }
-            }
-            .comment__body span{
-              margin: 8px 0 0;
-            }
-            .comment__body time{
-              display: block;
-              color: $gray;
-            }
-            .comment__body{
-              width: 568px;
-              float: right;
-              position: relative;
-              padding: 16px;
-              background-color: #eef0f4;
-              border-radius: 15px;
-              line-height: 1.5;
-              word-break: break-all;
-              height: auto;
-              .comment__icon div{
-                cursor: pointer;
-                display: block;
-                color: $gray;
-                text-decoration: none;
-                .comment_icon i{
-                  vertical-align: middle;
-               }
-              }
-              .comment__icon{
-                margin: 8px 0 0;
-                .comment__time{
-                  float: left;
-                  &--icon{
-                    vertical-align: middle;
-                  }
-                }
-                .comment__icon--right{
-                  float: right;
-                }
-                & button{
-                  cursor: pointer;
-                  border: 0;
-                  outline: 0;
-                  background-color: transparent;
-                  color: inherit;
-                }
-              }
-              .fa-caret-left{
-                position: absolute;
-                top: 8px;
-                left: -9px;
-                color: #eef0f4;
-             }
-            }
+        .comment__user{
+          position: relative;
+          top: -20px;
+          display: inline-block;
+          color: #333;
         }
-        .comment__items li:first-child{
-          margin: 1.5em 0 0;
+        .comment__user figcaption{
+          width: 600px;
+          min-width: 600px;
+          overflow: hidden;
+          position: absolute;
+          top: 0;
+          left: 56px;
+          max-width: 100%;
+          height: 1.2em;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          font-weight: 600;
+          line-height: 1;
+          div{
+            width: 40px;
+            height: 40px;
+            overflow: hidden;
+            border-radius: 50%;
+          }
         }
-        .comment__items li{
-          margin: 60px 0 0;
-        }
-        .comment__items ul {
-          padding-left: 0px;
-        }
-        .comment__form p{
-          padding: 8px;
-          font-size: 14px;
-          background: #fff6de;
-        }
-        .textarea{
-          margin: 8px 0 0;
-          display: block;
-          width: 630px;
-          min-height: 104px;
-          padding: 10px;
-          border: 1px solid #ccc;
-          background: $white;
-          font-size: 16px;
-          line-height: 1.5;
-        }
-        .comment__submit{
-          width: 652px;
-          margin: 8px 0 0;
-          font-size: 0;
-          text-align: center;
-          // 本当は別クラスが良い
-          background: $gray;
-          border: 1px solid $gray;
-          color: $white;
-          // ここも
-          display: block;
-          line-height: 48px;
-          transition: all ease-out .3s;
+      }
+      .comment__body span{
+        margin-top: 8px;
+      }
+      .comment__body time{
+        display: block;
+        color: $gray;
+      }
+      .comment__body{
+        width: 568px;
+        float: right;
+        position: relative;
+        padding: 16px;
+        background-color: #eef0f4;
+        border-radius: 15px;
+        line-height: 1.5;
+        word-break: break-all;
+        height: auto;
+        .comment__icon div{
           cursor: pointer;
-          & span{
+          display: block;
+          color: $gray;
+          text-decoration: none;
+          .comment_icon i{
+            vertical-align: middle;
+          }
+        }
+        .comment__icon{
+          margin-top: 8px;
+          .comment__time{
+            float: left;
+            &--icon{
+              vertical-align: middle;
+            }
+          }
+          .comment__icon--right{
+            float: right;
+          }
+          & button{
+            cursor: pointer;
+            border: 0;
+            outline: 0;
+            background-color: transparent;
+            color: inherit;
+          }
+        }
+        .fa-caret-left{
+          position: absolute;
+          top: 8px;
+          left: -9px;
+          color: #eef0f4;
+        }
+      }
+      .comment__items li:first-child{
+        margin-top: 1.5em;
+      }
+      .comment__items li{
+        margin-top: 60px;
+      }
+      .comment__items ul {
+        padding-left: 0px;
+      }
+      .comment__form p{
+        padding: 8px;
+        font-size: 14px;
+        background: #fff6de;
+      }
+      .textarea{
+        margin-top: 8px;
+        display: block;
+        width: 630px;
+        min-height: 104px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background: $white;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+      .comment__submit{
+        width: 652px;
+        margin-top: 8px;
+        font-size: 0;
+        text-align: center;
+        // 本当は別クラスが良い
+        background: $gray;
+        border: 1px solid $gray;
+        color: $white;
+        // ここも
+        display: block;
+        line-height: 48px;
+        transition: all ease-out .3s;
+        cursor: pointer;
+        & span{
             font-size: 14px;
             vertical-align: middle;
           }
@@ -425,7 +415,7 @@ h2{
     }
     &--prev{
       float: left;
-      padding: 0 0 0 14px;
+      padding-left:14px;
       a{
         .icon_left{
           left: 0;
@@ -439,7 +429,7 @@ h2{
     }
     &--next{
       float: right;
-      padding: 0 14px 0 0;
+      padding-right: 14px;
       text-align: right;
       a{
         .icon__right{
@@ -457,7 +447,7 @@ h2{
       text-align: center;
     }
     .social__box{
-      margin: 16px 0 0;
+      margin-top: 16px;
       text-align: center;
     }
     & li{
@@ -526,7 +516,6 @@ h2{
             .items__box--item-photo{
               width: 220px;
               overflow: hidden;
-              position: relative;
               padding: 0 0 100%;
               margin: 0;
             }
@@ -542,36 +531,43 @@ h2{
               transition: opacity .3s;
               vertical-align: middle;
             }
-          .items__box--body{
+          .items__box{
             padding: 16px;
             height: 78px;
-            .items__box--name{
-              overflow: hidden;
-              position: relative;
-              font-weight: 400;
-              height: 3em;
-              line-height: 1.5;
-              word-break: break-word;
-              white-space: normal;
+            &--name{
+            overflow: hidden;
+            position: relative;
+            font-weight: 400;
+            height: 3em;
+            line-height: 1.5;
+            word-break: break-word;
+            white-space: normal;
+          }
+          .item__box--bottom{
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+            margin-top: 8px;
+            &-price{
+              font-size: 16px;
+              font-weight: 600;
+              color: #333;
             }
-            .haert-icon{
+            &-heart-icon{
               font-size: 16px;
               font-weight: 400;
               color: #333;
             }
-            .item__price--box{
-              display: flex;
-              -webkit-box-align: center;
-              align-items: center;
-              -webkit-box-pack: justify;
-              justify-content: space-between;
-              margin: 8px 0 0;
-              .item__price{
-                font-size: 16px;
-                font-weight: 600;
-                color: #333;
-              }
-            }
+          }
+          .item__price--box{
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+            margin-top: 8px;
           }
         }
       }
