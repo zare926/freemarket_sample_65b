@@ -27,7 +27,7 @@
   .item__main
     .item__main--box
       .item__main--box-left
-      .item__main--box-raight
+      .item__main--box-right
         .item__box
           .item__box--top
             %h2.item__box--top-name
@@ -35,4 +35,24 @@
               %ul
                 %li
                   - @items.images.each do |item|
-                    - if item.image.id == 1
+                    - if item.id == 1
+                      = image_tag item.image
+                      %ul
+                        - @items.images.each do |item|
+                          %li
+                            - if item.id == 2
+                              = image_tag item.image
+                            - else
+                              = image_tag item.image
+            .item__price
+              %span ¥20000
+              .item__tax
+                %span (税込)
+                -#送料のところは商品登録ができてから
+                %span 送料込み
+            .item__detail
+              とても書きやすい鉛筆です。
+              %br
+              3年前に買いました。
+              %br
+              購入してください。

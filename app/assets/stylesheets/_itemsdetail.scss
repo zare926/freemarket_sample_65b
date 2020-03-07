@@ -56,19 +56,52 @@
               display: flex;
               position: relative;
             }
-            & li{
+            & ul>li{
               display: flex;
               flex-direction: column;
               width: 560px;
               align-items: center;
               margin: 0 auto;
             }
+            & ul>li img{
+              object-fit: cover;
+              height: 346px;
+            }
+            & ul>li ul{
+              display: flex;
+              position: relative;
+              margin-top: 10;
+            }
+            & ul> li ul li{
+              width: 25%;
+              margin-right: 10px;
+            }
+            & ul> li ul li img{
+              object-fit: cover;
+              height: 87px;
+            }
+          }
+          .item__price{
+            margin: 24px 0 24px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+          }
+          .item__price >span{
+            font-size: 46px;
+            font-weight: bold;
+            margin-right: 10px;
+            .item__tax{
+              font-size: 16px;
+            }
+          }
+          .item__detail{
+            line-height: 1.5;
+            font-size: 18px;
+            margin-bottom: 30px;
           }
         }
       }
     }
   }
 }
-
-
-
