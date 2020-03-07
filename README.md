@@ -81,7 +81,7 @@
 |user_id|references|null: false|
 ### Association
 - belongs_to :user
-このテーブルは、Paijpを検証してから不要かを決める。
+このテーブルは、Pay.jpを検証してから不要かを決める。
 
 ## imagesテーブル(商品プレビューテーブル)
 |Column|Type|Options|
