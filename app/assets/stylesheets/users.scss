@@ -178,3 +178,25 @@ input[name="tab_item"],[name="tab_buy"] {
     margin: 40px 0 0 0;
   }
 }
+
+.signout_content {
+  float: left;
+  background-color: #fff;
+  height: 200px;
+  width: 700px;
+  padding: 64px;
+  &__btn {
+    width: 320px;
+    height: 48px;
+    background-color: #ea352d;
+    display: block;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    margin: auto;
+    margin-top: 14px;
+    padding: 14px;
+  }
+}
+
+.card_content {}
