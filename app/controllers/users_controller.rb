@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   def signout
   end
 
-  def card
+  def payment
   end
   
 end

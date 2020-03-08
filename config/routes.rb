@@ -8,9 +8,8 @@ Rails.application.routes.draw do
   end
   resources :users do
     collection do
+      get 'payment'
       get 'signout'
-      get 'card'
     end
   end
-
 end
