@@ -35,16 +35,14 @@
             .item__box--top-body
               %ul
                 %li
-                  - @items.images.each do |item|
-                    - if item.id == 1
-                      = image_tag item.image
-                      %ul
-                        - @items.images.each do |item|
-                          %li
-                            - if item.id == 2
-                              = image_tag item.image
-                            - else
-                              = image_tag item.image
+                  = image_tag scr= 'https://s3.ap-northeast-1.amazonaws.com/welcomegroup/catalog/product/cache/ecd051e9670bd57df35c8f0b122d8aea/2/2/2220190819017_01.jpg'
+                  %ul
+                    %li
+                      = image_tag scr='https://media-01.creema.net/user/402176/exhibits/8111554/0_3808494940e339b472d8009e72d8221a_500.jpg'
+                    %li
+                      = image_tag scr='https://pbs.twimg.com/profile_images/1226880606132326400/zrxSnB6d_400x400.jpg'
+                    %li
+                      = image_tag scr='https://images-na.ssl-images-amazon.com/images/I/61sxcVIyseL._SX466_.jpg'
             .item__price
               %span ¥20000
               .item__tax
