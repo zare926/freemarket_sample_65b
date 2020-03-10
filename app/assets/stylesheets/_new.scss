@@ -17,6 +17,32 @@
   height: 2116px;
   width: 100vw;
   background-color: green;
+  &__center{
+    height:2116px;
+    width: 50vw;
+    background-color: purple;
+    margin: auto;
+    &__img-uplode{
+      height: 300px;
+      width: 50vw;
+      background-color: white;
+    }
+    &__items{
+      height: 416px;
+      width: 50vw;
+      background-color: yellow;
+    }
+    &__deta{
+      height: 444px;
+      width: 50vw;
+      background-color: yellowgreen;
+    }
+    &__delivery{
+      height: 444px;
+      width: 50vw;
+      background-color: yellow;
+    }
+  }
 }
 
 .top__footer{
