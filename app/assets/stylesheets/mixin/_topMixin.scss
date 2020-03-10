@@ -1,0 +1,38 @@
+@mixin btnStyle() {
+  display: flex;
+  align-items: center;
+  .appBtn {
+    width: 220px;
+    height: 59.5px;
+  }
+  .googleBtn {
+    width: 220px;
+    height: 88px;
+  }
+}
+@mixin afterStyle() {
+  content: "";
+  width: 70px;
+  height: 4px;
+  background-color: $mainBlueColor;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+}
+@mixin listsLeft-a {
+  color: $mainBlackColor;
+  text-decoration: none;
+  
+}
+@mixin listsRight-item {
+  color: $mainBlackColor;
+  line-height: 38px;
+  padding: 0 0 0 16px;
+  a {
+    display: flex;
+    align-items: center;
+    color: $mainBlackColor;
+    text-decoration: none;
+  }
+}

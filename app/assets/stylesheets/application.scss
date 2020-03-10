@@ -1,7 +1,4 @@
-@import "reset";
-@import "items";
-
 @import "font-awesome-sprockets";
-@import "font-awesome";
-@import "./reset";
-@import "./confirm";
+@import "./font-awesome";
+@import "./base/reset";
+@import "./items";
