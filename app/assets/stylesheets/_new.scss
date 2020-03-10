@@ -1,7 +1,26 @@
 
 
 .top__header{
-  height: 30px;
-  width: 120px;
+  height: 128px;
+  width: 100vw;
   background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .image_logo{
+    height: 49px;
+    width: 185px;
+  }
+}
+
+.top__main{
+  height: 2116px;
+  width: 100vw;
+  background-color: green;
+}
+
+.top__footer{
+  width: 100vw;
+  height: 220px;
+  background-color: blue;
 }
