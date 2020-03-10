@@ -1,3 +1,17 @@
+$mainBlueColor : #48D1CC;
+
+
+@mixin bottomLine {
+  border: solid 1px $mainBlueColor;
+  border-width:0 0 1px 0;
+}
+
+@mixin box {
+  width : 50vw;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
 
 
 .top__header{
@@ -10,37 +24,47 @@
   .image_logo{
     height: 49px;
     width: 185px;
+    
   }
 }
 
 .top__main{
-  height: 2116px;
   width: 100vw;
   background-color: green;
   &__center{
-    height:2116px;
     width: 50vw;
     background-color: purple;
     margin: auto;
     &__img-uplode{
       height: 300px;
-      width: 50vw;
       background-color: white;
+      @include bottomLine;
+      @include box;
     }
     &__items{
       height: 416px;
-      width: 50vw;
       background-color: yellow;
+      @include bottomLine;
+      @include box;
     }
     &__deta{
       height: 444px;
-      width: 50vw;
       background-color: yellowgreen;
+      @include bottomLine;
+      @include box;
     }
     &__delivery{
       height: 444px;
-      width: 50vw;
       background-color: yellow;
+      @include bottomLine;
+      @include box;
+    }
+    &__xhibition{
+      height: 558px;
+      width: 50vw;
+      background-color: yellowgreen;
+      box-sizing: border-box;
+      padding: 40px 40px 64px;
     }
   }
 }
