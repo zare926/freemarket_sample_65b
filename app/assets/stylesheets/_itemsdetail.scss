@@ -200,6 +200,9 @@ $mainBlackColor     : #333;
             }
           }
         }
+        .option__box li:hover{
+          opacity: 0.5;
+        }
       }
       .item__link{
         & li{
