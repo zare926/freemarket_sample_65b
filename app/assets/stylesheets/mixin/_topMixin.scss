@@ -28,7 +28,7 @@
 @mixin listsRight-item {
   color: $mainBlackColor;
   line-height: 38px;
-  padding: 0 0 0 16px;
+  padding-left: 16px;
   a {
     display: flex;
     align-items: center;

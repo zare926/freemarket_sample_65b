@@ -85,6 +85,9 @@
           line-height: 50px;
           font-weight: bold;
           margin: 0 0 0 2px;
+          &--color {
+            color: $mainBlueColor;;
+          }
         }
         &__description {
           font-size: 18px;
