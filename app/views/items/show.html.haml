@@ -1,131 +1,130 @@
-%body
-  %nav.kind__list
-    %ul
-      -# 以下カテゴリ機能実装後each?
-      %li
-        = link_to '/' do
-          FURIMA
-      %li
-        %i.fa.fa-angle-right
-      %li
-        = link_to '#' do
-          メンズ
-      %li
-        %i.fa.fa-angle-right
-      %li
-        = link_to '#' do
-          文房具
-      %li
-        %i.fa.fa-angle-right
-      %li
-        = link_to '#' do
-          黒
-      %li
-        %i.fa.fa-angle-right
-      %li
-        %p 鉛筆
-  .item__main
-    .item__main--box
-      .item__main--box-left
-      .item__main--box-right
-        .item__box
-          .item__box--top
-            %h2.item__box--top-name
-              鉛筆
-            .item__box--top-body
-              %ul
-                %li
-                  = image_tag scr= 'https://s3.ap-northeast-1.amazonaws.com/welcomegroup/catalog/product/cache/ecd051e9670bd57df35c8f0b122d8aea/2/2/2220190819017_01.jpg'
-                  %ul
-                    %li
-                      = image_tag scr='https://media-01.creema.net/user/402176/exhibits/8111554/0_3808494940e339b472d8009e72d8221a_500.jpg'
-                    %li
-                      = image_tag scr='https://pbs.twimg.com/profile_images/1226880606132326400/zrxSnB6d_400x400.jpg'
-                    %li
-                      = image_tag scr='https://images-na.ssl-images-amazon.com/images/I/61sxcVIyseL._SX466_.jpg'
-            .item__price
-              %span ¥20000
-              .item__tax
-                %span (税込)
-                -#送料のところは商品登録ができてから
-                %span 送料込み
-            .item__detail
-              とても書きやすい鉛筆です。
+%nav.kind__list
+  %ul
+    -# 以下カテゴリ機能実装後each?
+    %li
+      = link_to '/' do
+        FURIMA
+    %li
+      %i.fa.fa-angle-right
+    %li
+      = link_to '#' do
+        メンズ
+    %li
+      %i.fa.fa-angle-right
+    %li
+      = link_to '#' do
+        文房具
+    %li
+      %i.fa.fa-angle-right
+    %li
+      = link_to '#' do
+        黒
+    %li
+      %i.fa.fa-angle-right
+    %li
+      %p 鉛筆
+.item__main
+  .item__main--box
+    .item__main--box-left
+    .item__main--box-right
+      .item__box
+        .item__box--top
+          %h2.item__box--top-name
+            鉛筆
+          .item__box--top-body
+            %ul
+              %li
+                = image_tag scr= 'https://s3.ap-northeast-1.amazonaws.com/welcomegroup/catalog/product/cache/ecd051e9670bd57df35c8f0b122d8aea/2/2/2220190819017_01.jpg'
+                %ul
+                  %li
+                    = image_tag scr='https://media-01.creema.net/user/402176/exhibits/8111554/0_3808494940e339b472d8009e72d8221a_500.jpg'
+                  %li
+                    = image_tag scr='https://pbs.twimg.com/profile_images/1226880606132326400/zrxSnB6d_400x400.jpg'
+                  %li
+                    = image_tag scr='https://images-na.ssl-images-amazon.com/images/I/61sxcVIyseL._SX466_.jpg'
+          .item__price
+            %span ¥20000
+            .item__tax
+              %span (税込)
+              -#送料のところは商品登録ができてから
+              %span 送料込み
+          .item__detail
+            とても書きやすい鉛筆です。
+            %br
+            3年前に買いました。
+            %br
+            購入してください。
+          .info__table
+            -# あとでDBから引っ張る記述します。
+            %table
+              %tbody
+                %tr
+                  %th 出品者
+                  %td テストユーザー
+                %tr
+                  %th カテゴリー
+                  %td
+                    = link_to '#' do
+                      メンズ
+                      %br
+                    = link_to '#' do
+                      ジャケット/アウター
+                      %br
+                    = link_to '#' do
+                      ノーカラージャケット
+                %tr
+                  %th ブランド
+                  %td
+                %tr
+                  %th 商品サイズ
+                  %td
+                %tr
+                  %th 商品の状態
+                  %td 新品/未使用
+                %tr
+                  %th 配送料の負担
+                  %td 着払い（購入者負担）
+                %tr
+                  %th 発送元の地域
+                  %td 
+                    = link_to '#' do
+                      東京都
+                %tr
+                  %th 発送日の目安
+                  %td 1-2日で発送
+          .option__box
+            %ul
+              %li.option__left-btn
+                %i.fa.fa-star
+                お気に入り 0
+            %ul.option__right
+              %li.option__right-btn
+                = link_to '#' do
+                  %i.fa.fa-flag
+                  不適切な商品の通報
+        .comment__box
+          %ul.comment__box--content
+          %form{class: 'new__comment', action: '#',method:'post'}
+            %textarea.new__comment--body
+            %p.note__message
+              相手のことを考え丁寧なコメントを心がけましょう。
               %br
-              3年前に買いました。
-              %br
-              購入してください。
-            .info__table
-              -# あとでDBから引っ張る記述します。
-              %table
-                %tbody
-                  %tr
-                    %th 出品者
-                    %td テストユーザー
-                  %tr
-                    %th カテゴリー
-                    %td
-                      = link_to '#' do
-                        メンズ
-                        %br
-                      = link_to '#' do
-                        ジャケット/アウター
-                        %br
-                      = link_to '#' do
-                        ノーカラージャケット
-                  %tr
-                    %th ブランド
-                    %td
-                  %tr
-                    %th 商品サイズ
-                    %td
-                  %tr
-                    %th 商品の状態
-                    %td 新品/未使用
-                  %tr
-                    %th 配送料の負担
-                    %td 着払い（購入者負担）
-                  %tr
-                    %th 発送元の地域
-                    %td 
-                      = link_to '#' do
-                        東京都
-                  %tr
-                    %th 発送日の目安
-                    %td 1-2日で発送
-            .option__box
-              %ul
-                %li.option__left-btn
-                  %i.fa.fa-star
-                  お気に入り 0
-              %ul.option__right
-                %li.option__right-btn
-                  = link_to '#' do
-                    %i.fa.fa-flag
-                    不適切な商品の通報
-          .comment__box
-            %ul.comment__box--content
-            %form{class: 'new__comment', action: '#',method:'post'}
-              %textarea.new__comment--body
-              %p.note__message
-                相手のことを考え丁寧なコメントを心がけましょう。
-                %br
-                不快な言葉遣いなどは利用制限や退会処分となることがあります。
-              %br
-              %button.comment__btn
-                %i.fa.fa-comment
-                  コメントする
-        %ul.item__link
-          %li
-            = link_to '#' do
-              %i.fa.fa-angle-left
-                %span
-                  前の商品
-          %li
-            = link_to '#' do
-              %span 後ろの商品
-              %i.fa.fa-angle-right
-        .further__items
-          = link_to "#" do
-            メンズをもっと見る
-          .item__lists
+              不快な言葉遣いなどは利用制限や退会処分となることがあります。
+            %br
+            %button.comment__btn
+              %i.fa.fa-comment
+                コメントする
+      %ul.item__link
+        %li
+          = link_to '#' do
+            %i.fa.fa-angle-left
+              %span
+                前の商品
+        %li
+          = link_to '#' do
+            %span 後ろの商品
+            %i.fa.fa-angle-right
+      .further__items
+        = link_to "#" do
+          メンズをもっと見る
+        .item__lists
