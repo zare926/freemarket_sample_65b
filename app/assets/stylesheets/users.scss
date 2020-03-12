@@ -1,9 +1,21 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$maypageBackColor   : #fff;
+$maypageBtn         : #3ceace;
+$maypageBorderColor : #eee;
+
+@mixin btn {
+  width: 320px;
+  background-color: $maypageBtn;
+  display: block;
+  color: $maypageBackColor;
+  text-align: center;
+  text-decoration: none;
+  margin: auto;
+  margin-top: 14px;
+  padding: 14px;
+}
 
 li {
-  border-top: 1px solid #eee;
+  border-top: 1px solid $maypageBorderColor;
 }
 
 .tab_item{
@@ -41,7 +53,7 @@ input[name="tab_item"],[name="tab_buy"] {
 }
 
 .mypage-tabs input:checked + .tab_item {
-  background-color: #fff;
+  background-color: $maypageBackColor;
   border-top: 2px solid #ea352d;
 }
 
@@ -69,7 +81,7 @@ input[name="tab_item"],[name="tab_buy"] {
     }
     .mypage-nav {
       &__btn {
-        background-color: #fff;
+        background-color: $maypageBackColor;
         font-size: 14px;
         min-height: 48px;
         line-height: 48px;
@@ -113,19 +125,24 @@ input[name="tab_item"],[name="tab_buy"] {
     }
     &__middle{
       .mypage-item-link{
-        min-height: 80px;
+        min-height: 100px;
         padding: 16px;
         display: block;
+        figure {
+          position: relative;
+          float: left;
+        }
         &__img{
+          position: absolute;
           top: 0;
           right: 0;
           bottom: 0;
           left: 0;
-          float: left;
         }
         &__body{
-          margin: 0 45% 0 68px;
-          float: left;
+          margin: 0 40px 0 68px;
+          position: absolute;
+
           time{
             float: left;
           }
@@ -135,50 +152,23 @@ input[name="tab_item"],[name="tab_buy"] {
 
     &__bottom{
       margin: 40px 0 0 0;
-      .mypage-item-link{
-        min-height: 80px;
-        padding: 16px;
-        display: block;
-        &__img{
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          float: left;
-        }
-        &__body{
-          margin: 0 40px 0 68px;
-          float: left;
-          &__time{
-            float: left;
-          }
-        }
-      }
     }
   }
 
   .signout_content {
     float: left;
-    background-color: #fff;
+    background-color: $maypageBackColor;
     height: 200px;
     width: 700px;
     padding: 64px;
     &__btn {
-      width: 320px;
+      @include btn;
       height: 48px;
-      background-color: #ea352d;
-      display: block;
-      color: #fff;
-      text-align: center;
-      text-decoration: none;
-      margin: auto;
-      margin-top: 14px;
-      padding: 14px;
     }
   }
 
   .payment_content {
-    background-color: #fff;
+    background-color: $maypageBackColor;
     width: 700px;
     &__head{
       padding: 8px 24px;
@@ -198,18 +188,10 @@ input[name="tab_item"],[name="tab_buy"] {
         text-align: center;
         padding: 24px 0;
         margin: 0 auto;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid $maypageBorderColor;
         &--btn{
-          width: 320px;
           height: 25px;
-          background-color: #ea352d;
-          display: block;
-          color: #fff;
-          text-align: center;
-          text-decoration: none;
-          margin: auto;
-          margin-top: 14px;
-          padding: 14px;
+          @include btn;
         }
       }
       &__paymentGuide{
