@@ -47,8 +47,8 @@ input[name="tab_item"],[name="tab_buy"] {
   display: block;
 }
 
-#torihiki:checked ~ #torihiki_content,
-#kako:checked ~ #kako_content {
+#nowTransaction:checked ~ #nowTransaction_content,
+#oldTransaction:checked ~ #oldTransaction_content {
   display: block;
 }
 
@@ -152,6 +152,25 @@ input[name="tab_item"],[name="tab_buy"] {
 
     &__bottom{
       margin: 40px 0 0 0;
+      .mypage-item-link{
+        min-height: 80px;
+        padding: 16px;
+        display: block;
+        &__img{
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          float: left;
+        }
+        &__body{
+          margin: 0 40px 0 68px;
+          float: left;
+          &__time{
+            float: left;
+          }
+        }
+      }
     }
   }
 
