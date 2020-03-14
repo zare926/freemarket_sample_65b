@@ -18,7 +18,10 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @items = Item.find(params[:id])
+    @items = Item.where(id: params[:id])
+    @item = Item.find(params[:id])
+    @images = @item.images
+    # binding.pry
   end
 
   def confirm

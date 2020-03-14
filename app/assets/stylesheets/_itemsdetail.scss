@@ -3,6 +3,11 @@ $mainGrayColor      : #f8f8f8;
 $mainBlueColor      : #48D1CC;
 $mainBlackColor     : #333;
 
+
+// *{
+//   box-sizing: border-box;
+// }
+
 .item__link:after{
   display: block;
   content: "";
