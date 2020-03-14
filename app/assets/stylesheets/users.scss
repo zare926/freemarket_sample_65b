@@ -1,0 +1,225 @@
+$maypageBackColor   : #fff;
+$maypageBtn         : #3ceace;
+$maypageBorderColor : #eee;
+
+@mixin btn {
+  width: 320px;
+  background-color: $maypageBtn;
+  display: block;
+  color: $maypageBackColor;
+  text-align: center;
+  text-decoration: none;
+  margin: auto;
+  margin-top: 14px;
+  padding: 14px;
+}
+
+li {
+  border-top: 1px solid $maypageBorderColor;
+}
+
+.tab_item{
+  border: 0;
+  line-height: 72px;
+  position: relative;
+  width: calc(100%/2);
+  text-align: center;
+  font-weight: bold;
+  float: left;
+  background-color: #ddd;
+  display: block;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.tab_item:hover {
+  opacity: 0.75;
+}
+input[name="tab_item"],[name="tab_buy"] {
+  display: none;
+}
+.tab_content {
+  display: none;
+  clear: both;
+  overflow: hidden;
+}
+#nontification:checked ~ #nontification_content,
+#todo:checked ~ #todo_content {
+  display: block;
+}
+
+#nowTransaction:checked ~ #nowTransaction_content,
+#oldTransaction:checked ~ #oldTransaction_content {
+  display: block;
+}
+
+.mypage-tabs input:checked + .tab_item {
+  background-color: $maypageBackColor;
+  border-top: 2px solid #ea352d;
+}
+
+.mypage-go-list{
+  text-align: center;
+  background-color: #ddd;
+  height: 56px;
+  line-height: 56px;
+}
+
+.contents {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  margin: 40px 200px 0;
+
+  .side-content{
+    float: left;
+    width: 280px;
+    margin-right: 40px;
+    .mypage-nav{
+      margin: 0 auto;
+      &__head{
+        margin-top: 40px;
+      }
+    }
+    .mypage-nav {
+      &__btn {
+        background-color: $maypageBackColor;
+        font-size: 14px;
+        min-height: 48px;
+        line-height: 48px;
+        position: relative;
+        display: block;
+        padding: 2px 16px;
+        justify-content: space-around;
+        text-decoration: none;
+      }
+      &__icon{
+        font-size: 16px;
+      }
+    }
+  }
+
+  .right-content{
+    float: left;
+
+    &__top{
+      height: 200px;
+      min-width: 700px;
+      flex-direction: column;
+      text-align: center;
+      background-image: url(https://www.pakutaso.com/shared/img/thumb/boke12151240_TP_V.jpg);
+      background-size: cover;
+      background-position: center;
+      padding: 20px;
+
+      .user-icon{
+        border-radius: 50%;
+        margin: 0 auto;
+      }
+
+      .mypage-number {
+        font-size: 14px;
+        span {
+          font-size: 16px;
+          margin: 0 10px;
+        }
+      }
+    }
+    &__middle{
+      .mypage-item-link{
+        min-height: 100px;
+        padding: 16px;
+        display: block;
+        figure {
+          position: relative;
+          float: left;
+        }
+        &__img{
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+        }
+        &__body{
+          margin: 0 40px 0 68px;
+          position: absolute;
+
+          time{
+            float: left;
+          }
+        }
+      }
+    }
+
+    &__bottom{
+      margin: 40px 0 0 0;
+      .mypage-item-link{
+        min-height: 80px;
+        padding: 16px;
+        display: block;
+        &__img{
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          float: left;
+        }
+        &__body{
+          margin: 0 40px 0 68px;
+          float: left;
+          &__time{
+            float: left;
+          }
+        }
+      }
+    }
+  }
+
+  .signout_content {
+    float: left;
+    background-color: $maypageBackColor;
+    height: 200px;
+    width: 700px;
+    padding: 64px;
+    &__btn {
+      @include btn;
+      height: 48px;
+    }
+  }
+
+  .payment_content {
+    background-color: $maypageBackColor;
+    width: 700px;
+    &__head{
+      padding: 8px 24px;
+      text-align: center;
+      border-bottom: 1px solid #f5f5f5;
+    }
+    &__body{
+      padding: 64px;
+      &__head{
+        width: 300px;
+        margin: 0 auto;
+        &__list li {
+          border-top: none;
+        }
+      }
+      &__cardAdd{
+        text-align: center;
+        padding: 24px 0;
+        margin: 0 auto;
+        border-bottom: 1px solid $maypageBorderColor;
+        &--btn{
+          height: 25px;
+          @include btn;
+        }
+      }
+      &__paymentGuide{
+        text-align: right;
+        margin-top: 40px;
+        &--btn{
+          color: #0099e8;
+        }
+      }
+    }
+  }
+}
