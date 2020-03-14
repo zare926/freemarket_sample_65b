@@ -2,4 +2,22 @@
   = render partial: 'side_content'
 
   .payment_content
-    cardcardcard
+    .payment_content__head
+      %h2 支払い方法
+    .payment_content__body
+      .payment_content__body__head
+        %h3 クレジットカード一覧
+        .payment_content__body__head__list
+          %ul
+            %li
+              
+            %li
+              
+      .payment_content__body__cardAdd
+        = link_to '#', class: "payment_content__body__cardAdd--btn" do
+          %i.far-fa-credit-card
+          クレジットカードを追加する
+      .payment_content__body__paymentGuide
+        = link_to '#', class: "payment_content__body__paymentGuide--btn" do
+          支払いについて
+          %i.fas.fa-chevron-right.mypage__icon--arrow

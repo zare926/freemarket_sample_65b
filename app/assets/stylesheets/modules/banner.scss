@@ -1,0 +1,27 @@
+.appBanner {
+  padding: 100px 40px;
+  position: relative;
+  background-image: url('/assets/bg-appBanner-pict.jpg');
+  background-size: cover;
+  background-position: center;
+  &__inner {
+    color: $mainWhiteColor;
+    text-align: center;
+    &--title {
+      text-shadow: $textShadow;
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.4;
+    }
+    &--text {
+      text-shadow: $textShadow;
+      font-size: 35px;
+    }
+    &--btn {
+      width: 100%;
+      justify-content: center;
+      margin: 20 auto 0;
+      @include btnStyle();  
+    }
+  }
+}
