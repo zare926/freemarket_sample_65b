@@ -1,6 +1,7 @@
-%main.contents
-  = render partial: 'side_content'
+.mypage-main
+  .mypage-contents
+    = render partial: 'side_content'
 
-.signout_content
-  = link_to destroy_user_session_path, method: :delete, class: "signout_content__btn" do
-    ログアウト
+    .signout_content
+      = link_to destroy_user_session_path, method: :delete, class: "signout_content__btn" do
+        ログアウト
