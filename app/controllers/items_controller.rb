@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @item = Item.new
   end
 
   def create
@@ -21,6 +22,12 @@ class ItemsController < ApplicationController
   end
 
   def confirm
+  end
+
+  private
+
+  def item_params
+    params.require(:item).permit(:name, :description, :brand, :status, :status, :postage, :shipping_date, :brand)
   end
   
 end

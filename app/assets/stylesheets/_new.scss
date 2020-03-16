@@ -1,5 +1,6 @@
 $mainBlueColor : #48D1CC;
-
+$mainGrayColor      : #f8f8f8;
+$sabuGrayColor :     #333333;
 
 @mixin bottomLine {
   border: solid 1px $mainBlueColor;
@@ -12,12 +13,79 @@ $mainBlueColor : #48D1CC;
   box-sizing: border-box;
 }
 
+@mixin name-box{
+  width: 100%;
+  height: 19px;
+  background-color:$mainGrayColor;
+}
+
+@mixin product {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+@mixin necessary{
+  font-size: 12px;
+  margin-left: 8px;
+  background-color: #3ccace;
+  color: $mainGrayColor;
+  font-weight: 600;
+  line-height: 1.6em;
+  padding: 0 4px;
+}
+
+@mixin any{
+  font-size: 12px;
+  margin-left: 8px;
+  background-color: #bfbfbf;
+  color: $mainWhiteColor;
+  font-weight: 600;
+  line-height: 1.6em;
+  padding: 0 4px;
+}
+
+
+@mixin input-text {
+  margin-top: 16px;
+  border: 1px solid #ccc;
+  height: 48px;
+  padding: 0 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@mixin warning{
+  color: #ff0211;
+  font-size: 14px;
+  line-height: 1.4em;
+  margin: 16px 0 0;
+}
+
+@mixin magin-center{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+@mixin minus{
+  color: $sabuGrayColor;
+  font-size: 14px;
+}
+
+@mixin sale {
+  margin-right: auto;
+  font-size: 14px;
+  font-weight: lighter;
+  color: $sabuGrayColor;
+}
+
+
+
 
 
 .top__header{
   height: 128px;
   width: 100vw;
-  background-color: red;
+  background-color: $mainWhiteColor;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,49 +96,290 @@ $mainBlueColor : #48D1CC;
   }
 }
 
+
+
 .top__main{
   width: 100vw;
-  background-color: green;
+  background-color: $mainWhiteColor;
   &__center{
     width: 50vw;
     background-color: purple;
     margin: auto;
     &__img-uplode{
-      height: 300px;
-      background-color: white;
+      height: 335px;
+      background-color: $mainGrayColor ;
       @include bottomLine;
       @include box;
+      &__box__name-box{
+        @include name-box;
+        display: flex;
+        &__product{
+          @include product;
+        }
+        &__necessary{
+          @include necessary;
+        }
+      }
+      &__box__description-box{
+        color: $sabuGrayColor;
+        margin-top: 16px;
+        font-size: 14px;
+        line-height: 1.4em;
+      }
+      &__box__form{
+        margin-top: 16px;
+        background-color: red;
+        width: 620px;
+        height: 150px;
+      }
     }
+
+
+
+
+
+
+
+
+
     &__items{
-      height: 416px;
-      background-color: yellow;
+      height: 486px;
+      background-color: #f8f8f8;
       @include bottomLine;
       @include box;
-    }
+      &__box__name-box{
+        @include name-box;
+        display: flex;
+        &__product{
+          @include product;
+        }
+        &__necessary{
+          @include necessary;
+        }
+      }
+      &__box__input-box{
+        width: 100%;
+        &__form{
+          width: inherit;
+          &__text{
+            @include input-text;
+          }
+        }
+      }
+      &__box__warning{
+        @include warning;
+      }
+
+
+      &__text-box{
+        margin-top: 32px;
+        &__name-box{
+          @include name-box;
+          display: flex;
+          &__product{
+            @include product
+          }
+          &__necessary{
+            @include necessary
+          }
+        }
+        &__form{
+          margin-top: 16px;
+          &__text-area{
+            border: 1px solid #ccc;
+            font-size: 16px;
+            padding: 13px 16px;
+            width: 100%;
+            height: 154px;
+            box-sizing: border-box;
+          
+          }
+        }
+        
+        &__word-count{
+          margin-top: 9px;
+          color: #888;
+          font-size: 12px;
+          line-height: 1.4em;
+          text-align: right;
+        }
+        }
+        &__warning{
+          @include warning;
+        }
+      }
+
+
+
+
+
+
     &__deta{
-      height: 444px;
-      background-color: yellowgreen;
+      height: 499px;
+      background-color: $mainGrayColor;
       @include bottomLine;
       @include box;
+      &__title{
+        color:  rgb(136, 136, 136);
+        @include name-box;
+        @include product;
+        margin-bottom: 24px;
+      }
+
+      &__box{
+        margin-top: 16px;
+        &__what{
+          @include name-box;
+          display: flex;
+          &__product{
+            @include product;
+          }
+          &__necessary{
+            @include necessary
+          }
+          &__any{
+            @include any;
+          }
+        }
+      }
+      
+      
+      
+        
+      &__box__input-box__form__select{
+        @include input-text;
+        box-sizing: border-box;
+      }
+
+      &__box__warning {
+        @include warning;
+      }
+      
+
+
+
+
+
+      
     }
-    &__delivery{
-      height: 444px;
-      background-color: yellow;
-      @include bottomLine;
-      @include box;
-    }
+    
     &__xhibition{
-      height: 558px;
-      width: 50vw;
-      background-color: yellowgreen;
-      box-sizing: border-box;
-      padding: 40px 40px 64px;
+      height: 538px;
+      background-color: $mainGrayColor;
+      margin-bottom: 100px;
+      @include box;
+      &__box{
+        margin-bottom: 40px;
+        &__money{
+          display: flex;
+          width: 620px;
+          padding: 0 0 12px;
+          &__waht{
+            display: flex;
+            height: 19px;
+            margin-right: auto;
+            @include magin-center;
+            &__product{
+              @include product;
+            }
+            &__necessary{
+              @include necessary;
+            }
+          }
+          &__span{
+            font-size: 14px;
+            margin-right: 8px;
+            @include magin-center;
+            
+          }
+          &__input{
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            height: 48px;
+            outline: none;
+            padding: 0 16px;
+            width: 285px;
+            
+          }
+        
+        }
+        &__center{
+          padding: 12px 0px;
+          height: 46px;
+          display: flex;
+          width: 620px;
+          &__sale{
+            margin-right: auto;
+            font-size: 14px;
+            font-weight: lighter;
+            @include magin-center;
+            color: $sabuGrayColor;
+          }
+          &__minus{
+            @include magin-center;
+            @include minus;
+          }
+        }
+        &__warning{
+          @include warning;
+          margin: 4px 0 0;
+          text-align: right;
+          width: 620px;
+        }
+        &__bottom{
+          height: 46px;
+          display: flex;
+          width: 620px;
+          padding: 12px 0 0;
+          &__sale{
+            @include sale;
+            @include magin-center;
+          }
+          &__minus{
+            @include magin-center;
+            @include minus;
+          }
+        }
+      }
+
+      &__footer{
+        width: 360px;
+        margin-bottom: 32px;
+        margin: 0px auto 24px;
+        &__btn{
+          font-size: 20px;
+          padding: 10px 100px;
+          font-weight: bold;
+          color: $mainWhiteColor;
+          background-color: $mainBlueColor;
+          margin-bottom: 24px;
+          width: 100%;
+        }
+        &__return{
+          display: flex;
+          width: 100%;
+          height: 20px;
+          -webkit-box-pack: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          align-items: center;
+          color: #48d8cc;
+        }
+      }
+      
+
+      
+      
+      
     }
   }
 }
 
+
+
+
 .top__footer{
   width: 100vw;
   height: 220px;
-  background-color: blue;
+  background-color: $mainBlueColor;
 }
