@@ -307,7 +307,7 @@ $sabuGrayColor : #333333;
           padding: 12px 0px;
           height: 46px;
           display: flex;
-          width: 620px;
+          width: 100%;
           &__sale{
             margin-right: auto;
             font-size: 14px;
@@ -324,12 +324,12 @@ $sabuGrayColor : #333333;
           @include warning;
           margin: 4px 0 0;
           text-align: right;
-          width: 620px;
+          width: 100%;
         }
         &__bottom{
           height: 46px;
           display: flex;
-          width: 620px;
+          width: 100%;
           padding: 12px 0 0;
           &__sale{
             @include sale;
