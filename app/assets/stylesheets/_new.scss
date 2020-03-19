@@ -1,6 +1,3 @@
-$mainBlueColor : #48D1CC;
-$mainGrayColor : #f8f8f8;
-$sabuGrayColor : #333333;
 
 @mixin bottomLine {
   border: solid 1px $mainBlueColor;
@@ -27,7 +24,7 @@ $sabuGrayColor : #333333;
 @mixin necessary{
   font-size: 12px;
   margin-left: 8px;
-  background-color: #3ccace;
+  background-color: $mainBlueColor;
   color: $mainGrayColor;
   font-weight: 600;
   line-height: 1.6em;
@@ -47,7 +44,7 @@ $sabuGrayColor : #333333;
 
 @mixin input-text {
   margin-top: 16px;
-  border: 1px solid #ccc;
+  border: 1px solid $bordersolidColor;
   height: 48px;
   padding: 0 16px;
   width: 100%;
@@ -78,10 +75,6 @@ $sabuGrayColor : #333333;
   color: $sabuGrayColor;
 }
 
-
-
-
-
 .top__header{
   height: 128px;
   width: 100vw;
@@ -95,8 +88,6 @@ $sabuGrayColor : #333333;
     
   }
 }
-
-
 
 .top__main{
   width: 100vw;
@@ -134,17 +125,9 @@ $sabuGrayColor : #333333;
       }
     }
 
-
-
-
-
-
-
-
-
     &__items{
       height: 486px;
-      background-color: #f8f8f8;
+      background-color: $mainGrayColor;
       @include bottomLine;
       @include box;
       &__box__name-box{
@@ -169,8 +152,6 @@ $sabuGrayColor : #333333;
       &__box__warning{
         @include warning;
       }
-
-
       &__text-box{
         margin-top: 32px;
         &__name-box{
@@ -192,7 +173,6 @@ $sabuGrayColor : #333333;
             width: 100%;
             height: 154px;
             box-sizing: border-box;
-          
           }
         }
         
@@ -208,11 +188,6 @@ $sabuGrayColor : #333333;
           @include warning;
         }
       }
-
-
-
-
-
 
     &__deta{
       height: 499px;
@@ -242,9 +217,6 @@ $sabuGrayColor : #333333;
           }
         }
       }
-      
-      
-      
         
       &__box__input-box__form__select{
         @include input-text;
@@ -254,13 +226,6 @@ $sabuGrayColor : #333333;
       &__box__warning {
         @include warning;
       }
-      
-
-
-
-
-
-      
     }
     
     &__price{
@@ -293,7 +258,7 @@ $sabuGrayColor : #333333;
             
           }
           &__input{
-            border: 1px solid #ccc;
+            border: 1px solid $bordersolidColor;
             border-radius: 4px;
             height: 48px;
             outline: none;
@@ -363,7 +328,7 @@ $sabuGrayColor : #333333;
           justify-content: center;
           -webkit-box-align: center;
           align-items: center;
-          color: #48d8cc;
+          color: $mainBlueColor;
         }
       }
       
@@ -371,9 +336,6 @@ $sabuGrayColor : #333333;
     }
   }
 }
-
-
-
 
 .top__footer{
   width: 100vw;
