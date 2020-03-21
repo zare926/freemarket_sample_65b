@@ -1,0 +1,136 @@
+@import "./setting/color";
+
+
+header{
+  height: 80px;
+  width : 100vw;
+  text-align: center;
+  background-color: $mainWhiteColor;
+  padding-top: 30px;
+}
+
+.creditCard {
+  width: 700px;
+  margin: 0 auto;
+  background-color: $mainGrayColor;
+
+  .creditCard__head {
+    padding: 12px 10%;
+    border-bottom: 1px solid $mainBlueColor;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .creditCard__inner--form {
+    padding: 24px 16px 40px;
+    border-top: 1px solid $mainBlueColor;
+    margin-bottom: 100px;
+    .creditCard__inner--content {
+      max-width: 380px;
+      margin: 0 auto;
+      .formGroup:first-child {
+        margin: 0;
+      }
+      .formGroup {
+        margin: 24px 0 0;
+        label {
+          font-size: initial;
+          font-weight: 600;
+          color: $mainBlackColor;
+        }
+        .form-require {
+          background-color: $mainBlueColor;
+          margin-left: 8px;
+          padding: 2px 4px;
+          color: white;
+          font-size: 16px;
+          line-height: 1.5;
+        }
+        .input-default {
+          width: calc(100% - 40px);
+          margin: 8px 0 0;
+          height: 40px;
+          padding: 10px 16px 8px;
+          border: 1px solid #ccc;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 16px;
+        }
+        ul {
+          width: 100%;
+          margin: 8px 0 0;
+          li {
+            margin: 0;
+            display: inline-block;
+          }
+        }
+        .signup-seqcode {
+          position: relative;
+          margin: 8px 0 0;
+          &__text {
+            text-align: right;
+            color: #0099e8;
+            font-size: 12px;
+            .form-question {
+              display: inline-block;
+              width: 14px;
+              height: 14px;
+              border-radius: 50%;
+              background-color: #0099e8;
+              color: white;
+              line-height: 14px;
+              font-size: 12px;
+              text-align: center;
+            }
+          }
+        }
+      }
+      .formGroup.signup-form-expire {
+        margin: 24px 0 0;
+        label {
+          font-size: initial;
+          font-weight: 600;
+          color: $mainBlackColor;
+        }
+        .form-require {
+          background-color: $mainBlueColor;
+          margin-left: 8px;
+          color: white;
+          font-size: 16px;
+        }
+        .select-wrap.half {
+          display: inline-block;
+          width: calc(100% - 2px);
+          margin: 8px 0 0;
+          display: flex;
+          select {
+            width: calc(100% - 38px);
+            z-index: 2;
+            height: 48px;
+            padding: 0 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            line-height: 1.5;
+            cursor: pointer;
+            background-color: $mainWhiteColor;
+          }
+          span {
+            margin: 4px;
+            line-height: 2.5;
+            font-size: initial;
+          }
+        }
+      }
+      .btn {
+        width: 100%;
+        margin: 24px 0 24px 0;
+        height: 65px;
+        background-color: $mainBlueColor;
+        line-height: 1.5;
+        font-size: 18px;
+        color: white;
+        font-weight: bold;
+      }
+    }
+  }
+}

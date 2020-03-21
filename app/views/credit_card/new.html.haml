@@ -1,2 +1,78 @@
-%h1 CreditCard#new
-%p Find me in app/views/credit_card/new.html.haml
+.header
+  .header__logo
+    = image_tag asset_path('logo.png'), size: "140x40", alt: "test"
+
+%section.creditCard
+  %h2.creditCard__head
+    クレジットカード情報入力
+  = form_with(url: "#", local: true, method: :post, id: 'cardFrom', class: "creditCard__inner--form") do |form|
+    .creditCard__inner--content
+      .formGroup
+        %label カード番号
+        %span.form-require 必須
+        = form.text_field :number, placeholder: "半角数字のみ", type: "input-defalt", maxlength: "19", class: "input-default"
+        %ul.signup-card-list
+          %li
+            = image_tag asset_path('credit-card_22.png'), class: "image", size: "49x27"
+          %li
+            = image_tag asset_path('credit-card_9.png'), class: "image", size: "49x27"
+          %li
+            = image_tag asset_path('credit-card_26.png'), class: "image", size: "49x27"
+          %li
+            = image_tag asset_path('credit-card_28.png'), class: "image", size: "49x27"
+          %li
+            = image_tag asset_path('credit-card_19.png'), class: "image", size: "49x27"
+          %li
+            = image_tag asset_path('credit-card_31.png'), class: "image", size: "49x27"
+          %li
+            = image_tag asset_path('credit-card_15.png'), class: "image", size: "49x27"
+      .formGroup.signup-form-expire
+        %label 有効期限
+        %span.form-require 必須
+        %br
+        .select-wrap.half
+          %select#exp_month{name: "exp_month", type: "text"}
+            %option{value: ""} --
+            %option{value: "1"}01
+            %option{value: "2"}02
+            %option{value: "3"}03
+            %option{value: "4"}04
+            %option{value: "5"}05
+            %option{value: "6"}06
+            %option{value: "7"}07
+            %option{value: "8"}08
+            %option{value: "9"}09
+            %option{value: "10"}10
+            %option{value: "11"}11
+            %option{value: "12"}12
+          %i.icon-arrow-bottom
+          %span 月
+          %select#exp_year{name: "exp_year", type: "text"}
+            %option{value: ""} --
+            %option{value: "2020"}20
+            %option{value: "2021"}21
+            %option{value: "2022"}22
+            %option{value: "2023"}23
+            %option{value: "2024"}24
+            %option{value: "2025"}25
+            %option{value: "2026"}26
+            %option{value: "2027"}27
+            %option{value: "2028"}28
+            %option{value: "2029"}29
+            %option{value: "2029"}30
+          %i.icon-arrow-bottom
+          %span 年
+        %br
+      .formGroup
+        %label カード番号
+        %sapan.form-require  必須
+        = form.text_field :number, placeholder: "カード背面４桁もしくは３桁の番号", type: "text", class: "input-default", id: "card_security_code"
+        %ul
+        .signup-seqcode
+          .signup-seqcode__text
+            %span.form-question ?
+            カード背面の番号とは？
+      = form.submit "追加する", class: "btn"
+.wrapper
+  = render "shared/overview"
+
