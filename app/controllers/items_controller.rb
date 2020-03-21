@@ -7,6 +7,11 @@ class ItemsController < ApplicationController
   end
 
   def create
+    @item = Item.create(item_params)
+    respond_to do |format|
+      format.html { redirect_to :root }
+      format.json { render json: @item}
+    end
   end
 
   def edit
