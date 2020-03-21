@@ -1,0 +1,52 @@
+.member-body
+  .member-case
+    .member-header
+      %h1.member-header__logo
+        =link_to image_tag("logo.png", class:"member-header__logo--image"), root_path
+      .member-header__progress
+        %li.member-header__progress--text
+          会員情報
+          .member-header__progress--round
+        %li.member-header__progress--active
+          お届け先情報入力
+          .member-header__progress--round-blue
+        %li.member-header__progress--text-last
+          完了 
+          .member-header__progress--round
+        .member-header__progress--border
+
+    .member-form
+      .member-form__title
+        %h2.member-form__title--text お届け先情報入力
+      = form_for(@address, url: addresses_path,html: {class: 'member-form__for'}) do |f|
+        = render "devise/shared/error_messages", resource: @address
+        .member-main
+          .member-main__form-first
+            = f.label '郵便番号', {class: 'member-main__form--label'}
+            %span.member-main__form--require 必須
+            = f.text_field :postcode, {placeholder: "例) 123-4567", class:'member-main__form--input'}
+          .member-main__form
+            = f.label '都道府県', {class: 'member-main__form--label'}
+            %span.member-main__form--require 必須
+            = f.text_field :prefecture, {placeholder: "例) 北海道", class:'member-main__form--input'}
+          .member-main__form
+            = f.label '市区町村', {class: 'member-main__form--label'}
+            %span.member-main__form--require 必須
+            = f.text_field :address_city, {placeholder: "例) 札幌市", class:'member-main__form--input'}
+          .member-main__form
+            = f.label '番地', {class: 'member-main__form--label'}
+            %span.member-main__form--require 必須
+            = f.text_field :address_block, {placeholder: "例) 青葉1-1-1", class:'member-main__form--input'}
+          .member-main__form
+            = f.label '建物名', {class: 'member-main__form--label'}
+            %span.member-main__form--require 任意
+            = f.text_field :address_building, {placeholder: "例) 柳ビル103", class:'member-main__form--input'}
+          .member-main__form
+            = f.label '電話番号', {class: 'member-main__form--label'}
+            %span.member-main__form--require 任意
+            = f.text_field :phone_number, {placeholder: "例) 000-1234-5678", class:'member-main__form--input'}
+                  
+          .member-main__form
+            = f.submit "次に進む", {class: 'member-main__form--btn', url: "#"}
+
+    .member-footer
