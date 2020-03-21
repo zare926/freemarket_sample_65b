@@ -10,8 +10,10 @@
           %br
             フリマアプリです
         .content__btn
-          = link_to image_tag(src="/assets/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg", class: "appBtn"), "#"
-          = link_to image_tag(src="/assets/google-play-badge.png", class: "googleBtn"), "#"
+          = link_to asset_url('Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg') do
+            = image_tag 'Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg', class: "appBtn"
+          = link_to asset_url('google-play-badge.png') do
+            = image_tag 'google-play-badge.png', class: "googleBtn"
 
     %section.appIntroduction
       %h2.appIntroduction--subtitle
@@ -54,8 +56,11 @@
           %br
             欲しかったあの商品にも出会えるかもしれません。
         .middleDlVew__inner__btn
-          = link_to image_tag(src="/assets/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg", class: "appBtn"), "#"
-          = link_to image_tag(src="/assets/google-play-badge.png", class: "googleBtn"), "#"
+          = link_to asset_url('Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg') do
+            = image_tag 'Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg', class: "appBtn"
+          = link_to asset_url('google-play-badge.png') do
+            = image_tag 'google-play-badge.png', class: "googleBtn"
+
     %section.topCharacteristic
       %h2.head
         FURIMAの特徴
