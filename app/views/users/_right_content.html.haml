@@ -1,111 +1,102 @@
-%main.contents
-  .right-content
-    %section.right-content__top
-      = link_to '#' do
-        %figure
-          = image_tag "https://images.unsplash.com/photo-1562984933-9bdcd3c1893c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80", size: "60x60",alt: "ユーザー画像", class: "user-icon"
-          %h4
-            bobby
-        .mypage-number
-          評価
-          %span.bold 1
-          出品数
-          %span.bold 2
+.right-content
+  %section.right-content__top
+    = link_to '#' do
+      %figure
+        = image_tag "https://images.unsplash.com/photo-1562984933-9bdcd3c1893c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80", size: "60x60",alt: "ユーザー画像", class: "user-icon"
+        %h4
+          bobby
+      .mypage-number
+        評価
+        %span.bold 1
+        出品数
+        %span.bold 2
 
-    %section.right-content__middle
-      .mypage-tabs
-        %input{ name: "tab_item", type: "radio", checked: "checked", id: "nontification"}
-        %label.tab_item{for: "nontification"}
-          お知らせ
-        %input{ name: "tab_item", type: "radio", id: "todo" }
-        %label.tab_item{for: "todo"}
-          やることリスト
-      
-        .tab_content{ id: "nontification_content"}
-          %ul
-            %li
-              = link_to '#', class: "mypage-item-link" do
-                = image_tag "logo.png", size: "100x50", alt: "furima_logo", class: "mypage-item-link__img"
-                .mypage-item-link__body
-                  事務局から個別メッセージ
-                  .mypage-item-link__body__time
-                    %i.fal.fa-clock.mypage-list__icon--clock
-                    3時間前
-                %i.fas.fa-chevron-right.mypage-list__icon--arrow
-            %li
-              = link_to '#', class: "mypage-item-link" do
-                = image_tag "logo.png", size: "100x50", alt: "furima_logo", class: "mypage-item-link__img"
-                .mypage-item-link__body
-                  事務局から個別メッセージ
-                  .mypage-item-link__body__time
-                    %i.fal.fa-clock.mypage-list__icon--clock
-                    3時間前
-                %i.fas.fa-chevron-right.mypage-list__icon--arrow
-            %li
-              = link_to '#', class: "mypage-item-link" do
-                = image_tag "logo.png", size: "100x50", alt: "furima_logo", class: "mypage-item-link__img"
-                .mypage-item-link__body
-                  事務局から個別メッセージ
-                  .mypage-item-link__body__time
-                    %i.fal.fa-clock.mypage-list__icon--clock
-                    3時間前
-                %i.fas.fa-chevron-right.mypage-list__icon--arrow
-            %li
-              = link_to '#', class: "mypage-item-link" do
-                = image_tag "logo.png", size: "100x50", alt: "furima_logo", class: "mypage-item-link__img"
-                .mypage-item-link__body
-                  事務局から個別メッセージ
-                  .mypage-item-link__body__time
-                    %i.fal.fa-clock.mypage-list__icon--clock
-                    3時間前
-                %i.fas.fa-chevron-right.mypage-list__icon--arrow
-            %li
-              = link_to '#', class: "mypage-item-link" do
-                = image_tag "logo.png", size: "100x50", alt: "furima_logo", class: "mypage-item-link__img"
-                .mypage-item-link__body
-                  事務局から個別メッセージ
-                  .mypage-item-link__body__time
-                    %i.fal.fa-clock.mypage-list__icon--clock
-                    3時間前
-                %i.fas.fa-chevron-right.mypage-list__icon--arrow
-            %li.mypage-go-list
-              = link_to '#', class: "mypage-item-link" do
-                一覧を見る
-        .tab_content{ id: "todo_content" }
-          %ul
-            %li
-              aiueo
+  %section.right-content__middle
+    .mypage-tabs-middle
+      %input{ name: "tab_item", type: "radio", checked: "checked", id: "nontification"}
+      %label.mypage-tabs-middle__item{for: "nontification"}
+        お知らせ
+      %input{ name: "tab_item", type: "radio", id: "todo" }
+      %label.mypage-tabs-middle__item{for: "todo"}
+        やることリスト
+    
+      .mypage-tabs-middle__content{ id: "nontification_content"}
+        %li
+          = link_to '#', class: "mypage-tabs-middle__content__link-middle" do
+            = image_tag "logo.png", size: "150x50", alt: "furima_logo", class: "mypage-tabs-middle__content__link-middle__img"
+            .mypage-tabs-middle__content__link-middle__body
+              事務局から個別メッセージ
+              .mypage-tabs-middle__content__link-middle__body__time
+                = icon("far", "clock", class: 'mypage-tabs-middle__content__link-middle__body__time--icon')
+                3時間前
+            .mypage-tabs-middle__content__link-middle__chevron
+              = icon('fas', 'chevron-right', class: 'tab-content__content__link-middle__chevron--icon')
+        %li
+          = link_to '#', class: "mypage-tabs-middle__content__link-middle" do
+            = image_tag "logo.png", size: "150x50", alt: "furima_logo", class: "mypage-tabs-middle__content__link-middle__img"
+            .mypage-tabs-middle__content__link-middle__body
+              事務局から個別メッセージ
+              .mypage-tabs-middle__content__link-middle__body__time
+                = icon("far", "clock", class: 'mypage-tabs-middle__content__link-middle__body__time--icon')
+                3時間前
+            .mypage-tabs-middle__content__link-middle__chevron
+              = icon('fas', 'chevron-right', class: 'tab-content__content__link-middle__chevron--icon')
+        %li
+          = link_to '#', class: "mypage-tabs-middle__content__link-middle" do
+            = image_tag "logo.png", size: "150x50", alt: "furima_logo", class: "mypage-tabs-middle__content__link-middle__img"
+            .mypage-tabs-middle__content__link-middle__body
+              事務局から個別メッセージ
+              .mypage-tabs-middle__content__link-middle__body__time
+                = icon("far", "clock", class: 'mypage-tabs-middle__content__link-middle__body__time--icon')
+                3時間前
+            .mypage-tabs-middle__content__link-middle__chevron
+              = icon('fas', 'chevron-right', class: 'tab-content__content__link-middle__chevron--icon')
+        %li
+          = link_to '#', class: "mypage-tabs-middle__content__link-middle" do
+            = image_tag "logo.png", size: "150x50", alt: "furima_logo", class: "mypage-tabs-middle__content__link-middle__img"
+            .mypage-tabs-middle__content__link-middle__body
+              事務局から個別メッセージ
+              .mypage-tabs-middle__content__link-middle__body__time
+                = icon("far", "clock", class: 'mypage-tabs-middle__content__link-middle__body__time--icon')
+                3時間前
+            .mypage-tabs-middle__content__link-middle__chevron
+              = icon('fas', 'chevron-right', class: 'tab-content__content__link-middle__chevron--icon')
+        %li
+          = link_to '#', class: "mypage-tabs-middle__content__link-middle" do
+            = image_tag "logo.png", size: "150x50", alt: "furima_logo", class: "mypage-tabs-middle__content__link-middle__img"
+            .mypage-tabs-middle__content__link-middle__body
+              事務局から個別メッセージ
+              .mypage-tabs-middle__content__link-middle__body__time
+                = icon("far", "clock", class: 'mypage-tabs-middle__content__link-middle__body__time--icon')
+                3時間前
+            .mypage-tabs-middle__content__link-middle__chevron
+              = icon('fas', 'chevron-right', class: 'tab-content__content__link-middle__chevron--icon')
+        .mypage-tabs-middle__content__list
+          = link_to '#', class: "mypage-tabs-middle__list__link" do
+            一覧を見る
+      .mypage-tabs-middle{ id: "todo_content" }
 
-          
-          
-    %section.right-content__bottom
-      %h4 購入した商品　
-      .mypage-tabs
-        %input{ name: "tab_buy", type: "radio", checked: "checked", id: "nowTransaction"}
-        %label.tab_item{for: "nowTransaction"}
-          取引中
-        %input{ name: "tab_buy", type: "radio", id: "oldTransaction" }
-        %label.tab_item{for: "oldTransaction"}
-          過去の取引
+  %section.right-content__bottom
+    %h4 購入した商品
+    .mypage-tabs-bottom
+      %input{ name: "tab_item2", type: "radio", checked: "checked", id: "nowTransaction"}
+      %label.mypage-tabs-bottom__item{for: "nowTransaction"}
+        取引中
+      %input{ name: "tab_item2", type: "radio", id: "oldTransaction" }
+      %label.mypage-tabs-bottom__item{for: "oldTransaction"}
+        過去の取引
 
-        .tab_content{ id: "nowransaction_content" }
-          %ul
-            %li
-              aiueo
-            %li.mypage-go-list
-              = link_to '#' do
-                一覧を見る
+      .mypage-tabs-bottom__content{ id: "nowTransaction_content" }
 
-        .tab_content{ id: "oldTransaction_content" }
-          %ul
-            %li
-              = link_to '#', class: "mypage-item-link" do
-                = image_tag "a007.png", size: "50x50", alt: "furima_logo", class: "mypage-item-link__img"
-                .mypage-item-link__body
-                  「」を購入しました。取引が完了しました。
-                  .mypage-item-link__status
-                    取引完了
-                %i.fas.fa-chevron-right.mypage-list__icon--arrow
-            %li.mypage-go-list
-              = link_to '#', class: "mypage-item-link" do
-                一覧を見る
+      .mypage-tabs-bottom__content{ id: "oldTransaction_content" }
+        = link_to '#', class: "mypage-tabs-bottom__content__link-bottom" do
+          = image_tag "a007.png", size: "50x50", alt: "furima_logo", class: "mypage-tabs-bottom__content__link-bottom__img"
+          .mypage-tabs-bottom__content__link-bottom__body
+            「」を購入しました。取引が完了しました。
+            .mypage-tabs-bottom__content__link-bottom__body__status
+              取引完了
+          .mypage-tabs-bottom__content__link-bottom__chevron
+            = icon('fas', 'chevron-right', class: 'mypage-tabs-bottom__content__link-bottom__chevron--icon')
+        .mypage-tabs-bottom__content__list
+          = link_to '#', class: "mypage-tabs-bottom__content__list__link" do
+            一覧を見る
