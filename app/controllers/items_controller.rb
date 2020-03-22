@@ -23,13 +23,13 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @images = @item.images
     # binding.pry
-    @comment = Comment.new
-    if @comment.save
-      redirect_to root_path
-    else
-      render :show
-    end
-    @comments = @item.comments.includes(:user)
+    # @comment = Comment.new
+    # if @comment.save
+    #   redirect_to root_path
+    # else
+    #   render :show
+    # end
+    # @comments = @item.comments.includes(:user)
   end
 
   def confirm
