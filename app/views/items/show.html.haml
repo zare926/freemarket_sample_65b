@@ -103,16 +103,15 @@
                     不適切な商品の通報
           .comment__box
             %ul.comment__box--content
-            %form{class: 'new__comment', action: '#',method:'post'}
-              %textarea.new__comment--body
+            = form_with model: @item, local: true ,class: 'new__comment' do |f|
+              = f.text_area :text, row: "10", id: "text", class: 'new__comment--body'
               %p.note__message
                 相手のことを考え丁寧なコメントを心がけましょう。
                 %br
                 不快な言葉遣いなどは利用制限や退会処分となることがあります。
               %br
-              %button.comment__btn
-                %i.fa.fa-comment
-                  コメントする
+                = f.submit 'コメントする' , class: 'comment__btn'
+                = f.i class: 'fa fa-comment'
         %ul.item__link
           %li
             = link_to '#' do
