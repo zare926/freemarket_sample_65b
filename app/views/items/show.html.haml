@@ -11,17 +11,17 @@
         %i.fa.fa-angle-right
       %li
         = link_to '#' do
-          メンズ
+          =@item.category.parent.parent.name
       %li
         %i.fa.fa-angle-right
       %li
         = link_to '#' do
-          文房具
+          =@item.category.parent.name
       %li
         %i.fa.fa-angle-right
       %li
         = link_to '#' do
-          黒
+          =@item.category.name
       %li
         %i.fa.fa-angle-right
       %li
@@ -65,13 +65,13 @@
                     %th カテゴリー
                     %td
                       = link_to '#' do
-                        メンズ
+                        =@item.category.parent.parent.name
                         %br
                       = link_to '#' do
-                        ジャケット/アウター
+                        =@item.category.parent.name
                         %br
                       = link_to '#' do
-                        ノーカラージャケット
+                        =@item.category.name
                   %tr
                     %th ブランド
                     %td
@@ -106,15 +106,16 @@
                     不適切な商品の通報
           .comment__box
             %ul.comment__box--content
-            - form_with model: [@tweet,@comment],local: true, class: 'new__comment' do |f|
-              = f.text_area :text, row: "10", id: "text", class: 'new__comment--body'
+            %form{class: 'new__comment', action: '#',method:'post'}
+              %textarea.new__comment--body
               %p.note__message
                 相手のことを考え丁寧なコメントを心がけましょう。
                 %br
                 不快な言葉遣いなどは利用制限や退会処分となることがあります。
               %br
-                = f.submit 'コメントする' , class: 'comment__btn'
+              %button.comment__btn
                 %i.fa.fa-comment
+                  コメントする
         %ul.item__link
           %li
             = link_to '#' do
