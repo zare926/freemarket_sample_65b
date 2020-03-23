@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:show]
   def index
   end
 
@@ -20,10 +21,8 @@ class ItemsController < ApplicationController
 
   def show
     @items = Item.where(id: params[:id])
-    @item = Item.find(params[:id])
     @images = @item.images
-    @comment = Comment.new
-    @comments = @item.comments.includes(:user)
+
   end
 
   def confirm
@@ -35,4 +34,7 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :description, :brand, :state, :status, :postage, :shipping_date, :category)
   end
   
+  def set_item
+    @item = Item.find(params[:id])
+  end
 end
