@@ -2,7 +2,8 @@
   .headerInner
     .mainHeader
       .mainHeader__icon
-        = link_to image_tag(src="/assets/logo.png"), "#"
+        = link_to asset_url('logo.png') do
+          = image_tag 'logo.png'
       .searchBox
         %form{action: "#", method: "get"}
           %input{name: "utf8", type: "hidden", value: "✓"}
