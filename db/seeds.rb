@@ -31,6 +31,7 @@ category1s.each.with_index(1) do |category1,i|
 end
 
 User.create!(
+   id: 1 
    nickname: 'ミッツ',
    family_name: '圭汰',
    first_name: '光川',
