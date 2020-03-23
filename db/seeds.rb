@@ -30,10 +30,15 @@ category1s.each.with_index(1) do |category1,i|
   end
 end
 
+User.create!(
+  id: 1, 
+  nickname: 'ミッツ',
+  family_name: '圭汰',
+  first_name: '光川',
+  family_name_kana: 'ケイタ',
+  first_name_kana: 'ミツカワ',
+  birth_day: '19931111',
+  password: 1111,
+  email: "keita@111"
+)
 
-users= [
-{ nickname: 'kanritarou', email: 'kanri1@yahoo.com', password: 'test1' },
-]
-users.each do |record|
- User.create!(record) unless User.find_by(email: record[:email])
-end
