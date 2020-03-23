@@ -30,18 +30,15 @@ category1s.each.with_index(1) do |category1,i|
   end
 end
 
-# User.create(
-#   nickname: 'フリマテスト',
-#   family_name: 'フリマ',
-#   first_name: 'テスト',
-#   family_name_kana: 'ふりま',
-#   first_name_kana: 'てすと',
-#   birth_day: 2000-01-01,
-#   password: 'testtest',
-#   email: 'furima@test.com',
-#   reset_password_token: 'testtest',
-#   reset_password_sent_at: 2020-03-22,
-#   remember_created_at: 2020-03-22,
-#   created_at: 2020-03-22,
-#   updated_at: 2020-03-22
-#   )
+User.create!(
+  id: 1, 
+  nickname: 'ミッツ',
+  family_name: '圭汰',
+  first_name: '光川',
+  family_name_kana: 'ケイタ',
+  first_name_kana: 'ミツカワ',
+  birth_day: '19931111',
+  encrypted_password: 1111,
+  email: "keita@111"
+)
+
