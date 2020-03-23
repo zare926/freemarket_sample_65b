@@ -38,7 +38,7 @@ User.create!(
   family_name_kana: 'ケイタ',
   first_name_kana: 'ミツカワ',
   birth_day: '19931111',
-  password: 1111,
+  encrypted_password: 1111,
   email: "keita@111"
 )
 
