@@ -30,7 +30,7 @@ category1s.each.with_index(1) do |category1,i|
   end
 end
 
-User.create!(
+users = User.create!(
   id: 1, 
   nickname: 'ミッツ',
   family_name: '圭汰',
@@ -41,5 +41,4 @@ User.create!(
   password: 1111,
   email: "keita@111"
 )
-
 
