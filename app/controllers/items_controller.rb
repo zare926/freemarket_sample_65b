@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show]
   def index
+    @items = Item.all.per(3)
+    @images = @items.images
   end
 
   def new
@@ -22,7 +24,6 @@ class ItemsController < ApplicationController
   def show
     @items = Item.where(id: params[:id])
     @images = @item.images
-
   end
 
   def confirm

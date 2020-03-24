@@ -94,18 +94,19 @@
         .productHead
           = link_to "新規投稿商品", "#", class: "text"
         .productLists
-          .productList
-            %figure.productList--image
-              = image_tag asset_path('product01.jpg'), class: "img"
-            .productDetail
-              %h3.productDetail__name
-                product01
-              %ul.productDetail__price
-                %li 5000円
-                %i.likeIcon
-                  = icon("fas fa-star", "image", class: 'icon')
-                  0
-              %p (税込)
+          - @items.each do |i|
+            .productList
+              %figure.productList--image
+                = image_tag , class: "img"
+              .productDetail
+                %h3.productDetail__name
+                  product01
+                %ul.productDetail__price
+                  %li 5000円
+                  %i.likeIcon
+                    = icon("fas fa-star", "image", class: 'icon')
+                    0
+                %p (税込)
           .productList
             %figure.productList--image
               = image_tag asset_path('product02.jpg'), class: "img"
