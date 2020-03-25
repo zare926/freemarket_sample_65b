@@ -3,7 +3,6 @@
 - @items.each do |item|
   %nav.kind__list
     %ul
-      -# 以下カテゴリ機能実装後each?
       %li
         = link_to '/' do
           FURIMA
@@ -49,12 +48,26 @@
                 = item.price
               .item__tax
                 %span (税込)
-                -#送料のところは商品登録ができてから
                 %span 送料込み
             .item__detail
               = simple_format(item.description)
+            - if user_signed_in? && @item.user.id != current_user.id
+              .buy__area
+                %button.buy__area--btn
+                  = link_to "/items/confirm" do
+                    購入画面に進む
+            - if user_signed_in? && @item.user.id == current_user.id
+              .edit__area
+                %button.edit__area--btn
+                  = link_to "/items/#{@item.id}/edit" do
+                    編集する
+            - if user_signed_in?
+            - else
+              .guide__area
+                %button.guide__area--btn
+                  = link_to "/users/sign_in" do
+                    ログインする
             .info__table
-              -# あとでDBから引っ張る記述します。
               %table
                 %tbody
                   %tr
@@ -118,17 +131,18 @@
                   コメントする
         %ul.item__link
           %li
-            = link_to '#' do
+            = link_to "/items/#{@item.id - 1}" do
               %i.fa.fa-angle-left
                 %span
                   前の商品
           %li
-            = link_to '#' do
+            = link_to "/items/#{@item.id + 1}" do
               %span 後ろの商品
               %i.fa.fa-angle-right
         .further__items
           = link_to "#" do
-            メンズをもっと見る
+            = @item.category.parent.parent.name
+            をもっと見る
           .item__lists
 .fotter
   = render "shared/banner"

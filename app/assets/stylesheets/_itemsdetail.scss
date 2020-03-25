@@ -110,7 +110,55 @@
           .item__detail{
             line-height: 1.5;
             font-size: 18px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+          }
+          .buy__area{
+            margin-bottom: 20px;
+            text-align: center;
+            &--btn{
+              line-height: 48px;
+              background: $mainBlueColor;
+              border: 1px solid $mainBlueColor;
+              width: 60%;
+              border-radius: 100px;
+              & a{
+                text-decoration: none;
+                color: $mainWhiteColor;
+                font-size: 18px;
+              }
+            }
+          }
+          .guide__area{
+            margin-bottom: 20px;
+            text-align: center;
+            &--btn{
+              line-height: 48px;
+              background: $mainBlueColor;
+              border: 1px solid $mainBlueColor;
+              width: 60%;
+              border-radius: 100px;
+              & a{
+                text-decoration: none;
+                color: $mainWhiteColor;
+                font-size: 18px;
+              }
+            }
+          }
+          .edit__area{
+            margin-bottom: 20px;
+            text-align: center;
+            &--btn{
+              line-height: 48px;
+              background: $mainBlueColor;
+              border: 1px solid $mainBlueColor;
+              width: 60%;
+              border-radius: 100px;
+              & a{
+                text-decoration: none;
+                color: $mainWhiteColor;
+                font-size: 18px;
+              }
+            }
           }
           .info__table{
             margin-bottom: 20px;
