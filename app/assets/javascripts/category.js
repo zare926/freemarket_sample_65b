@@ -1,6 +1,6 @@
 var key = ""
 $(function(){
-    // ページ読み込み時
+  // ページ読み込み時
   $(document).ready(function(){
     $('.category-first').hide();
     $('.category-second').hide();

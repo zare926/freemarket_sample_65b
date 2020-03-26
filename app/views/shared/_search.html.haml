@@ -24,7 +24,7 @@
                     =link_to category.name, "#"
             .category-second
               - @categories.each do |category|
-                - #ancestryが空白でない　かつ　スラッシュが含まれていない場合
+                - #ancestryが空白でない かつ スラッシュが含まれていない場合
                 - if category.ancestry && category.ancestry.to_s.count("/") == 0
                   .category-second__tree{ id: "#{category.id}","parent_id": "#{category.ancestry}" }
                     =link_to category.name, "#"
