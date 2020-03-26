@@ -94,9 +94,32 @@
 }
 
 .category{
-  width: 200px;
-  background-color: black;
-  color: white;
+  width: 650px;
   z-index: 10;
   position: relative;
+  display: flex;
+  &-first{
+    width: 200px;
+    &__tree{
+      background-color: white;
+      padding-left: 10px;
+      border: 1px solid whitesmoke;
+    }
+  }
+  &-second{
+    width: 200px;
+    &__tree{
+      background-color: white;
+      padding-left: 10px;
+      border: 1px solid whitesmoke;
+    }
+  }
+  &-third{
+    width: 250px;
+    &__tree{
+      background-color: white;
+      padding-left: 10px;
+      border: 1px solid whitesmoke;
+    }
+  }
 }
