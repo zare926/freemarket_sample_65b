@@ -22,7 +22,7 @@
         = render "devise/shared/error_messages", resource: @address
         .member-main
           .member-main__form-first
-             = f.label '送付先氏名(全角)', {class: 'member-main__form--label'}
+            = f.label '送付先氏名(全角)', {class: 'member-main__form--label'}
             %span.member-main__form--require 必須
           .member-main__form--half
             = f.text_field :address_family_name, {placeholder:"例) 山田",class:'member-main__form--input-half'}
