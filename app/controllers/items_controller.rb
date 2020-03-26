@@ -1,8 +1,8 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show]
   def index
-    @items = Item.all.per(3)
-    @images = @items.images
+    @items = Item.all.page(params[:page]).per(3).order("created_at DESC")
+    @images = Image.all
   end
 
   def new
