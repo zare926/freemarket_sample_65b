@@ -6,7 +6,7 @@
     .member-form
       .member-form__title2
         .member-form__title2--text2 アカウントをお持ちでない方はこちら
-        %a{ href: '/users/sign_up', class: 'member-form__title2--btn'}新規会員登録
+        = link_to '新規会員登録', '/users/sign_up',{class: 'member-form__title2--btn'}
         
       = form_for( resource, as: resource_name, url: session_path(resource_name),html: {class: 'member-form__for'}) do |f|
         .member-main
