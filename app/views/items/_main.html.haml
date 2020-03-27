@@ -93,50 +93,50 @@
       .productBox
         .productHead
           = link_to "新規投稿商品", "#", class: "text"
-        - @items.each do |i|
           .productLists
-            = link_to item_path(i.id) do
-              .productList
-                %figure.productList--image
-                  = image_tag i.images[0].image, class: "img"
-                  - if i.status == 1
-                    .sold
-                      .sold__area
-                        SOLD
-                .productDetail
-                  %h3.productDetail__name
-                    = i.name
-                  %ul.productDetail__price
-                    %li
-                      = i.price
-                    %i.likeIcon
-                      = icon("fas fa-star", "image", class: 'icon')
-                      0
-                  %p (税込)
+            - @items.each do |i|
+              = link_to item_path(i.id) do
+                .productList
+                  %figure.productList--image
+                    = image_tag i.images[0].image, class: "img"
+                    - if i.status == 1
+                      .sold
+                        .sold__area
+                          SOLD
+                  .productDetail
+                    %h3.productDetail__name
+                      = i.name
+                    %ul.productDetail__price
+                      %li
+                        = i.price
+                      %i.likeIcon
+                        = icon("fas fa-star", "image", class: 'icon')
+                        0
+                    %p (税込)
     %section.productListFunction
       %h2.head
         ピックアップブランド
       .productBox
         .productHead
           = link_to "新規投稿商品", "#", class: "text"
-        - @items.each do |i|
           .productLists
-            = link_to item_path(i.id) do
-              .productList
-                %figure.productList--image
-                  = image_tag i.images[0].image, class: "img"
-                  - if i.status == 1
-                    .sold
-                      .sold__area
-                        SOLD
-                .productDetail
-                  %h3.productDetail__name
-                    = i.name
-                  %ul.productDetail__price
-                    %li
-                      = i.price
-                    %i.likeIcon
-                      = icon("fas fa-star", "image", class: 'icon')
-                      0
-                  %p (税込)
-                  -# - if i.brand == 'Off-White'
+            - @items.each do |i|
+              - if i.brand == "Off-White"
+                = link_to item_path(i.id) do
+                  .productList
+                    %figure.productList--image
+                      = image_tag i.images[0].image, class: "img"
+                      - if i.status == 1
+                        .sold
+                          .sold__area
+                            SOLD
+                    .productDetail
+                      %h3.productDetail__name
+                        = i.name
+                      %ul.productDetail__price
+                        %li
+                          = i.price
+                        %i.likeIcon
+                          = icon("fas fa-star", "image", class: 'icon')
+                          0
+                      %p (税込)
