@@ -57,6 +57,7 @@
         &--top{
           background-color: $mainWhiteColor ;
           padding: 24px 40px 40px;
+          position: relative;
           &-name{
             text-align: center;
             font-weight: bold;
@@ -67,36 +68,17 @@
             & ul{
               display: flex;
               position: relative;
-            }
-            & ul>li{
-              display: flex;
-              flex-direction: column;
-              width: 560px;
-              align-items: center;
-              margin: 0 auto;
-            }
-            & ul>li img{
-              object-fit: cover;
-              height: 346px;
-              position: relative;
-              .sold{
-                width: 0;
-                height: 0;
-                border-top: 60px solid $mainBlueColor;
-                border-right: 60px solid transparent;
-                border-bottom: 60px solid transparent;
-                border-left: 60px solid $mainBlueColor; 
-                position: absolute;
-                left: 0;
-                top: 0;
-                z-index:100;
-                &__area{
-                  transform: rotate(-45deg);
-                  font-size: 25px;
-                  margin:-29px 0px 0px -55px;
-                  color: #fff;
-                  letter-spacing: 2px;
-                  font-weight: 600;
+              &>li{
+                display: flex;
+                flex-direction: column;
+                width: 560px;
+                align-items: center;
+                margin: 0 auto;
+                position: relative;
+                & img{
+                  object-fit: cover;
+                  height: 346px;
+                  width: 560px;
                 }
               }
             }
@@ -112,6 +94,27 @@
             & ul> li ul li img{
               object-fit: cover;
               height: 87px;
+              width: 87px;
+            }
+          }
+          .sold__area{
+            width: 0;
+            height: 0;
+            border-top: 60px solid $mainBlueColor;
+            border-right: 60px solid transparent;
+            border-bottom: 60px solid transparent;
+            border-left: 60px solid $mainBlueColor;
+            position: absolute;
+            left: 70px;
+            top: 76px;
+            z-index: 100;
+            & div{
+              transform: rotate(-45deg);
+              font-size: 25px;
+              margin: -29px 0 0 -55px;
+              color: white;
+              letter-spacing: 2px;
+              font-weight: 600;
             }
           }
           .item__price{
@@ -131,55 +134,7 @@
           .item__detail{
             line-height: 1.5;
             font-size: 18px;
-            margin-bottom: 20px;
-          }
-          .buy__area{
-            margin-bottom: 20px;
-            text-align: center;
-            &--btn{
-              line-height: 48px;
-              background: $mainBlueColor;
-              border: 1px solid $mainBlueColor;
-              width: 60%;
-              border-radius: 100px;
-              & a{
-                text-decoration: none;
-                color: $mainWhiteColor;
-                font-size: 18px;
-              }
-            }
-          }
-          .guide__area{
-            margin-bottom: 20px;
-            text-align: center;
-            &--btn{
-              line-height: 48px;
-              background: $mainBlueColor;
-              border: 1px solid $mainBlueColor;
-              width: 60%;
-              border-radius: 100px;
-              & a{
-                text-decoration: none;
-                color: $mainWhiteColor;
-                font-size: 18px;
-              }
-            }
-          }
-          .edit__area{
-            margin-bottom: 20px;
-            text-align: center;
-            &--btn{
-              line-height: 48px;
-              background: $mainBlueColor;
-              border: 1px solid $mainBlueColor;
-              width: 60%;
-              border-radius: 100px;
-              & a{
-                text-decoration: none;
-                color: $mainWhiteColor;
-                font-size: 18px;
-              }
-            }
+            margin-bottom: 30px;
           }
           .info__table{
             margin-bottom: 20px;

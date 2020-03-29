@@ -38,14 +38,14 @@
               %ul
                 %li
                   = image_tag @images[0].image
-                  - if item.status == 1
-                    .sold
-                      .sold__area
-                        SOLD
                   %ul
                     - @images.each do |i|
                       %li
                         = image_tag i.image
+            - if item.status == 1
+              .sold__area
+                %div
+                  SOLD
             .item__price
               %span
                 ¥
