@@ -75,6 +75,10 @@
   color: $sabuGrayColor;
 }
 
+.invalid{
+  @include warning;
+}
+
 .top__header{
   height: 128px;
   width: 100vw;
@@ -144,6 +148,12 @@
         width: 100%;
         &__form{
           width: inherit;
+          &__text.invalid { // バリデーションNGの場合に枠線を赤色に変更
+            border: #ea352d 1px solid;
+          }
+          &__text.valid {
+            border: seagreen 1px solid; // バリデーションNGの場合に枠線を緑色に変更
+          }
           &__text{
             @include input-text;
           }
@@ -166,6 +176,12 @@
         }
         &__form{
           margin-top: 16px;
+          &__text-area.invalid { // バリデーションNGの場合に枠線を赤色に変更
+            border: #ea352d 1px solid;
+          }
+          &__text-area.valid {
+            border: seagreen 1px solid; // バリデーションNGの場合に枠線を緑色に変更
+          }
           &__text-area{
             border: 1px solid #ccc;
             font-size: 16px;
@@ -173,6 +189,7 @@
             width: 100%;
             height: 154px;
             box-sizing: border-box;
+            margin-top: 16px;
           }
         }
         
@@ -216,16 +233,21 @@
             @include any;
           }
         }
+        &__input-box__form{
+          &__select.invalid { // バリデーションNGの場合に枠線を赤色に変更
+            border: #ea352d 1px solid;
+          }
+          &__select.valid {
+            border: seagreen 1px solid; // バリデーションNGの場合に枠線を緑色に変更
+          }
+          &__select{
+            @include input-text;
+            box-sizing: border-box;
+            color: $mainBlackColor;
+          }
+        }
       }
-        
-      &__box__input-box__form__select{
-        @include input-text;
-        box-sizing: border-box;
-      }
-
-      &__box__warning {
-        @include warning;
-      }
+      
     }
     
     &__price{
@@ -257,14 +279,17 @@
             @include magin-center;
             
           }
-          &__input{
-            border: 1px solid $bordersolidColor;
-            border-radius: 4px;
-            height: 48px;
-            outline: none;
-            padding: 0 16px;
+          &__form{
             width: 50%;
-            
+            &__input{
+              border: 1px solid $bordersolidColor;
+              border-radius: 4px;
+              height: 48px;
+              outline: none;
+              padding: 0 16px;
+              width: 50%;
+              text-align: right;
+            }
           }
         
         }
@@ -299,6 +324,9 @@
           &__sale{
             @include sale;
             @include magin-center;
+            &__form__input{
+              display: none
+            }
           }
           &__minus{
             @include magin-center;
