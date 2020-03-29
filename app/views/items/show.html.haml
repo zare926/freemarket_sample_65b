@@ -65,7 +65,10 @@
                 %button.edit__area--btn
                   = link_to "/items/#{@item.id}/edit" do
                     編集する
-            - if user_signed_in?
+            - if user_signed_in? && item.status == 1
+              .notbuy__area
+                .notbuy__area--btn
+                  %p 売り切れました
             - else
               .guide__area
                 %button.guide__area--btn

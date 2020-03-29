@@ -136,6 +136,72 @@
             font-size: 18px;
             margin-bottom: 30px;
           }
+          .buy__area{
+            margin-bottom: 20px;
+            text-align: center;
+            &--btn{
+              line-height: 48px;
+              background: $mainBlueColor;
+              box-decoration-break: 1px solid $mainBlueColor;
+              width: 60%;
+              border-radius: 100px;
+              & a{
+                text-decoration: none;
+                color: $mainWhiteColor;
+                font-size: 18px;
+              }
+            }
+          }
+          .guide__area{
+            margin-bottom: 20px;
+            text-align: center;
+            &--btn{
+              line-height: 48px;
+              background: $mainBlueColor;
+              box-decoration-break: 1px solid $mainBlueColor;
+              width: 60%;
+              border-radius: 100px;
+              & a{
+                text-decoration: none;
+                color: $mainWhiteColor;
+                font-size: 18px;
+              }
+            }
+          }
+          .edit__area{
+            margin-bottom: 20px;
+            text-align: center;
+            &--btn{
+              line-height: 48px;
+              background: $mainBlueColor;
+              box-decoration-break: 1px solid $mainBlueColor;
+              width: 60%;
+              border-radius: 100px;
+              & a{
+                text-decoration: none;
+                color: $mainWhiteColor;
+                font-size: 18px;
+              }
+            }
+          }
+          .notbuy__area{
+            margin-bottom: 20px;
+            text-align: center;
+            &--btn{
+              line-height: 48px;
+              background: #888;
+              box-decoration-break: 1px solid $mainBlueColor;
+              width: 60%;
+              border-radius: 100px;
+              cursor: not-allowed;
+              margin: 0 auto;
+              p{
+                text-decoration: none;
+                color: $mainWhiteColor;
+                font-size: 18px;
+              }
+            }
+          }
           .info__table{
             margin-bottom: 20px;
           }
