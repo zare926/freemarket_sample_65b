@@ -95,10 +95,26 @@
                       = item.size
                   %tr
                     %th 商品の状態
-                    %td 新品/未使用
+                    %td 
+                      - if item.state == 1
+                        新品、未使用に近い
+                      - elsif item.state == 2
+                        未使用に近い
+                      - elsif item.state == 3
+                        目立った傷や汚れなし
+                      - elsif item.state == 4
+                        やや傷や汚れあり
+                      - elsif item.state == 5
+                        傷や汚れあり
+                      - elsif item.state == 6
+                        全体的に状態が悪い
                   %tr
                     %th 配送料の負担
-                    %td 着払い（購入者負担）
+                    %td 
+                      - if item.postage == 1
+                        送料込み(出品者負担)
+                      - elsif item.postage == 2
+                        着払い(購入者負担)
                   %tr
                     %th 発送元の地域
                     %td 
@@ -106,7 +122,13 @@
                         = item.prefecture
                   %tr
                     %th 発送日の目安
-                    %td 1-2日で発送
+                    %td
+                      - if item.shipping_date == 1
+                        1~2日で発送
+                      - elsif item.shipping_date == 2
+                        2~3日で発送
+                      - elsif item.shipping_date == 3
+                        4~7日で発送
             .option__box
               %ul
                 %li.option__left-btn
