@@ -44,8 +44,4 @@ class Item < ApplicationRecord
   belongs_to :user
   belongs_to :category
 
-
-  def test
-    i = Item.all
-  end
 end
