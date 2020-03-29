@@ -78,6 +78,27 @@
             & ul>li img{
               object-fit: cover;
               height: 346px;
+              position: relative;
+              .sold{
+                width: 0;
+                height: 0;
+                border-top: 60px solid $mainBlueColor;
+                border-right: 60px solid transparent;
+                border-bottom: 60px solid transparent;
+                border-left: 60px solid $mainBlueColor; 
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index:100;
+                &__area{
+                  transform: rotate(-45deg);
+                  font-size: 25px;
+                  margin:-29px 0px 0px -55px;
+                  color: #fff;
+                  letter-spacing: 2px;
+                  font-weight: 600;
+                }
+              }
             }
             & ul>li ul{
               display: flex;
