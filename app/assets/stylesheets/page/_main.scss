@@ -208,11 +208,9 @@
         margin: 26px auto;
         display: flex;
         justify-content: space-around;
-        overflow-x: scroll;
         .productList {
           width: 220px;
           display: inline-block;
-          margin-left: 20px;
           background: $mainWhiteColor;
           .productList--image {
             width: 220px;

@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show]
   def index
-    @items = Item.all.limit(100).order("created_at DESC")
+    @items = Item.all.limit(3).order("created_at DESC")
     @images = Image.all
   end
 
