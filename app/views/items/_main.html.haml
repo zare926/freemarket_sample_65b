@@ -120,7 +120,7 @@
         .productHead
           = link_to "新規投稿商品", "#", class: "text"
           .productLists
-            - @items.each do |i|
+            - @items_brand.each do |i|
               - if i.brand == "Off-White"
                 = link_to item_path(i.id) do
                   .productList
