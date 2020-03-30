@@ -1,0 +1,23 @@
+.member-body
+  .member-case
+    .member-header
+      %h1.member-header__logo
+        =link_to image_tag("logo.png", class:"member-header__logo--image"), root_path
+    .member-form
+      .member-form__title2
+        .member-form__title2--text2 アカウントをお持ちでない方はこちら
+        = link_to '新規会員登録', '/users/sign_up',{class: 'member-form__title2--btn'}
+        
+      = form_for( resource, as: resource_name, url: session_path(resource_name),html: {class: 'member-form__for'}) do |f|
+        .member-main
+          .member-main__form
+            = f.email_field :email, {autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class:'member-main__form--input'}
+          .member-main__form
+            - if @minimum_password_length
+              %em
+            = f.password_field :password,{placeholder: "パスワード",class:'member-main__form--input',id:"password"}
+          .member-main__form
+            = f.submit "ログイン", {class: 'member-main__form--btn'}
+
+.member-footer
+  = render "shared/overview"
