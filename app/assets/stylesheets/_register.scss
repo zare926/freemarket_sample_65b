@@ -98,11 +98,33 @@ $mainblueColor      : #3ccace;
       }
       &__for{
         padding: 24px 16px 40px;
+        .field_with_errors{
+          display: inline;
+        }          
+        .field_with_errors input,
+        .field_with_errors select{
+           outline: 0;
+           border-color: red !important;
+        }
+        .errors{
+           margin-top: 5px;
+           line-height: 1.5;
+           color: red;
+        }
         .member-main{
           max-width: 343px;
           margin: 0 auto;
           &__form{
             margin-top: 24px;
+            position: relative;
+            &--input{
+              height: 48px;
+              width: 328px;
+              margin-top: 8px;
+              padding-left: 16px;
+              font-size: 16px;
+              border: 1px solid $maingray2Color;
+            }
             &--label{
               font-weight: 600;
             }
@@ -113,19 +135,6 @@ $mainblueColor      : #3ccace;
               vertical-align: top;
               color: $mainWhiteColor;
               background-color: $mainblueColor;
-            }
-            &--input{
-              height: 48px;
-              width: 328px;
-              margin-top: 8px;
-              padding-left: 16px;
-              font-size: 16px;
-              border: 1px solid $maingray2Color;
-            }
-            &--input-half{
-              @extend .member-main__form--input;
-              width: calc(50% - 6px);
-              margin-right: 8px;
             }
             &--info{
               margin-top: 8px;
@@ -146,9 +155,12 @@ $mainblueColor      : #3ccace;
               background-color: $mainWhiteColor;
             }
             &--select{
-              height: 30px;
-              margin-top: 8px;
-              font-size: 18px;
+              margin-top: 8px;  
+            }
+            .select__text{
+              position: absolute;
+              right: 54px;
+              top: 39px;
             }
             .year,.month,.day{
               height: 48px;
@@ -173,10 +185,17 @@ $mainblueColor      : #3ccace;
               @extend .member-form__title2--btn;
             }
           }
-          &__form--half{
-            @extend .member-main__form;
-            margin: 0 auto;
+          &__name{
             display: flex;
+            justify-content: space-between;
+            &--half{
+              
+              &__input{
+                @extend .member-main__form--input;
+                margin-right: 8px;
+                width: 80%;
+              }
+            }
           }
         }
       }
