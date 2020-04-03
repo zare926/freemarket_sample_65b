@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
   
   resources :items do
+    resources :comments
     collection do
       get 'confirm'
     end

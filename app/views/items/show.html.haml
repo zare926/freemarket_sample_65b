@@ -1,130 +1,178 @@
-%nav.kind__list
-  %ul
-    -# 以下カテゴリ機能実装後each?
-    %li
-      = link_to '/' do
-        FURIMA
-    %li
-      %i.fa.fa-angle-right
-    %li
-      = link_to '#' do
-        メンズ
-    %li
-      %i.fa.fa-angle-right
-    %li
-      = link_to '#' do
-        文房具
-    %li
-      %i.fa.fa-angle-right
-    %li
-      = link_to '#' do
-        黒
-    %li
-      %i.fa.fa-angle-right
-    %li
-      %p 鉛筆
-.item__main
-  .item__main--box
-    .item__main--box-left
-    .item__main--box-right
-      .item__box
-        .item__box--top
-          %h2.item__box--top-name
-            鉛筆
-          .item__box--top-body
-            %ul
-              %li
-                = image_tag scr= 'https://s3.ap-northeast-1.amazonaws.com/welcomegroup/catalog/product/cache/ecd051e9670bd57df35c8f0b122d8aea/2/2/2220190819017_01.jpg'
-                %ul
-                  %li
-                    = image_tag scr='https://media-01.creema.net/user/402176/exhibits/8111554/0_3808494940e339b472d8009e72d8221a_500.jpg'
-                  %li
-                    = image_tag scr='https://pbs.twimg.com/profile_images/1226880606132326400/zrxSnB6d_400x400.jpg'
-                  %li
-                    = image_tag scr='https://images-na.ssl-images-amazon.com/images/I/61sxcVIyseL._SX466_.jpg'
-          .item__price
-            %span ¥20000
-            .item__tax
-              %span (税込)
-              -#送料のところは商品登録ができてから
-              %span 送料込み
-          .item__detail
-            とても書きやすい鉛筆です。
-            %br
-            3年前に買いました。
-            %br
-            購入してください。
-          .info__table
-            -# あとでDBから引っ張る記述します。
-            %table
-              %tbody
-                %tr
-                  %th 出品者
-                  %td テストユーザー
-                %tr
-                  %th カテゴリー
-                  %td
-                    = link_to '#' do
-                      メンズ
-                      %br
-                    = link_to '#' do
-                      ジャケット/アウター
-                      %br
-                    = link_to '#' do
-                      ノーカラージャケット
-                %tr
-                  %th ブランド
-                  %td
-                %tr
-                  %th 商品サイズ
-                  %td
-                %tr
-                  %th 商品の状態
-                  %td 新品/未使用
-                %tr
-                  %th 配送料の負担
-                  %td 着払い（購入者負担）
-                %tr
-                  %th 発送元の地域
-                  %td 
-                    = link_to '#' do
-                      東京都
-                %tr
-                  %th 発送日の目安
-                  %td 1-2日で発送
-          .option__box
-            %ul
-              %li.option__left-btn
-                %i.fa.fa-star
-                お気に入り 0
-            %ul.option__right
-              %li.option__right-btn
-                = link_to '#' do
-                  %i.fa.fa-flag
-                  不適切な商品の通報
-        .comment__box
-          %ul.comment__box--content
-          %form{class: 'new__comment', action: '#',method:'post'}
-            %textarea.new__comment--body
-            %p.note__message
-              相手のことを考え丁寧なコメントを心がけましょう。
-              %br
-              不快な言葉遣いなどは利用制限や退会処分となることがあります。
-            %br
-            %button.comment__btn
-              %i.fa.fa-comment
-                コメントする
-      %ul.item__link
-        %li
-          = link_to '#' do
-            %i.fa.fa-angle-left
+.wrapper
+  = render "shared/search"
+- @items.each do |item|
+  %nav.kind__list
+    %ul
+      %li
+        = link_to '/' do
+          FURIMA
+      %li
+        %i.fa.fa-angle-right
+      %li
+        = link_to '#' do
+          =@item.category.parent.parent.name
+      %li
+        %i.fa.fa-angle-right
+      %li
+        = link_to '#' do
+          =@item.category.parent.name
+      %li
+        %i.fa.fa-angle-right
+      %li
+        = link_to '#' do
+          =@item.category.name
+      %li
+        %i.fa.fa-angle-right
+      %li
+        %p
+          = item.name
+  .item__main
+    .item__main--box
+      .item__main--box-left
+      .item__main--box-right
+        .item__box
+          .item__box--top
+            %h2.item__box--top-name
+              = item.name
+            .item__box--top-body
+              %ul
+                %li
+                  = image_tag @images[0].image
+                  %ul
+                    - @images.each do |i|
+                      %li
+                        = image_tag i.image
+            - if item.status == 1
+              .sold__area
+                %div
+                  SOLD
+            .item__price
               %span
-                前の商品
-        %li
-          = link_to '#' do
-            %span 後ろの商品
-            %i.fa.fa-angle-right
-      .further__items
-        = link_to "#" do
-          メンズをもっと見る
-        .item__lists
+                ¥
+                = item.price
+              .item__tax
+                %span (税込)
+                %span 送料込み
+            .item__detail
+              = simple_format(item.description)
+            - if user_signed_in? && @item.user.id != current_user.id
+              .buy__area
+                %button.buy__area--btn
+                  = link_to "/items/confirm" do
+                    購入画面に進む
+            - if user_signed_in? && @item.user.id == current_user.id
+              .edit__area
+                %button.edit__area--btn
+                  = link_to "/items/#{@item.id}/edit" do
+                    編集する
+            - if user_signed_in? && item.status == 1
+              .notbuy__area
+                .notbuy__area--btn
+                  %p 売り切れました
+            - else
+              .guide__area
+                %button.guide__area--btn
+                  = link_to "/users/sign_in" do
+                    ログインする
+            .info__table
+              %table
+                %tbody
+                  %tr
+                    %th 出品者
+                    %td
+                      = item.user.nickname
+                  %tr
+                    %th カテゴリー
+                    %td
+                      = link_to '#' do
+                        =@item.category.parent.parent.name
+                        %br
+                      = link_to '#' do
+                        =@item.category.parent.name
+                        %br
+                      = link_to '#' do
+                        =@item.category.name
+                  %tr
+                    %th ブランド
+                    %td
+                      = item.brand
+                  %tr
+                    %th 商品サイズ
+                    %td
+                      = item.size
+                  %tr
+                    %th 商品の状態
+                    %td 
+                      - if item.state == 1
+                        新品、未使用に近い
+                      - elsif item.state == 2
+                        未使用に近い
+                      - elsif item.state == 3
+                        目立った傷や汚れなし
+                      - elsif item.state == 4
+                        やや傷や汚れあり
+                      - elsif item.state == 5
+                        傷や汚れあり
+                      - elsif item.state == 6
+                        全体的に状態が悪い
+                  %tr
+                    %th 配送料の負担
+                    %td 
+                      - if item.postage == 1
+                        送料込み(出品者負担)
+                      - elsif item.postage == 2
+                        着払い(購入者負担)
+                  %tr
+                    %th 発送元の地域
+                    %td 
+                      = link_to '#' do
+                        = item.prefecture
+                  %tr
+                    %th 発送日の目安
+                    %td
+                      - if item.shipping_date == 1
+                        1~2日で発送
+                      - elsif item.shipping_date == 2
+                        2~3日で発送
+                      - elsif item.shipping_date == 3
+                        4~7日で発送
+            .option__box
+              %ul
+                %li.option__left-btn
+                  %i.fa.fa-star
+                  お気に入り 0
+              %ul.option__right
+                %li.option__right-btn
+                  = link_to '#' do
+                    %i.fa.fa-flag
+                    不適切な商品の通報
+          .comment__box
+            %ul.comment__box--content
+            %form{class: 'new__comment', action: '#',method:'post'}
+              %textarea.new__comment--body
+              %p.note__message
+                相手のことを考え丁寧なコメントを心がけましょう。
+                %br
+                不快な言葉遣いなどは利用制限や退会処分となることがあります。
+              %br
+              %button.comment__btn
+                %i.fa.fa-comment
+                  コメントする
+        %ul.item__link
+          %li
+            = link_to "/items/#{@item.id - 1}" do
+              %i.fa.fa-angle-left
+                %span
+                  前の商品
+          %li
+            = link_to "/items/#{@item.id + 1}" do
+              %span 後ろの商品
+              %i.fa.fa-angle-right
+        .further__items
+          = link_to "#" do
+            = @item.category.parent.parent.name
+            をもっと見る
+          .item__lists
+.fotter
+  = render "shared/banner"
+  = render "shared/overview"
