@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root to: 'items#index'
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
+  }
+
+  devise_scope :user do
+    get 'addresses', to: 'users/registrations#new_address'
+    post 'addresses', to: 'users/registrations#create_address'
+  end
+  
   resources :items do
     resources :comments
     collection do
@@ -10,7 +18,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
     collection do
       get 'payment'
-      get 'signout'
     end
   end
+  root to: 'items#index'
 end
