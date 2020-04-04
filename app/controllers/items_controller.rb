@@ -25,8 +25,8 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @items = Item.where(id: params[:id])
-    @images = @item.images
+    @images = @items.images
+    @categories = Category.all
   end
 
   def confirm
@@ -43,6 +43,6 @@ class ItemsController < ApplicationController
   end
   
   def set_item
-    @item = Item.find(params[:id])
+    @items = Item.find(params[:id])
   end
 end
