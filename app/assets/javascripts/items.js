@@ -126,14 +126,14 @@ $(function(){
   $('#items9').validate({
 
     rules: {
-      "item[price]": {
-        min: 300,
-        max: 999
+      "session[price]": {
+        range : [300,9999999]
       }
   },
     messages: {
-      "item[price]": {
-        min: "選択してください"
+      "session[price]": {
+        range: "300以上9999999以下で入力してください"
+        
         },
     },
     errorClass: "invalid",
@@ -144,6 +144,10 @@ $(function(){
   $("#item_name, #item_description, #item_brand, #input").blur(function () {
     $(this).valid();
   });
+  $("#input").on("keyup keydown change",function(event){
+    $(this).valid();
+});
+  
   
   $('#input').on('input', function(){   //リアルタイムで表示したいのでinputを使う｡入力の度にイベントが発火するようになる｡
     var data = $('#input').val(); // val()でフォームのvalueを取得(数値)

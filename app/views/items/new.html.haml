@@ -12,12 +12,23 @@
               商品名
             .top__main__center__img-uplode__box__name-box__necessary
               必須
-          %p.top__main__center__img-uplode__box__description-box
-            最大10枚までアップロードできます
           .top__main__center__img-uplode__box__form
+            = form_for [@item],html: { class: "top__main__center__img-uplode__box__name-box__form" },html: { id: 'items0' } do |f|
+              #image-box
+                = f.fields_for :images do |image|
+                  .date-index = "=image.index"
+                  = i.file_field :src, class: 'top__main__center__img-uplode__box__name-box__form__text', placeholder: '40文字まで'
           .top__main__center__deta__box__warning 
             入力してください
 
+              <%= f.fields_for :images do |image| %>
+                <div data-index="<%= image.index %>" class="js-file_group">
+                  <%= image.file_field :src, class: 'js-file' %><br>
+                  <span class="js-remove">削除</span>
+                </div>
+              <% end %>
+ 
+        
 
 
 
@@ -124,7 +135,8 @@
                 必須
             %span.top__main__center__price__box__money__span
               ¥
-            %input#input.top__main__center__price__box__money__form__input{name: "btn",placeholder: '0', type: "number", min: 0, max: 9999999}
+            = form_for(:session, html:{class: "top__main__center__price__box__money__form", id: 'items9'}) do |f|
+              = f.number_field :price, class: 'top__main__center__price__box__money__form__input', id: "input"
               
           .top__main__center__price__box__center
             .top__main__center__price__box__center__sale
