@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show]
   def index
+    @categories = Category.all
   end
 
   def new
@@ -30,6 +31,10 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :description, :brand, :state, :status, :postage, :shipping_date, :category)
+  end
+
+  def category_params
+    params.require(:category).permit(:name)
   end
   
   def set_item
