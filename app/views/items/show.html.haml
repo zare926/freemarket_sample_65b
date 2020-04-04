@@ -1,6 +1,5 @@
 .wrapper
   = render "shared/search"
-- @items.each do |item|
   %nav.kind__list
     %ul
       %li
@@ -10,22 +9,22 @@
         %i.fa.fa-angle-right
       %li
         = link_to '#' do
-          =@item.category.parent.parent.name
+          =@items.category.parent.parent.name
       %li
         %i.fa.fa-angle-right
       %li
         = link_to '#' do
-          =@item.category.parent.name
+          =@items.category.parent.name
       %li
         %i.fa.fa-angle-right
       %li
         = link_to '#' do
-          =@item.category.name
+          =@items.category.name
       %li
         %i.fa.fa-angle-right
       %li
         %p
-          = item.name
+          = @items.name
   .item__main
     .item__main--box
       .item__main--box-left
@@ -33,7 +32,7 @@
         .item__box
           .item__box--top
             %h2.item__box--top-name
-              = item.name
+              = @items.name
             .item__box--top-body
               %ul
                 %li
@@ -42,19 +41,19 @@
                     - @images.each do |i|
                       %li
                         = image_tag i.image
-            - if item.status == 1
+            - if @items.status == 1
               .sold__area
                 %div
                   SOLD
             .item__price
               %span
                 ¥
-                = item.price
+                = @items.price
               .item__tax
                 %span (税込)
                 %span 送料込み
             .item__detail
-              = simple_format(item.description)
+              = simple_format(@items.description)
             - if user_signed_in? && @item.user.id != current_user.id
               .buy__area
                 %button.buy__area--btn
@@ -77,61 +76,61 @@
                   %tr
                     %th 出品者
                     %td
-                      = item.user.nickname
+                      = @items.user.nickname
                   %tr
                     %th カテゴリー
                     %td
                       = link_to '#' do
-                        =@item.category.parent.parent.name
+                        =@items.category.parent.parent.name
                         %br
                       = link_to '#' do
-                        =@item.category.parent.name
+                        =@items.category.parent.name
                         %br
                       = link_to '#' do
-                        =@item.category.name
+                        =@items.category.name
                   %tr
                     %th ブランド
                     %td
-                      = item.brand
+                      = @items.brand
                   %tr
                     %th 商品サイズ
                     %td
-                      = item.size
+                      = @items.size
                   %tr
                     %th 商品の状態
                     %td 
-                      - if item.state == 1
+                      - if @items.state == 1
                         新品、未使用に近い
-                      - elsif item.state == 2
+                      - elsif @items.state == 2
                         未使用に近い
-                      - elsif item.state == 3
+                      - elsif @items.state == 3
                         目立った傷や汚れなし
-                      - elsif item.state == 4
+                      - elsif @items.state == 4
                         やや傷や汚れあり
-                      - elsif item.state == 5
+                      - elsif @items.state == 5
                         傷や汚れあり
-                      - elsif item.state == 6
+                      - elsif @items.state == 6
                         全体的に状態が悪い
                   %tr
                     %th 配送料の負担
                     %td 
-                      - if item.postage == 1
+                      - if @items.postage == 1
                         送料込み(出品者負担)
-                      - elsif item.postage == 2
+                      - elsif @items.postage == 2
                         着払い(購入者負担)
                   %tr
                     %th 発送元の地域
                     %td 
                       = link_to '#' do
-                        = item.prefecture
+                        = @items.prefecture
                   %tr
                     %th 発送日の目安
                     %td
-                      - if item.shipping_date == 1
+                      - if @items.shipping_date == 1
                         1~2日で発送
-                      - elsif item.shipping_date == 2
+                      - elsif @items.shipping_date == 2
                         2~3日で発送
-                      - elsif item.shipping_date == 3
+                      - elsif @items.shipping_date == 3
                         4~7日で発送
             .option__box
               %ul
@@ -158,13 +157,13 @@
         %ul.item__link
           %li
             %i.fa.fa-angle-left
-            = link_to "前の商品" , item_path(item.id - 1), method: :get
+            = link_to "前の商品" , item_path(@items.id - 1), method: :get
           %li
-            = link_to "後ろの商品", item_path(item.id + 1), method: :get
+            = link_to "後ろの商品", item_path(@items.id + 1), method: :get
             %i.fa.fa-angle-right
         .further__items
           = link_to "#" do
-            = @item.category.parent.parent.name
+            = @items.category.parent.parent.name
             をもっと見る
           .item__lists
 .fotter
