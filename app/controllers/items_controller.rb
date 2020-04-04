@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
     @items = Item.where(status: false).limit(3).order("created_at DESC")
     @items_brand = Item.where(status: false).where(brand: "Off-White").limit(3).order("created_at DESC")
     @images = Image.all
+    @categories = Category.all
   end
 
   
@@ -35,6 +36,10 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :description, :brand, :state, :status, :postage, :shipping_date, :category)
+  end
+
+  def category_params
+    params.require(:category).permit(:name)
   end
   
   def set_item
