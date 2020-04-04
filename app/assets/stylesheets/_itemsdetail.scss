@@ -1,7 +1,8 @@
-$mainWhiteColor     : #FFF;
-$mainGrayColor      : #f8f8f8;
-$mainBlueColor      : #48D1CC;
-$mainBlackColor     : #333;
+
+
+// *{
+//   box-sizing: border-box;
+// }
 
 .item__link:after{
   display: block;
@@ -11,7 +12,7 @@ $mainBlackColor     : #333;
 
 .kind__list{
   width: 100%;
-  border-top: 1px solid $mainWhiteColor ;
+  border-top: 1px solid $bordersolidColor ;
   box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
   position: relative;
   padding: 0 60px;
@@ -177,9 +178,10 @@ $mainBlackColor     : #333;
           text-align: center;
           .new__comment{
             &--body{
-              width: 100%;
+              width: 628px;
               min-height: 104px;
               padding: 10px;
+              align-items: center;
             }
             .note__message{
               padding: 8px;
