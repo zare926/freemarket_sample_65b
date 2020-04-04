@@ -22,6 +22,7 @@ class ItemsController < ApplicationController
 
   def show
     @images = @items.images
+    @categories = Category.all
   end
 
   def confirm
