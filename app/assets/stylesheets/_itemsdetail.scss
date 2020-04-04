@@ -298,6 +298,9 @@
       .item__link{
         & li{
           float: left;
+          .fa{
+            color :$mainBlueColor;
+          }
           & a{
             text-decoration: none;
             color: $mainBlueColor;
