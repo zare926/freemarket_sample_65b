@@ -1,0 +1,266 @@
+$maypageBackColor   : #fff;
+$maypageBtn         : #3ccace;
+$maypageBorderColor : #eee;
+$maypageMainColor   : #f5f5f5;
+
+@mixin btn {
+  width: 320px;
+  background-color: $maypageBtn;
+  display: block;
+  color: $maypageBackColor;
+  text-align: center;
+  text-decoration: none;
+  margin: auto;
+  margin-top: 14px;
+  padding: 14px;
+}
+
+.mypage-main{
+  background-color: $maypageMainColor;
+  .mypage-contents {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    margin: 70px;
+
+    .side-content{
+      width: 20%;
+      margin-right: 40px;
+      .mypage-nav{
+        margin: 0 auto;
+        &__list {
+          &__btn {
+            background-color: $maypageBackColor;
+            font-size: 14px;
+            min-height: 48px;
+            line-height: 48px;
+            position: relative;
+            display: block;
+            padding: 2px 16px;
+            justify-content: space-around;
+            text-decoration: none;
+            border-top: 1px solid $maypageBorderColor;
+            &--icon{
+              position: absolute;
+              top: 17px;
+              right: 10px;
+            }
+          }
+        }
+        &__head{
+          margin-top: 40px;
+          &__btn {
+            @extend .mypage-nav__list__btn;
+          }
+        }
+      }
+    }
+
+    .right-content{
+      width: 70%;
+      &__top{
+        height: 200px;
+        min-width: 700px;
+        flex-direction: column;
+        text-align: center;
+        background-image: url(https://www.pakutaso.com/shared/img/thumb/boke12151240_TP_V.jpg);
+        background-size: cover;
+        background-position: center;
+        padding: 20px;
+        .user-icon{
+          border-radius: 50%;
+          margin: 0 auto;
+        }
+        .mypage-number {
+          font-size: 14px;
+          .bold {
+            font-size: 16px;
+            margin: 0 10px;
+          }
+        }
+      }
+      &__middle{
+        .mypage-tabs-middle {
+          &__item{
+            @extend .tab_item;
+          }
+          &__content {
+            @extend .tab_content;
+            &__link-middle{
+              border-top: 1px solid $maypageBorderColor;
+              min-height: 80px;
+              padding: 16px;
+              display: flex;
+              justify-content: space-between;
+              line-height: 1.5;
+              text-align: center;
+              text-decoration: none;
+              background-color: $maypageBackColor;
+              &__body{
+                margin-right: 300px;
+                position: relative;
+                &__time{
+                  position: absolute;
+                  &--icon {
+                    color: #888;
+                  }
+                }
+              }
+              &__chevron{
+                padding-top: 25px;
+              }
+            }
+            &__list{
+              text-align: center;
+              background-color: #ddd;
+              height: 56px;
+              line-height: 56px;
+              &__link {
+                text-decoration: none;
+              }
+            }
+          }
+      }
+    }
+
+      &__bottom{
+        margin: 40px 0 0 0;
+        .mypage-tabs-bottom{
+          &__item{
+            @extend .tab_item;
+          }
+          &__content{
+            @extend .tab_content;
+            &__link-bottom{
+              min-height: 80px;
+              padding: 16px;
+              display: flex;
+              justify-content: space-between;
+              line-height: 1.5;
+              text-align: center;
+              text-decoration: none;
+              background-color: $maypageBackColor;
+              &__body{
+                margin-right: 300px;
+                position: relative;
+                &__status{
+                  position: absolute;
+                }
+              }
+              &__chevron {
+                padding-top: 25px;
+              }
+            }
+            &__list{
+              text-align: center;
+              background-color: #ddd;
+              height: 56px;
+              line-height: 56px;
+              &__link {
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .signout_content {
+      background-color: $maypageBackColor;
+      height: 200px;
+      width: 700px;
+      padding: 64px;
+      &__btn {
+        @include btn;
+      }
+    }
+
+    .payment_content {
+      background-color: $maypageBackColor;
+      width: 700px;
+      &__head{
+        padding: 8px 24px;
+        text-align: center;
+        border-bottom: 1px solid #f5f5f5;
+      }
+      &__body{
+        padding: 64px;
+        &__head{
+          width: 300px;
+          margin: 0 auto;
+          &__list li {
+            border-top: none;
+          }
+        }
+        &__cardAdd{
+          text-align: center;
+          padding: 24px 0;
+          margin: 0 auto;
+          border-bottom: 1px solid $maypageBorderColor;
+          &__btn{
+            height: 25px;
+            @include btn;
+            &--icon{
+              margin-right: 10px;
+            }
+          }
+        }
+        &__paymentGuide{
+          text-align: right;
+          margin-top: 40px;
+          &__btn{
+            color: #0099e8;
+            text-decoration: none;
+            &--icon {
+              margin-left: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.tab_content {
+  display: none;
+  clear: both;
+  overflow: hidden;
+  list-style: none;
+}
+
+.tab_item {
+  border: 0;
+  line-height: 72px;
+  position: relative;
+  width: calc(100%/2);
+  text-align: center;
+  font-weight: bold;
+  float: left;
+  background-color: $maypageMainColor;
+  display: block;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.tab_item:hover, .right-content__top:hover, .mypage-nav__list__btn:hover, .mypage-tabs-middle__content__link-middle:hover, .signout_content__btn:hover, .payment_content__body__cardAdd__btn:hover {
+  opacity: 0.75;
+}
+
+input[name="tab_item"],[name="tab_item2"] {
+  display: none;
+}
+
+#nontification:checked ~ #nontification_content,
+#todo:checked ~ #todo_content {
+  display: block;
+}
+
+#nowTransaction:checked ~ #nowTransaction_content,
+#oldTransaction:checked ~ #oldTransaction_content {
+  display: block;
+}
+
+.mypage-main .mypage-contents .right-content__middle .mypage-tabs-middle input:checked + .mypage-tabs-middle__item,
+.mypage-main .mypage-contents .right-content__bottom .mypage-tabs-bottom input:checked + .mypage-tabs-bottom__item{
+  background-color: $maypageBackColor;
+  border-top: 2px solid #ea352d;
+}
