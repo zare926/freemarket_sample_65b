@@ -1,9 +1,13 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show]
   def index
+    @items = Item.where(status: false).limit(3).order("created_at DESC")
+    @items_brand = Item.where(status: false).where(brand: "Off-White").limit(3).order("created_at DESC")
+    @images = Image.all
     @categories = Category.all
   end
 
+  
   def new
     @item = Item.new
   end
