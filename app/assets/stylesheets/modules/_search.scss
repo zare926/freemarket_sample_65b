@@ -1,5 +1,6 @@
 .searchHeader {
   padding: 0 60px;
+  height: 100px;
   .headerInner {
     max-width: 1040px;
     width: 100%;
@@ -58,9 +59,11 @@
       display: flex;
       margin-bottom: 10px;
       .listsLeft {
+        z-index: 11;
         position: relative;
         display: flex;
         &__item--first {
+          width: 100px;
           text-decoration: none;
           padding-right: 8px;
           line-height: 38px;
@@ -89,6 +92,37 @@
           @include listsRight-item();
         }
       }
+    }
+  }
+}
+
+.category{
+  width: 650px;
+  z-index: 10;
+  position: relative;
+  display: flex;
+  &-first{
+    width: 200px;
+    &__tree{
+      background-color: white;
+      padding-left: 10px;
+      border: 1px solid whitesmoke;
+    }
+  }
+  &-second{
+    width: 200px;
+    &__tree{
+      background-color: white;
+      padding-left: 10px;
+      border: 1px solid whitesmoke;
+    }
+  }
+  &-third{
+    width: 250px;
+    &__tree{
+      background-color: white;
+      padding-left: 10px;
+      border: 1px solid whitesmoke;
     }
   }
 }
