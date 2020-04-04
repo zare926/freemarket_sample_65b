@@ -18,10 +18,10 @@
     .member-form
       .member-form__title
         %h2.member-form__title--text 登録が完了しました
-      = form_for( resource, as: resource_name, url: registration_path(resource_name),html: {class: 'member-form__for'}) do |f|
+      .member-form__for
         .member-main
           .member-main__form
-            = link_to "トップへ戻る", "/", class: 'member-main__form--btn2'
+            = link_to "トップへ戻る", root_path, class: 'member-main__form--btn2'
 
 .member-footer
   = render "shared/overview"
