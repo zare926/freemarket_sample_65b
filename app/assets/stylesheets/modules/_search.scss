@@ -82,6 +82,9 @@
       .listsRight {
         margin-left: auto;
         display: flex;
+        &__item--mypage{
+          @include listsRight-item();
+        }
         &__item--login {
           @include listsRight-item();
         }

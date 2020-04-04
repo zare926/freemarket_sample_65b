@@ -2,14 +2,16 @@
   .headerInner
     .mainHeader
       .mainHeader__icon
-        = link_to image_tag(src="/assets/logo.png"), "#"
+        = link_to '#' do
+          = image_tag asset_path('logo.png')
       .searchBox
         %form{action: "#", method: "get"}
           %input{name: "utf8", type: "hidden", value: "✓"}
           %input.searchBox--input{name: "key", placeholder: "キーワードから探す"}
           %button{type: "submit"}
             .searchBox__icon
-              = link_to image_tag(src="/assets/icon-search 1.png"), "#"
+              = link_to '#' do
+                = image_tag asset_path('icon-search 1.png')
 
     .nav
       %ul.listsLeft
@@ -38,7 +40,21 @@
         %li.listsLeft__item
           =link_to "ブランド", "#", class: "brandBtn"
       %ul.listsRight
-        %li.listsRight__item--login
-          = link_to "ログイン", "#"
-        %li.listsRight__item--new
-          = link_to "新規会員登録", "#"
+        - if user_signed_in?
+          %li.listsRight__item--mypage
+            =link_to "マイページ", user_path(current_user.id)
+        - else
+          %li.listsRight__item--login
+            = link_to "ログイン", new_user_session_path
+          %li.listsRight__item--new
+            = link_to "新規会員登録", new_user_registration_path
+
+      
+
+
+
+
+      
+
+
+
