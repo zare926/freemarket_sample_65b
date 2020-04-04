@@ -1,12 +1,16 @@
 class Item < ApplicationRecord
-  validates :image,
+  validates :name,
     presence: true,
-    presence: { message: "画像がありません" }
+    presence: { message: "入力してください" }
+
+  validates :status,
+    presence: true,
+    acceptance: true,
+    presence: { message: "選択してください" }
 
   validates :description,
     presence: true,
     presence: { message: "入力してください" }
-
 
   validates :category_id,
     presence: true,
@@ -37,7 +41,7 @@ class Item < ApplicationRecord
     presence: true,
     acceptance: true,
     numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 },
-    presence: { message: "300以上9999999以下で入力してください" }
+    presence: { message: "must be less than or equal to 300" }
 
   has_many :comments
   has_many :images
