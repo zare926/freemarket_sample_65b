@@ -6,7 +6,7 @@
     .member-form
       .member-form__title2
         .member-form__title2--text2 アカウントをお持ちでない方はこちら
-        = link_to '新規会員登録', '/users/sign_up',{class: 'member-form__title2--btn'}
+        = link_to '新規会員登録', new_user_registration_path, {class: 'member-form__title2--btn'}
         
       = form_for( resource, url: user_session_path, builder: WithErrorFormBuilder, html: {class: 'member-form__for'}) do |f|
         .member-main
