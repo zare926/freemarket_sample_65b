@@ -1,0 +1,65 @@
+@import "./setting/color";
+
+.header{
+  height: 80px;
+  width : 100vw;
+  text-align: center;
+  background-color: $mainWhiteColor;
+  padding-top: 30px;
+}
+
+.chapter__container {
+  width: 700px;
+  height: 500px;
+  margin: 0 auto;
+  background-color: $mainWhiteColor;
+  .chapter__head {
+    font-size: 18px;
+    padding: 10px 24px;
+    text-align: center;
+    border-bottom: 1px solid $mainBlueColor;
+    line-height: 1.4;
+  }
+  .payment__main {
+    padding: 64px;
+    border-top: 1px;
+    .payment__list {
+      text-align: center;
+      .card__number__view {
+        font-size: 20px;
+      }
+      .card__number {
+        margin-top: 8px;
+        font-size: 24px;
+        text-align: center;
+      }
+      .expire__date__view {
+        font-size: 120x;
+        margin-top: 40px;
+        text-align: center;
+      }
+      .expire__date {
+        margin-top: 4px;
+        font-size: 22px;
+        text-align: center;
+        form {
+          padding-top: 24px;
+          text-align: center;
+          button {
+          width: 140px;
+          height: 50px;
+          margin-top: 40px;
+          color: $mainWhiteColor;
+          font-size: 14px;
+          font-weight: bold;
+          background-color: $mainBlueColor;
+          border: 1px solid $mainBlueColor;
+          }
+        }
+      }
+    }
+    .how__not__regist {
+      text-align: center;
+    }
+  }
+}

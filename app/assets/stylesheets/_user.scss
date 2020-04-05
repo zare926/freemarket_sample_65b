@@ -20,7 +20,7 @@ $maypageMainColor   : #f5f5f5;
   .mypage-contents {
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
-    margin: 70px;
+    padding: 70px;
 
     .side-content{
       width: 20%;
@@ -177,6 +177,7 @@ $maypageMainColor   : #f5f5f5;
     .payment_content {
       background-color: $maypageBackColor;
       width: 700px;
+      height: 500px;
       &__head{
         padding: 8px 24px;
         text-align: center;
