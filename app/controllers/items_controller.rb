@@ -10,13 +10,19 @@ class ItemsController < ApplicationController
   
   def new
     @item = Item.new
+    @item.images.new
   end
 
   def create
-    @item = Item.create(item_params)
+    @item = Item.new(item_params)
     respond_to do |format|
       format.html { redirect_to :root }
       format.json { render json: @item}
+    end
+    if @item.save
+      redirect_to root_path
+    else
+      render :new
     end
   end
 
@@ -40,7 +46,17 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :description, :brand, :state, :status, :postage, :shipping_date, :category, :price)
+    params.require(:item).permit(
+                                  :name,
+                                  :description,
+                                  :brand,
+                                  :state,
+                                  :status,
+                                  :postage,
+                                  :shipping_date,
+                                  :category,
+                                  :price,
+                                  item_images_attributes: [:src, :_destroy, :id]).marge(id: current_user.id,status: 0)
   end
 
   def category_params

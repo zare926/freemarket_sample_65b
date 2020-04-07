@@ -1,5 +1,64 @@
+// フォーム複製
+$(document).on('turbolinks:load', ()=> {
+  const buildFileField = (index)=> {
+    const html = `<div data-index="${index}" class="form__box--image">
+                    <input class="item__image" type="file"
+                    name="item[images_attributes][${index}][src]"
+                    id="item_images_attributes_${index}_src">
+                  </div>`;
+    return html;
+  }
+  const buildImg = (index, url)=> {
+    const html = `<div class="item__image-remove remove${index}">×</div>
+                  <img data-index="${index}" src="${url}" width="118px" height="118px">`;
+    return html;
+  }
+  // file_fieldのnameに動的なindexをつける為の配列
+  let fileIndex = [1,2,3,4,5,6,7,8,9,10];
+  lastIndex = $('.item__image--group:last').data('index');
+  fileIndex.splice(0, lastIndex);
+
+  $('.hidden-destroy').hide();
+  // input隠す奴
+  $('.image__uplode--btn').on('mousedown',function(){
+    $('.item__image').last().click();
+  });
+
+  $('.form__box').on('change', '.item__image', function(e) {
+    const targetIndex = $(this).parent().data('index');
+    // ファイルのブラウザ上でのURLを取得する
+    const file = e.target.files[0];
+    const blobUrl = window.URL.createObjectURL(file);
+    // 該当indexを持つimgタグがあれば取得して変数imgに入れる(画像変更の処理)
+    if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
+      img.setAttribute('src', blobUrl);
+    } else {  // 新規画像追加の処理
+      $('#previews').append(buildImg(targetIndex, blobUrl));
+      // fileIndexの先頭の数字を使ってinputを作る
+      $('.form__box').append(buildFileField(fileIndex[0]));
+      fileIndex.shift();
+      // 末尾の数に1足した数を追加する
+      fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
+    }
+  });
+
+
+  $('.form__box').on('click', '.item__image-remove', function() {
+    const targetIndex = $(this).parent().data('index')
+    // 該当indexを振られているチェックボックスを取得する
+    const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
+    // もしチェックボックスが存在すればチェックを入れる
+    if (hiddenCheck) hiddenCheck.prop('checked', true);
+    $(this).parent().remove();
+    $(`img[data-index="${targetIndex}"]`).remove();
+    // 画像入力欄が0個にならないようにしておく
+    if ($('.item__image').length == 0) $('.form__box').append(buildFileField(fileIndex[0]));
+  });
+});
+
 $(function(){
   //フォーム指定
+
   $('#items1').validate({
 
     rules: {
@@ -162,3 +221,10 @@ $(function(){
   
 
 });
+
+// $(document).on('click', ".item__image-remove", function(){
+//   let imageId = $(this).parents().data('index');
+//   // 画像を削除するロジック
+//   $(`#item_images_attributes_${imageId}_src`).remove()
+// });
+
