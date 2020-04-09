@@ -5,18 +5,21 @@ $(document).on('turbolinks:load', ()=> {
                     <input class="item__image" type="file"
                     name="item[images_attributes][${index}][src]"
                     id="item_images_attributes_${index}_src">
+                    <div data-index="${index - 1}"  class="item__image-remove remove${index}">×</div>
                   </div>`;
     return html;
   }
   const buildImg = (index, url)=> {
-    const html = `<div class="item__image-remove remove${index}">×</div>
-                  <img data-index="${index}" src="${url}" width="118px" height="118px">`;
+    const html = `<img data-index="${index}" src="${url}" width="118px" height="118px">`;
     return html;
   }
   // file_fieldのnameに動的なindexをつける為の配列
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
   lastIndex = $('.item__image--group:last').data('index');
   fileIndex.splice(0, lastIndex);
+
+  lastIndex2 = $('.form__box--image:last').data('index');
+  fileIndex.splice(0, lastIndex2);
 
   $('.hidden-destroy').hide();
   // input隠す奴
@@ -42,19 +45,31 @@ $(document).on('turbolinks:load', ()=> {
     }
   });
 
-
-  $('.form__box').on('click', '.item__image-remove', function() {
-    const targetIndex = $(this).parent().data('index')
+  $('.form__box').on('click', '.item__image-remove', function(){
+    const targetIndex = $(this).data('index');
     // 該当indexを振られているチェックボックスを取得する
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
     // もしチェックボックスが存在すればチェックを入れる
     if (hiddenCheck) hiddenCheck.prop('checked', true);
-    $(this).parent().remove();
+  
+    $(this).remove();
     $(`img[data-index="${targetIndex}"]`).remove();
+    // $(`#item_images_attributes_${imageId}_src`).remove()
+  
     // 画像入力欄が0個にならないようにしておく
     if ($('.item__image').length == 0) $('.form__box').append(buildFileField(fileIndex[0]));
   });
 });
+
+
+// index番号を取得する
+// クリックしたremove#{index}と同じdata-indexの画像を消す処理
+
+// $(document).on('click', ".item__image-remove", function(){
+//   let imageId = $(this).parents().data('index');
+//   // 画像を削除するロジック
+//   $(`#item_images_attributes_${imageId}_src`).remove()
+// });
 
 $(function(){
   //フォーム指定
@@ -218,13 +233,7 @@ $(function(){
     $('.top__main__center__price__box__bottom__minus').html('');
     }
   })
-  
-
 });
 
-// $(document).on('click', ".item__image-remove", function(){
-//   let imageId = $(this).parents().data('index');
-//   // 画像を削除するロジック
-//   $(`#item_images_attributes_${imageId}_src`).remove()
-// });
+
 
