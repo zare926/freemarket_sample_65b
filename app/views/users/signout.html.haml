@@ -4,18 +4,17 @@
 %nav.kind__list
   %ul
     %li
-      = link_to '/' do
+      = link_to root_path do
         FURIMA
     %li
       %i.fa.fa-angle-right
     %li
-      = link_to '#' do
+      = link_to "/users/#{:id}" do
         マイページ
     %li
       %i.fa.fa-angle-right
     %li
-      = link_to '#' do
-        ログアウト
+      ログアウト
 
 .mypage-main
   .mypage-contents
