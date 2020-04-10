@@ -1,3 +1,22 @@
+.mypage-header
+  = render "shared/search"
+
+%nav.kind__list
+  %ul
+    %li
+      = link_to '/' do
+        FURIMA
+    %li
+      %i.fa.fa-angle-right
+    %li
+      = link_to '#' do
+        マイページ
+    %li
+      %i.fa.fa-angle-right
+    %li
+      = link_to '#' do
+        ログアウト
+
 .mypage-main
   .mypage-contents
     = render partial: 'side_content'
@@ -5,3 +24,7 @@
     .signout_content
       = link_to destroy_user_session_path, method: :delete, class: "signout_content__btn" do
         ログアウト
+
+.mypage-fotter
+  = render "shared/banner"
+  = render "shared/overview" 
