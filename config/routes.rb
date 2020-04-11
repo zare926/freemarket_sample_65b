@@ -6,6 +6,14 @@ Rails.application.routes.draw do
     collection do
       get 'confirm'
     end
+  end
+  
+  resources :users, only: [:show] do
+    collection do
+      get 'payment'
+    end
+  end
+
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions'
@@ -15,12 +23,4 @@ Rails.application.routes.draw do
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
   end
-
-  resources :users, only: [:show] do
-    collection do
-      get 'payment'
-    end
-  end
-
-  root to: 'items#index'
 end
