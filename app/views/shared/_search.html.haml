@@ -2,26 +2,51 @@
   .headerInner
     .mainHeader
       .mainHeader__icon
-        = link_to image_tag(src="/assets/logo.png"), "#"
+        = link_to '#' do
+          = image_tag asset_path('logo.png')
       .searchBox
         %form{action: "#", method: "get"}
           %input{name: "utf8", type: "hidden", value: "✓"}
           %input.searchBox--input{name: "key", placeholder: "キーワードから探す"}
           %button{type: "submit"}
             .searchBox__icon
-              = link_to image_tag(src="/assets/icon-search 1.png"), "#"
-
+              = link_to '#' do
+                = image_tag asset_path('icon-search 1.png')
     .nav
       %ul.listsLeft
         %li.listsLeft__item--first
           =link_to "カテゴリー", "#", class: "catBtn"
+          .category
+            .category-first
+              - @categories.each do |category|
+                - #ancestryが空白の場合
+                - unless category.ancestry
+                  .category-first__tree{ id: "#{category.id}" }
+                    =link_to category.name, "#"
+            .category-second
+              - @categories.each do |category|
+                - #ancestryが空白でない かつ スラッシュが含まれていない場合
+                - if category.ancestry && category.ancestry.to_s.count("/") == 0
+                  .category-second__tree{ id: "#{category.id}","parent_id": "#{category.ancestry}" }
+                    =link_to category.name, "#"
+            .category-third
+              - @categories.each do |category|
+                - #ancestryにスラッシュがひとつ含まれている場合
+                - if category.ancestry.to_s.count("/") == 1
+                  .category-third__tree{ id: "#{category.id}","parent_id": "#{category.ancestry.to_s.sub(/.+\//, "")}" }
+                    =link_to category.name, "#"
+                
         %li.listsLeft__item
           =link_to "ブランド", "#", class: "brandBtn"
       %ul.listsRight
-        %li.listsRight__item--login
-          = link_to "ログイン", "#"
-        %li.listsRight__item--new
-          = link_to "新規会員登録", "#"
+        - if user_signed_in?
+          %li.listsRight__item--mypage
+            =link_to "マイページ", user_path(current_user.id)
+        - else
+          %li.listsRight__item--login
+            = link_to "ログイン", new_user_session_path
+          %li.listsRight__item--new
+            = link_to "新規会員登録", new_user_registration_path
 
       
 

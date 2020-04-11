@@ -44,6 +44,9 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -75,6 +78,9 @@ gem 'haml-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
+gem 'pry-rails'
 gem 'ancestry'
 gem 'erb2haml'
 gem 'jquery-rails'
+gem 'payjp'
+gem 'rails-i18n'
