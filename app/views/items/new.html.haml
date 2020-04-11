@@ -16,8 +16,8 @@
             = form_for [@item],html: { class: "top__main__center__img-uplode__box__name-box__form" },html: { id: 'items0' } do |f|
               #image-box
                 = f.fields_for :images do |image|
-                  .date-index = "=image.index"
-                  = i.file_field :src, class: 'top__main__center__img-uplode__box__name-box__form__text', placeholder: '40文字まで'
+                  .date-index
+                  = i.file_field :src, class: 'top__main__center__img-uplode__box__name-box__form__text'
           .top__main__center__deta__box__warning 
             入力してください
 
@@ -112,7 +112,7 @@
               必須
           .top__main__center__deta__box__input-box
             = form_for [@item],html: { class: "top__main__center__deta__box__input-box__form" },html: { id: 'items8' } do |f|
-              = f.select :shipping_date, [["選択して下さい", "0"],["1~2日で発送", 1], ["2~3日で発送", 2], ["4~7日で発送", 3]], {}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select5'}
+              = f.select :shipping_date, [["選択して下さい", 0],["1~2日で発送", 1], ["2~3日で発送", 2], ["4~7日で発送", 3]], {}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select5'}
 
 
 
