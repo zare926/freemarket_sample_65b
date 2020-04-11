@@ -202,6 +202,27 @@
               }
             }
           }
+          .delete__area{
+            margin-bottom: 20px;
+            text-align: center;
+            &--btn{
+              line-height: 48px;
+              background: $mainBlueColor;
+              box-decoration-break: 1px solid $mainBlueColor;
+              width: 60%;
+              border-radius: 100px;
+              & a{
+                text-decoration: none;
+                color: $mainWhiteColor;
+                font-size: 18px;
+              }
+            }
+          }
+          .or__area{
+            text-align: center;
+            margin-top: -10px;
+            margin-bottom: 10px;
+          }
           .info__table{
             margin-bottom: 20px;
           }
