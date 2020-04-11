@@ -59,6 +59,7 @@ $(document).on('turbolinks:load', ()=> {
     if (hiddenCheck) hiddenCheck.prop('checked', true);
   
     $(this).remove();
+    $(`div[data-index="${targetIndex}"]`).remove();
     $(`img[data-index="${targetIndex}"]`).remove();
     if ($('.item__image').length == 0) $('.form__box').append(buildFileField(fileIndex[0]));
   });
