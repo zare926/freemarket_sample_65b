@@ -1,11 +1,11 @@
 // フォーム複製
 $(document).on('turbolinks:load', ()=> {
   const buildFileField = (index)=> {
-    const html = `<div data-index="${index}" class="form__box--image">
+    const html = `<div class="form__box--image" data-index="${index}">
+                    <div data-index="${index - 1}"  class="item__image-remove remove${index }">×</div>
                     <input class="item__image" type="file"
                     name="item[images_attributes][${index}][src]"
-                    id="item_images_attributes_${index}_src">
-                    <div data-index="${index - 1}"  class="item__image-remove remove${index}">×</div>
+                    id="item_images_attributes_${index }_src">
                   </div>`;
     return html;
   }
@@ -18,13 +18,18 @@ $(document).on('turbolinks:load', ()=> {
   lastIndex = $('.item__image--group:last').data('index');
   fileIndex.splice(0, lastIndex);
 
-  lastIndex2 = $('.form__box--image:last').data('index');
-  fileIndex.splice(0, lastIndex2);
 
   $('.hidden-destroy').hide();
   // input隠す奴
   $('.image__uplode--btn').on('mousedown',function(){
-    $('.item__image').last().click();
+    const count = $('.form__box--image').find('.item__image-remove').length
+    console.log(count);
+    if ( count <= 9 ){
+      $('.item__image').last().click();
+      $(this).text("画像を選択");
+    }else{
+      $(this).text("画像は10枚迄です");
+    }
   });
 
   $('.form__box').on('change', '.item__image', function(e) {
@@ -54,9 +59,6 @@ $(document).on('turbolinks:load', ()=> {
   
     $(this).remove();
     $(`img[data-index="${targetIndex}"]`).remove();
-    // $(`#item_images_attributes_${imageId}_src`).remove()
-  
-    // 画像入力欄が0個にならないようにしておく
     if ($('.item__image').length == 0) $('.form__box').append(buildFileField(fileIndex[0]));
   });
 });
