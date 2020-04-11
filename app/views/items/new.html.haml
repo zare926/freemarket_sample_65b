@@ -21,13 +21,6 @@
           .top__main__center__deta__box__warning 
             入力してください
 
-              <%= f.fields_for :images do |image| %>
-                <div data-index="<%= image.index %>" class="js-file_group">
-                  <%= image.file_field :src, class: 'js-file' %><br>
-                  <span class="js-remove">削除</span>
-                </div>
-              <% end %>
- 
         
 
 
@@ -66,8 +59,8 @@
             .top__main__center__deta__box__what__necessary
               必須
           .top__main__center__deta__box__input-box
-            = form_for [@item],html: { class: "top__main__center__deta__box__input-box__form" },html: { id: 'items3' } do |f|
-              = f.select :status, [["選択して下さい", 0],["新品、未使用", 1], ["未使用に近い", 2], ["目立った傷や汚れなし", 3], ["やや傷や汚れあり", 4], ["傷や汚れあり", 5], ["全体的に状態が悪い", 6]], {}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select1'}
+            = form_for [@item],html: { class: "top__main__center__deta__box__input-box__form", id: 'items3' } do |f|
+              = f.select :category, @category_parent_array, {}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select1'}
         .top__main__center__deta__box
           .top__main__center__deta__box__what
             .top__main__center__deta__box__what__product
@@ -110,7 +103,7 @@
               任意
           .top__main__center__deta__box__input-box
             = form_for [@item],html: { class: "top__main__center__deta__box__input-box__form" },html: { id: 'items7' } do |f|
-              = f.select :status, [["選択して下さい",""],["新品、未使用", 1], ["未使用に近い", 2], ["目立った傷や汚れなし", 3], ["やや傷や汚れあり", 4], ["傷や汚れあり", 5], ["全体的に状態が悪い", 6]], {}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select4'}
+              = f.select :prefecture, Item.prefectures.keys, {}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select4'}
         .top__main__center__deta__box
           .top__main__center__deta__box__what
             .top__main__center__deta__box__what__product
