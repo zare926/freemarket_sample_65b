@@ -2,7 +2,7 @@
   %nav.mypage-nav
     %ul.mypage-nav__list
       %li
-        = link_to "/users/#{:id}", class: "mypage-nav__list__btn" do
+        = link_to user_path(current_user.id), class: "mypage-nav__list__btn" do
           マイページ
           = icon('fas', 'chevron-right', class: 'mypage-nav__list__btn--icon')
       %li
