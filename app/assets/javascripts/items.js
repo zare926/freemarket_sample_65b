@@ -2,7 +2,6 @@
 $(document).on('turbolinks:load', ()=> {
   const buildFileField = (index)=> {
     const html = `<div class="form__box--image" data-index="${index}">
-                    <div data-index="${index - 1}"  class="item__image-remove remove${index }">×</div>
                     <input class="item__image" type="file"
                     name="item[images_attributes][${index}][src]"
                     id="item_images_attributes_${index }_src">
@@ -10,7 +9,10 @@ $(document).on('turbolinks:load', ()=> {
     return html;
   }
   const buildImg = (index, url)=> {
-    const html = `<img data-index="${index}" src="${url}" width="118px" height="118px">`;
+    const html = `<div data-index="${index}" class="preview">
+                    <img data-index="${index}" src="${url}" width="124px" height="124px">
+                    <div data-index="${index}"  class="item__image-remove">×</div>
+                  </div>`;
     return html;
   }
   // file_fieldのnameに動的なindexをつける為の配列
@@ -18,12 +20,11 @@ $(document).on('turbolinks:load', ()=> {
   lastIndex = $('.item__image--group:last').data('index');
   fileIndex.splice(0, lastIndex);
 
-
   $('.hidden-destroy').hide();
+
   // input隠す奴
   $('.image__uplode--btn').on('mousedown',function(){
-    const count = $('.form__box--image').find('.item__image-remove').length
-    console.log(count);
+    const count = $('#previews').find('.item__image-remove').length
     if ( count <= 9 ){
       $('.item__image').last().click();
       $(this).text("画像を選択");
@@ -62,16 +63,6 @@ $(document).on('turbolinks:load', ()=> {
     if ($('.item__image').length == 0) $('.form__box').append(buildFileField(fileIndex[0]));
   });
 });
-
-
-// index番号を取得する
-// クリックしたremove#{index}と同じdata-indexの画像を消す処理
-
-// $(document).on('click', ".item__image-remove", function(){
-//   let imageId = $(this).parents().data('index');
-//   // 画像を削除するロジック
-//   $(`#item_images_attributes_${imageId}_src`).remove()
-// });
 
 $(function(){
   //フォーム指定
