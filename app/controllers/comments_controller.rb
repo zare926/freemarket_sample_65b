@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
       redirect_to item_path
     else
       render: new
+    end
   end
 
   def new

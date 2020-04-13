@@ -1,3 +1,7 @@
+.header
+  .header__logo
+    = image_tag asset_path('logo.png'), size: "140x40", alt: "test"
+
 .mypage-main
   .mypage-contents
     = render partial: 'side_content'
@@ -18,3 +22,6 @@
           = link_to '#', class: "payment_content__body__paymentGuide__btn" do
             支払いについて
             = icon('fas', 'chevron-right', class: 'payment_content__body__paymentGuide__btn--icon')
+  = render "shared/banner"
+  = render "shared/overview"
+  = render "shared/iconCamera"

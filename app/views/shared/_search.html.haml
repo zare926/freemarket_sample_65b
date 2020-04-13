@@ -18,23 +18,23 @@
           =link_to "カテゴリー", "#", class: "catBtn"
           .category
             .category-first
-              - @categories.each do |category|
-                - #ancestryが空白の場合
-                - unless category.ancestry
-                  .category-first__tree{ id: "#{category.id}" }
-                    =link_to category.name, "#"
+              -# - @categories.each do |category|
+              -#   - #ancestryが空白の場合
+              -#   - unless category.ancestry
+              -#     .category-first__tree{ id: "#{category.id}" }
+              -#       =link_to category.name, "#"
             .category-second
-              - @categories.each do |category|
-                - #ancestryが空白でない かつ スラッシュが含まれていない場合
-                - if category.ancestry && category.ancestry.to_s.count("/") == 0
-                  .category-second__tree{ id: "#{category.id}","parent_id": "#{category.ancestry}" }
-                    =link_to category.name, "#"
+              -# - @categories.each do |category|
+              -#   - #ancestryが空白でない かつ スラッシュが含まれていない場合
+              -#   - if category.ancestry && category.ancestry.to_s.count("/") == 0
+              -#     .category-second__tree{ id: "#{category.id}","parent_id": "#{category.ancestry}" }
+              -#       =link_to category.name, "#"
             .category-third
-              - @categories.each do |category|
-                - #ancestryにスラッシュがひとつ含まれている場合
-                - if category.ancestry.to_s.count("/") == 1
-                  .category-third__tree{ id: "#{category.id}","parent_id": "#{category.ancestry.to_s.sub(/.+\//, "")}" }
-                    =link_to category.name, "#"
+              -# - @categories.each do |category|
+              -#   - #ancestryにスラッシュがひとつ含まれている場合
+              -#   - if category.ancestry.to_s.count("/") == 1
+              -#     .category-third__tree{ id: "#{category.id}","parent_id": "#{category.ancestry.to_s.sub(/.+\//, "")}" }
+              -#       =link_to category.name, "#"
                 
         %li.listsLeft__item
           =link_to "ブランド", "#", class: "brandBtn"
