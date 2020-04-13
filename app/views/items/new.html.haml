@@ -19,7 +19,7 @@
           .top__main__center__deta__box__warning 
 
 
-
+    = form_for @item do |i|
       .top__main__center__items
         .top__main__center__items__box
           .top__main__center__items__box__name-box
@@ -28,8 +28,8 @@
             .top__main__center__items__box__name-box__necessary
               必須
           .top__main__center__items__box__input-box
-            = form_for [@item],html: { class: "top__main__center__items__box__input-box__form" },html: { id: 'items1' } do |f|
-              = f.text_field :name, class: 'top__main__center__items__box__input-box__form__text', placeholder: '40文字まで'
+            .top__main__center__items__box__input-box__form#items1
+              = i.text_field :name, class: 'top__main__center__items__box__input-box__form__text', placeholder: '40文字まで'
           
         .top__main__center__items__text-box
           .top__main__center__items__text-box__name-box
@@ -37,8 +37,8 @@
               商品の説明
             .top__main__center__items__text-box__name-box__necessary
               必須
-          = form_for [@item],html: { class: "top__main__center__items__text-box__form" },html: { id: 'items2' } do |f|
-            =f.text_area :description, class: 'top__main__center__items__text-box__form__text-area', placeholder: text_placeholder
+          .top__main__center__items__text-box__form#items2
+            =i.text_area :description, class: 'top__main__center__items__text-box__form__text-area', placeholder: text_placeholder
           .top__main__center__items__text-box__word-count
             0/1000
 
@@ -53,8 +53,8 @@
             .top__main__center__deta__box__what__necessary
               必須
           .top__main__center__deta__box__input-box
-            = form_for [@item],html: { class: "top__main__center__deta__box__input-box__form", id: 'items3' } do |f|
-              = f.select :category, @category_parent_array, {}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select1'}
+            .top__main__center__deta__box__input-box__form#items3
+              = i.select :category, @category_parent_array, {}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select1'}
         .top__main__center__deta__box
           .top__main__center__deta__box__what
             .top__main__center__deta__box__what__product
@@ -62,8 +62,8 @@
             .top__main__center__deta__box__what__any
               任意
           .top__main__center__deta__box__input-box
-            = form_for [@item],html: { class: "top__main__center__deta__box__input-box__form" },html: { id: 'items4' } do |f|
-              = f.text_field :brand, class: 'top__main__center__items__box__input-box__form__text', placeholder: '40文字まで'
+            .top__main__center__deta__box__input-box__form#items4
+              = i.text_field :brand, class: 'top__main__center__items__box__input-box__form__text', placeholder: '40文字まで'
         .top__main__center__deta__box
           .top__main__center__deta__box__what
             .top__main__center__deta__box__what__product
@@ -71,8 +71,8 @@
             .top__main__center__deta__box__what__necessary
               必須
           .top__main__center__deta__box__input-box
-            = form_for [@item],html: { class: "top__main__center__deta__box__input-box__form" },html: { id: 'items5' } do |f|
-              = f.select :status, [["選択して下さい", 0],["新品、未使用", 1], ["未使用に近い", 2], ["目立った傷や汚れなし", 3], ["やや傷や汚れあり", 4], ["傷や汚れあり", 5], ["全体的に状態が悪い", 6]], {}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select2'}
+            .top__main__center__deta__box__input-box__form#items5
+              = i.select :status, [["選択して下さい", 0],["新品、未使用", 1], ["未使用に近い", 2], ["目立った傷や汚れなし", 3], ["やや傷や汚れあり", 4], ["傷や汚れあり", 5], ["全体的に状態が悪い", 6]], {}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select2'}
 
 
 
@@ -87,8 +87,8 @@
             .top__main__center__deta__box__what__necessary
               必須
           .top__main__center__deta__box__input-box
-            = form_for [@item],html: { class: "top__main__center__deta__box__input-box__form" },html: { id: 'items6' } do |f|
-              = f.select :postage, [["選択して下さい", 0],["送料込み(出品者負担)", 1], ["着払い(購入者負担)", 2]], {}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select3'}
+            .top__main__center__deta__box__input-box__form#items6
+              = i.select :postage, [["選択して下さい", 0],["送料込み(出品者負担)", 1], ["着払い(購入者負担)", 2]], {}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select3'}
         .top__main__center__deta__box
           .top__main__center__deta__box__what
             .top__main__center__deta__box__what__product
@@ -96,8 +96,8 @@
             .top__main__center__deta__box__what__any
               任意
           .top__main__center__deta__box__input-box
-            = form_for [@item],html: { class: "top__main__center__deta__box__input-box__form" },html: { id: 'items7' } do |f|
-              = f.select :prefecture, Item.prefectures.keys, {}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select4'}
+            .top__main__center__deta__box__input-box__form#items7
+              = i.select :prefecture, Item.prefectures.keys, {}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select4'}
         .top__main__center__deta__box
           .top__main__center__deta__box__what
             .top__main__center__deta__box__what__product
@@ -105,8 +105,8 @@
             .top__main__center__deta__box__what__necessary
               必須
           .top__main__center__deta__box__input-box
-            = form_for [@item],html: { class: "top__main__center__deta__box__input-box__form" },html: { id: 'items8' } do |f|
-              = f.select :shipping_date, [["選択して下さい"],["1~2日で発送", 1], ["2~3日で発送", 2], ["4~7日で発送", 3]], {}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select5'}
+            .top__main__center__deta__box__input-box__form#items8
+              = i.select :shipping_date, [["選択して下さい"],["1~2日で発送", 1], ["2~3日で発送", 2], ["4~7日で発送", 3]], {}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select5'}
 
 
 
@@ -122,8 +122,8 @@
                 必須
             %span.top__main__center__price__box__money__span
               ¥
-            = form_for(:session, html:{class: "top__main__center__price__box__money__form", id: 'items9'}) do |f|
-              = f.number_field :price, class: 'top__main__center__price__box__money__form__input', id: "input"
+            .top__main__center__price__box__money__form#items9
+              = i.number_field :price, class: 'top__main__center__price__box__money__form__input', id: "input"
               
           .top__main__center__price__box__center
             .top__main__center__price__box__center__sale
@@ -133,16 +133,14 @@
           .top__main__center__price__box__bottom
             .top__main__center__price__box__bottom__sale
               販売利益
-              = form_for [@item],html: { class: "top__main__center__price__box__bottom__sale__form", id: 'items9'} do |f|
-                = f.number_field :price, class: 'top__main__center__price__box__bottom__sale__form__input', id: "price"
+              .top__main__center__price__box__bottom__sale__form#items9
+                = i.number_field :price, class: 'top__main__center__price__box__bottom__sale__form__input', id: "price"
             .top__main__center__price__box__bottom__minus
               ー
         .top__main__center__price__footer
-          = f.submit '出品', class: "top__main__center__price__footer__btn", id: "id_value"
-          %button#id_value.top__main__center__price__footer__btn  出品
+          = i.submit '出品', class: "top__main__center__price__footer__btn", id: "id_value"
           = link_to "戻る" ,root_path, class: "top__main__center__price__footer__return"  
-              
 
-
-
-  .top__footer
+.fotter
+  = render "shared/banner"
+  = render "shared/overview"

@@ -102,6 +102,9 @@
 .top__main{
   width: 100vw;
   background-color: $mainWhiteColor;
+  .new_item{
+    margin: 0 auto;
+  }
   &__center{
     width: 700px;
     background-color: purple;
@@ -180,6 +183,7 @@
       background-color: $mainGrayColor;
       @include bottomLine;
       @include box;
+      margin: auto;
       &__box__name-box{
         @include name-box;
         display: flex;
@@ -257,6 +261,7 @@
       background-color: $mainGrayColor;
       @include bottomLine;
       @include box;
+      margin: auto;
       &__title{
         color:  rgb(136, 136, 136);
         @include name-box;
@@ -301,6 +306,7 @@
       background-color: $mainGrayColor;
       margin-bottom: 100px;
       @include box;
+      margin: auto;
       &__box{
         margin-bottom: 40px;
         &__money{
