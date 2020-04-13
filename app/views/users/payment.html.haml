@@ -1,3 +1,21 @@
+.mypage-header
+  = render "shared/search"
+
+%nav.kind__list
+  %ul
+    %li
+      = link_to root_path do
+        FURIMA
+    %li
+      %i.fa.fa-angle-right
+    %li
+      = link_to user_path(current_user.id) do
+        マイページ
+    %li
+      %i.fa.fa-angle-right
+    %li
+      支払い方法
+
 .mypage-main
   .mypage-contents
     = render partial: 'side_content'
@@ -18,3 +36,7 @@
           = link_to '#', class: "payment_content__body__paymentGuide__btn" do
             支払いについて
             = icon('fas', 'chevron-right', class: 'payment_content__body__paymentGuide__btn--icon')
+
+.mypage-fotter
+  = render "shared/banner"
+  = render "shared/overview" 

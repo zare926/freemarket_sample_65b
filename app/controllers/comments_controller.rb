@@ -4,7 +4,8 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to item_path
     else
-      render: new
+      render :new
+    end
   end
 
   def new
