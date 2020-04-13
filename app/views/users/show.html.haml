@@ -1,6 +1,14 @@
-.header
-  .header__logo
-    = image_tag asset_path('logo.png'), size: "140x40", alt: "test"
+.mypage-header
+  = render "shared/search"
+%nav.kind__list
+  %ul
+    %li
+      = link_to root_path do
+        FURIMA
+    %li
+      %i.fa.fa-angle-right
+    %li
+      マイページ
 
 .mypage-main
   .mypage-contents
