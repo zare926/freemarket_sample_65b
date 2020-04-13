@@ -102,6 +102,7 @@
   position: relative;
   display: flex;
   &-first{
+    display: none;
     width: 200px;
     &__tree{
       background-color: white;
@@ -110,6 +111,7 @@
     }
   }
   &-second{
+    display: none;
     width: 200px;
     &__tree{
       background-color: white;
@@ -118,6 +120,7 @@
     }
   }
   &-third{
+    display: none;
     width: 250px;
     &__tree{
       background-color: white;
