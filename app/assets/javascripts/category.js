@@ -90,6 +90,7 @@ $(function(){
       $('#brand_wrapper').remove();
     }
   });
+  
   var key = ""
   $(function(){
     // ページ読み込み時
@@ -143,7 +144,6 @@ $(function(){
     // 第三階層ホバー時
     $('.category-third').hover(function(){
       $('.category-third').show();
-    }, function(){
     })
   })
 });
