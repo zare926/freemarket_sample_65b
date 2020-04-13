@@ -9,7 +9,7 @@ $(function(){
     var childSelectHtml = '';
     childSelectHtml = `<div class='top__main__center__deta__box__input-box' id= 'children_wrapper'>
                           <select class="top__main__center__deta__box__input-box__form__select" id="child_category" name="category_id">
-                            <option value= 0 data-category="---">選択してください</option>
+                            <option value= "選択して下さい" data-category="---">選択して下さい</option>
                             ${insertHTML}
                           </select>
                         </form>
@@ -21,7 +21,7 @@ $(function(){
     var grandchildSelectHtml = '';
     grandchildSelectHtml = `<div class='top__main__center__deta__box__input-box' id= 'grandchildren_wrapper'>
                               <select class="top__main__center__deta__box__input-box__form__select" id="grandchild_category" name="category_id">
-                                <option value= 0 data-category="---">選択してください</option>
+                                <option value= "選択して下さい" data-category="---">選択して下さい</option>
                                 ${insertHTML}
                               </select>
                             </form>
@@ -31,7 +31,7 @@ $(function(){
   // 親カテゴリー選択後のイベント
   $('#select1').on('change', function(){
     var parentCategory = document.getElementById('select1').value; //選択された親カテゴリーの名前を取得
-    if (parentCategory != "選択してください"){ //親カテゴリーが初期値でないことを確認
+    if (parentCategory != "選択して下さい"){ //親カテゴリーが初期値でないことを確認
       $.ajax({
         url: 'get_category_children',
         type: 'GET',

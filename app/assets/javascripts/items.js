@@ -66,6 +66,24 @@ $(document).on('turbolinks:load', ()=> {
 });
 
 $(function(){
+  jQuery.validator.addMethod('selectcheck', function (value) {
+    return (value != '選択して下さい');
+}, "選択して下さい");
+
+  $.validator.addMethod('my_rule', function(value, element) {
+    // お決まりの定型文
+    // 検証対象の要素にこのルールが設定されているか
+    if ( this.optional( element ) ) {
+        return true;
+    }
+    if (value != "選択してください") {
+        return true;
+    }
+      return false;
+  }, '選択してください');
+
+  
+
   //フォーム指定
 
   $('#items1').validate({
@@ -126,15 +144,16 @@ $(function(){
   $('#items3').validate({
 
     rules: {
-      "item[status]": {
-        min: 1,
-      }
+      "item[category]":{
+        selectcheck: true
+      },
+      "category_id":{
+        selectcheck: true
+      },
   },
-    messages: {
-      "item[status]": {
-        min: "選択してください"
-        },
-    },
+
+
+
     errorClass: "invalid",
     errorElement: "p", 
     validClass: "valid", 
@@ -178,14 +197,15 @@ $(function(){
 
     rules: {
       "item[shipping_date]": {
-        min: 1,
+        selectcheck: true
       }
   },
     messages: {
       "item[shipping_date]": {
-        min: "選択してください"
+        selectcheck: "選択してください"
         },
     },
+    
     errorClass: "invalid",
     errorElement: "p", 
     validClass: "valid", 
@@ -215,6 +235,11 @@ $(function(){
   $("#input").on("keyup keydown change",function(event){
     $(this).valid();
 });
+
+  $('button').click(function() {
+    var value = $('select').val();
+    console.log(value);
+  })
   
   
   $('#input').on('input', function(){   //リアルタイムで表示したいのでinputを使う｡入力の度にイベントが発火するようになる｡
