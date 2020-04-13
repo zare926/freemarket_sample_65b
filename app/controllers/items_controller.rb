@@ -13,6 +13,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.new
+    @category = Category.all
     @category_parent_array = [ "選択して下さい"]
       Category.where(ancestry: nil).each do |parent|
         @category_parent_array << parent.name
@@ -21,6 +22,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    @categories = Category.all
     respond_to do |format|
       format.html { redirect_to :root }
       format.json { render json: @item}
@@ -72,7 +74,7 @@ class ItemsController < ApplicationController
                                   :shipping_date,
                                   :category,
                                   :price,
-                                  item_images_attributes: [:src, :_destroy, :id]).marge(id: current_user.id,status: 0)
+                                  item_images_attributes: [:src, :_destroy, :id]).merge(id: current_user.id,status: 0)
   end
 
   def category_params
