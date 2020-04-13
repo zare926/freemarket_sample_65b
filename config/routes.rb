@@ -23,4 +23,5 @@ Rails.application.routes.draw do
   end
 
   root to: 'items#index'
+
 end
