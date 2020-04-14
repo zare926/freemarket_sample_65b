@@ -28,6 +28,7 @@ class PurchaseController < ApplicationController
 
   def done
     Purchase.create(item_id: @items.id, user_id: current_user.id)
+    @items.update!(buyer_id: current_user.id)
   end
 
   def set_item

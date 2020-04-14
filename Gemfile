@@ -84,4 +84,3 @@ gem 'erb2haml'
 gem 'jquery-rails'
 gem 'payjp'
 gem 'rails-i18n'
-gem "jquery-rails"
