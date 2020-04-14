@@ -14,7 +14,7 @@ $(function(){
                           </select>
                         </form>
                       </div>`;
-    $('.top__main__center__deta__box__input-box__form').append(childSelectHtml);
+    $('.top__main__center__deta__box__input-box__form-category').append(childSelectHtml);
   }
   // 孫カテゴリーの表示作成
   function appendGrandchidrenBox(insertHTML){
@@ -26,7 +26,7 @@ $(function(){
                               </select>
                             </form>
                           </div>`;
-    $('.top__main__center__deta__box__input-box__form').append(grandchildSelectHtml);
+    $('.top__main__center__deta__box__input-box__form-category').append(grandchildSelectHtml);
   }
   // 親カテゴリー選択後のイベント
   $('#select1').on('change', function(){
@@ -60,9 +60,9 @@ $(function(){
     }
   });
   // 子カテゴリー選択後のイベント
-  $('.top__main__center__deta__box__input-box__form').on('change', '#child_category', function(){
+  $('.top__main__center__deta__box__input-box__form-category').on('change', '#child_category', function(){
     var childId = $('#child_category option:selected').data('category'); //選択された子カテゴリーのidを取得
-    if (childId != "---"){ //子カテゴリーが初期値でないことを確認
+    if (childId != "選択して下さい"){ //子カテゴリーが初期値でないことを確認
       $.ajax({
         url: 'get_category_grandchildren',
         type: 'GET',
