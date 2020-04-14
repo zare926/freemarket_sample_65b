@@ -13,11 +13,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.new
-    @category = Category.all
-    @category_parent_array = []
-      Category.where(ancestry: nil).each do |parent|
-        @category_parent_array << parent
-      end
+    @category = Category.all.order("id ASC").limit(1)
   end
 
   def create
@@ -26,8 +22,7 @@ class ItemsController < ApplicationController
       format.html
       format.json
     end
-    binding.pry
-    if @item.save!
+    if @item.save
       redirect_to root_path and return
     else
       redirect_to new_item_path and return
@@ -54,11 +49,11 @@ class ItemsController < ApplicationController
   end
 
   def get_category_children
-    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+    @category_children = Category.find(params[:productcategory]).children
   end
 
   def get_category_grandchildren
-    @category_grandchildren = Category.find("#{params[:child_id]}").children
+    @category_grandchildren = Category.find(params[:productcategory]).children
   end
 
   private

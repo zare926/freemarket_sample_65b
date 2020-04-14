@@ -1,7 +1,7 @@
 $(function(){
   // カテゴリーセレクトボックスのオプションを作成
   function appendOption(category){
-    var html = `<option value="${category.name}" data-category="${category.id}">${category.name}</option>`;
+    var html = `<option value="${category.id}">${category.name}</option>`;
     return html;
   }
   // 子カテゴリーの表示作成
@@ -31,11 +31,11 @@ $(function(){
   // 親カテゴリー選択後のイベント
   $('#select1').on('change', function(){
     var parentCategory = document.getElementById('select1').value; //選択された親カテゴリーの名前を取得
-    if (parentCategory != "選択して下さい"){ //親カテゴリーが初期値でないことを確認
+    if (parentCategory != ""){ //親カテゴリーが初期値でないことを確認
       $.ajax({
         url: 'get_category_children',
         type: 'GET',
-        data: { parent_name: parentCategory },
+        data: { productcategory: parentCategory },
         dataType: 'json'
       })
       .done(function(children){
@@ -61,12 +61,12 @@ $(function(){
   });
   // 子カテゴリー選択後のイベント
   $('.top__main__center__deta__box__input-box__form-category').on('change', '#child_category', function(){
-    var childId = $('#child_category option:selected').data('category'); //選択された子カテゴリーのidを取得
+    var childId = document.getElementById('child_category').value; //選択された子カテゴリーのidを取得
     if (childId != "選択して下さい"){ //子カテゴリーが初期値でないことを確認
       $.ajax({
         url: 'get_category_grandchildren',
         type: 'GET',
-        data: { child_id: childId },
+        data: { productcategory: childId },
         dataType: 'json'
       })
       .done(function(grandchildren){

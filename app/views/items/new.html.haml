@@ -67,8 +67,7 @@
               必須
           .top__main__center__deta__box__input-box
             .top__main__center__deta__box__input-box__form-category#items3
-              -# = i.select :category_id, @category_parent_array, {}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select1'}
-              = i.collection_select(:category_id, @category_parent_array, :id, :name,{prompt: "選択して下さい"}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select1'})
+              = i.collection_select(:category_id, @category, :id, :name,{prompt: "選択して下さい"}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select1'})
         .top__main__center__deta__box
           .top__main__center__deta__box__what
             .top__main__center__deta__box__what__product
