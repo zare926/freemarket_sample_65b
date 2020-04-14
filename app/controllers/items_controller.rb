@@ -22,7 +22,6 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @categories = Category.all
     respond_to do |format|
       format.html { redirect_to :root }
       format.json { render json: @item}
@@ -30,7 +29,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
-      render :new
+      redirect_to new_item_path
     end
   end
 
