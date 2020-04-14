@@ -1,11 +1,11 @@
 var key = ""
 $(function(){
   // ページ読み込み時
-  $(document).ready(function(){
-    $('.category-first').hide();
-    $('.category-second').hide();
-    $('.category-third').hide();
-  });
+  // $(document).ready(function(){
+  //   $('.category-first').hide();
+  //   $('.category-second').hide();
+  //   $('.category-third').hide();
+  // });
 
   // カテゴリータブホバー時
   $('.listsLeft__item--first').hover(function(){
