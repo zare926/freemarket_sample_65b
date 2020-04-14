@@ -14,22 +14,23 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.images.new
     @category = Category.all
-    @category_parent_array = [ "選択して下さい"]
+    @category_parent_array = []
       Category.where(ancestry: nil).each do |parent|
-        @category_parent_array << parent.name
+        @category_parent_array << parent
       end
   end
 
   def create
     @item = Item.new(item_params)
     respond_to do |format|
-      format.html { redirect_to :root }
-      format.json { render json: @item}
+      format.html
+      format.json
     end
-    if @item.save
-      redirect_to root_path
+    binding.pry
+    if @item.save!
+      redirect_to root_path and return
     else
-      redirect_to new_item_path
+      redirect_to new_item_path and return
     end
   end
 
@@ -68,12 +69,13 @@ class ItemsController < ApplicationController
                                   :description,
                                   :brand,
                                   :state,
-                                  :status,
                                   :postage,
+                                  :prefecture,
                                   :shipping_date,
-                                  :category,
+                                  :category_id,
                                   :price,
-                                  item_images_attributes: [:src, :_destroy, :id]).merge(id: current_user.id,status: 0)
+                                  :size,
+                                  item_images_attributes: [:src, :_destroy, :id]).merge(user_id: current_user.id,status: 0)
   end
 
   def category_params
