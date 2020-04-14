@@ -2,7 +2,7 @@
   .top__header
     = link_to image_tag("logo.png",class:"image_logo"),root_path, class: "top__header__btn" 
 
-
+= form_for @item do |i|
   .top__main
     .top__main__center
       .top__main__center__img-uplode
@@ -13,13 +13,26 @@
           %p.top__main__center__img-uplode__box__description-box
             最大10枚までアップロードできます
           .top__main__center__img-uplode__box__form
-            = render "form"
+            .form__box
+              .image__remove-field
+                #previews
+                  .preview
+                    - if @item.persisted?
+                      - @item.images.each_with_index do |image, i|
+                        = image_tag image.src.url, data: { index: i }, width: "124", height: '124'
+                  = i.fields_for :images do |image|
+                    .form__box--image{"data-index" => "#{image.index}"}
+                      = image.file_field :src, class: 'item__image'
+                    - if @item.persisted?
+                      = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+                  - if @item.persisted?
+                    .item__image--group{"data-index" => "#{@item.images.count}"}
+                      = file_field_tag :src, name: "item[images_attributes][#{@item.images.count}][src]", class: 'js-file'
+                      .item__image-remove 削除
             .image__uplode--btn
               画像を選択
           .top__main__center__deta__box__warning 
 
-
-    = form_for @item do |i|
       .top__main__center__items
         .top__main__center__items__box
           .top__main__center__items__box__name-box

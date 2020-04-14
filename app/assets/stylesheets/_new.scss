@@ -138,26 +138,24 @@
         height: 248px;
         margin-bottom: 16px;
         position: relative;
-        .new_item{
-          .form__box{
-            position: relative;
-            &--image{
-              .item__image{
-                display: none;
-              }
+        .form__box{
+          position: relative;
+          &--image{
+            .item__image{
+              display: none;
             }
-            #previews{
-              font-size: 0;
-              .preview{
-                position: relative;
-                display: inline-block;
-                .item__image-remove{
-                  position: absolute;
-                  top: 0px;
-                  left: 100px;
-                  font-size: 20px;
-                  cursor: pointer;
-                }
+          }
+          #previews{
+            font-size: 0;
+            .preview{
+              position: relative;
+              display: inline-block;
+              .item__image-remove{
+                position: absolute;
+                top: 0px;
+                left: 100px;
+                font-size: 20px;
+                cursor: pointer;
               }
             }
           }

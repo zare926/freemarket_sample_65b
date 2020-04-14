@@ -65,6 +65,7 @@ $(document).on('turbolinks:load', ()=> {
   });
 });
 
+
 $(function(){
   jQuery.validator.addMethod('selectcheck', function (value) {
     return (value != '選択して下さい');
@@ -81,8 +82,6 @@ $(function(){
     }
       return false;
   }, '選択してください');
-
-  
 
   //フォーム指定
 
