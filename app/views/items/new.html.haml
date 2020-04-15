@@ -2,7 +2,7 @@
   .top__header
     = link_to image_tag("logo.png",class:"image_logo"),root_path, class: "top__header__btn" 
 
-= form_for [@item] do |i|
+= form_for @item do |i|
   .top__main
     .top__main__center
       .top__main__center__img-uplode
@@ -19,15 +19,15 @@
                   .preview
                     - if @item.persisted?
                       - @item.images.each_with_index do |image, i|
-                        = image_tag image.src.url, data: { index: i }, width: "124", height: '124'
+                        = image_tag image.image.url, data: { index: i }, width: "124", height: '124'
                   = i.fields_for :images do |image|
                     .form__box--image{"data-index" => "#{image.index}"}
-                      = image.file_field :src, class: 'item__image'
+                      = image.file_field :image, class: 'item__image'
                     - if @item.persisted?
                       = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
                   - if @item.persisted?
                     .item__image--group{"data-index" => "#{@item.images.count}"}
-                      = file_field_tag :src, name: "item[images_attributes][#{@item.images.count}][src]", class: 'js-file'
+                      = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file'
                       .item__image-remove 削除
             .image__uplode--btn
               画像を選択

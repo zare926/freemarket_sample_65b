@@ -22,7 +22,8 @@ class ItemsController < ApplicationController
       format.html
       format.json
     end
-    if @item.save
+    binding.pry
+    if @item.save!
       redirect_to root_path and return
     else
       redirect_to new_item_path and return
@@ -70,7 +71,7 @@ class ItemsController < ApplicationController
                                   :category_id,
                                   :price,
                                   :size,
-                                  item_images_attributes: [:src, :_destroy, :id]).merge(user_id: current_user.id,status: 0)
+                                  item_images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id,status: 0)
   end
 
   def category_params

@@ -3,8 +3,8 @@ $(document).on('turbolinks:load', ()=> {
   const buildFileField = (index)=> {
     const html = `<div class="form__box--image" data-index="${index}">
                     <input class="item__image" type="file"
-                    name="item[images_attributes][${index}][src]"
-                    id="item_images_attributes_${index }_src">
+                    name="item[images_attributes][${index}][image]"
+                    id="item_images_attributes_${index}_image">
                   </div>`;
     return html;
   }
@@ -40,7 +40,7 @@ $(document).on('turbolinks:load', ()=> {
     const blobUrl = window.URL.createObjectURL(file);
     // 該当indexを持つimgタグがあれば取得して変数imgに入れる(画像変更の処理)
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
-      img.setAttribute('src', blobUrl);
+      img.setAttribute('image', blobUrl);
     } else {  // 新規画像追加の処理
       $('#previews').append(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
