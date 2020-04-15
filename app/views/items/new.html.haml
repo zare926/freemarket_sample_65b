@@ -2,7 +2,7 @@
   .top__header
     = link_to image_tag("logo.png",class:"image_logo"),root_path, class: "top__header__btn" 
 
-= form_for [@item] do |i|
+= form_for [@item], html: {id: 'items1'} do |i|
   .top__main
     .top__main__center
       .top__main__center__img-uplode
@@ -94,7 +94,7 @@
               必須
           .top__main__center__deta__box__input-box
             .top__main__center__deta__box__input-box__form#items5
-              = i.select :state, [["選択して下さい", 0],["新品、未使用", 1], ["未使用に近い", 2], ["目立った傷や汚れなし", 3], ["やや傷や汚れあり", 4], ["傷や汚れあり", 5], ["全体的に状態が悪い", 6]], {}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select2'}
+              = i.select :state, [["選択して下さい",""],["新品、未使用", 1], ["未使用に近い", 2], ["目立った傷や汚れなし", 3], ["やや傷や汚れあり", 4], ["傷や汚れあり", 5], ["全体的に状態が悪い", 6]], {}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select2'}
 
 
 
@@ -110,7 +110,7 @@
               必須
           .top__main__center__deta__box__input-box
             .top__main__center__deta__box__input-box__form#items6
-              = i.select :postage, [["選択して下さい", 0],["送料込み(出品者負担)", 1], ["着払い(購入者負担)", 2]], {}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select3'}
+              = i.select :postage, [["選択して下さい", ""],["送料込み(出品者負担)", 1], ["着払い(購入者負担)", 2]], {}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select3'}
         .top__main__center__deta__box
           .top__main__center__deta__box__what
             .top__main__center__deta__box__what__product
@@ -128,7 +128,7 @@
               必須
           .top__main__center__deta__box__input-box
             .top__main__center__deta__box__input-box__form#items8
-              = i.select :shipping_date, [["選択して下さい"],["1~2日で発送", 1], ["2~3日で発送", 2], ["4~7日で発送", 3]], {}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select5'}
+              = i.select :shipping_date, [["選択して下さい",""],["1~2日で発送", 1], ["2~3日で発送", 2], ["4~7日で発送", 3]], {}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select5'}
 
 
 
