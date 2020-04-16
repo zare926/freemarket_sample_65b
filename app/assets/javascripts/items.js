@@ -89,148 +89,64 @@ $(function(){
 
     rules: {
       "item[name]": {
-          required: true,
-          maxlength: 40
-      }
-  },
-    messages: {
-      "item[name]": {
-            required: "入力してください。",
-            maxlength: "40文字以内で入力してください。"
-        },
-    },
-    errorClass: "invalid",
-    errorElement: "p", 
-    validClass: "valid", 
-  });
-
-  $('#items2').validate({
-
-    rules: {
+        required: true,
+        maxlength: 40
+      },
       "item[description]": {
-          required: true,
-          maxlength: 1000
-      }
-  },
-    messages: {
-      "item[description]": {
-            required: "入力してください。",
-            maxlength: "1000文字以内で入力してください。"
-        },
-    },
-    errorClass: "invalid",
-    errorElement: "p", 
-    validClass: "valid", 
-  });
-
-  $('#items4').validate({
-
-    rules: {
+        required: true,
+        maxlength: 1000
+      },
       "item[brand]": {
-          maxlength: 40
-      }
-  },
-    messages: {
-      "item[brand]": {
-            maxlength: "お名前は40文字以内で入力してください。"
-        },
-    },
-    errorClass: "invalid",
-    errorElement: "p", 
-    validClass: "valid", 
-  });
-
-  $('#items3').validate({
-
-    rules: {
-      "item[category]":{
+        maxlength: 40
+      },
+      "item[category_id]":{
+        required: true,
         selectcheck: true
       },
-      "category_id":{
-        selectcheck: true
+      "item[state]": {
+        required: true
       },
-  },
-
-
-
-    errorClass: "invalid",
-    errorElement: "p", 
-    validClass: "valid", 
-  });
-
-  $('#items5').validate({
-
-    rules: {
-      "item[status]": {
-        min: 1,
-      }
-  },
-    messages: {
-      "item[status]": {
-        min: "選択してください"
-        },
-    },
-    errorClass: "invalid",
-    errorElement: "p", 
-    validClass: "valid", 
-  });
-
-  $('#items6').validate({
-
-    rules: {
       "item[postage]": {
-        min: 1,
-      }
-  },
-    messages: {
-      "item[postage]": {
-        min: "選択してください"
-        },
-    },
-    errorClass: "invalid",
-    errorElement: "p", 
-    validClass: "valid", 
-  });
-  
-  $('#items8').validate({
-
-    rules: {
+        required: true
+      },
       "item[shipping_date]": {
-        selectcheck: true
-      }
-  },
-    messages: {
-      "item[shipping_date]": {
-        selectcheck: "選択してください"
-        },
-    },
-    
-    errorClass: "invalid",
-    errorElement: "p", 
-    validClass: "valid", 
-  });
-
-  $('#items9').validate({
-
-    rules: {
-      "session[price]": {
+        required: true
+      },
+      "item[price]": {
         range : [300,9999999]
-      }
-  },
-    messages: {
-      "session[price]": {
-        range: "300以上9999999以下で入力してください"
-        
-        },
+      },
     },
+
+
+  messages: {
+    "item[name]": {
+        required: "入力してください。",
+        maxlength: "40文字以内で入力してください。"
+      },
+    "item[description]": {
+        required: "入力してください。",
+        maxlength: "1000文字以内で入力してください。"
+      },
+    "item[brand]": {
+        maxlength: "お名前は40文字以内で入力してください。"
+      },
+    "session[price]": {
+        range: "300以上9999999以下で入力してください"
+      },
+    },
+
     errorClass: "invalid",
     errorElement: "p", 
     validClass: "valid", 
   });
 
-  $("#item_name, #item_description, #item_brand, #input").blur(function () {
+
+  $("#item_name, #item_description, #item_brand, #input, #select2,.top__main__center__deta__box__input-box__form__select").blur(function () {
     $(this).valid();
   });
+  $("#select1,#child_category,#grandchild_category").on("change",function(event){
+    $(this).valid();
+});
   $("#input").on("keyup keydown change",function(event){
     $(this).valid();
 });
