@@ -1,7 +1,8 @@
-$mainWhiteColor     : #FFF;
-$mainGrayColor      : #f8f8f8;
-$mainBlueColor      : #48D1CC;
-$mainBlackColor     : #333;
+
+
+// *{
+//   box-sizing: border-box;
+// }
 
 .item__link:after{
   display: block;
@@ -11,7 +12,7 @@ $mainBlackColor     : #333;
 
 .kind__list{
   width: 100%;
-  border-top: 1px solid $mainWhiteColor ;
+  border-top: 1px solid $bordersolidColor ;
   box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
   position: relative;
   padding: 0 60px;
@@ -56,6 +57,7 @@ $mainBlackColor     : #333;
         &--top{
           background-color: $mainWhiteColor ;
           padding: 24px 40px 40px;
+          position: relative;
           &-name{
             text-align: center;
             font-weight: bold;
@@ -66,17 +68,19 @@ $mainBlackColor     : #333;
             & ul{
               display: flex;
               position: relative;
-            }
-            & ul>li{
-              display: flex;
-              flex-direction: column;
-              width: 560px;
-              align-items: center;
-              margin: 0 auto;
-            }
-            & ul>li img{
-              object-fit: cover;
-              height: 346px;
+              &>li{
+                display: flex;
+                flex-direction: column;
+                width: 560px;
+                align-items: center;
+                margin: 0 auto;
+                position: relative;
+                & img{
+                  object-fit: cover;
+                  height: 346px;
+                  width: 560px;
+                }
+              }
             }
             & ul>li ul{
               display: flex;
@@ -90,6 +94,27 @@ $mainBlackColor     : #333;
             & ul> li ul li img{
               object-fit: cover;
               height: 87px;
+              width: 87px;
+            }
+          }
+          .sold__area{
+            width: 0;
+            height: 0;
+            border-top: 60px solid $mainBlueColor;
+            border-right: 60px solid transparent;
+            border-bottom: 60px solid transparent;
+            border-left: 60px solid $mainBlueColor;
+            position: absolute;
+            left: 70px;
+            top: 76px;
+            z-index: 100;
+            & div{
+              transform: rotate(-45deg);
+              font-size: 25px;
+              margin: -29px 0 0 -55px;
+              color: white;
+              letter-spacing: 2px;
+              font-weight: 600;
             }
           }
           .item__price{
@@ -110,6 +135,93 @@ $mainBlackColor     : #333;
             line-height: 1.5;
             font-size: 18px;
             margin-bottom: 30px;
+          }
+          .buy__area{
+            margin-bottom: 20px;
+            text-align: center;
+            &--btn{
+              line-height: 48px;
+              background: $mainBlueColor;
+              box-decoration-break: 1px solid $mainBlueColor;
+              width: 60%;
+              border-radius: 100px;
+              & a{
+                text-decoration: none;
+                color: $mainWhiteColor;
+                font-size: 18px;
+              }
+            }
+          }
+          .guide__area{
+            margin-bottom: 20px;
+            text-align: center;
+            &--btn{
+              line-height: 48px;
+              background: $mainBlueColor;
+              box-decoration-break: 1px solid $mainBlueColor;
+              width: 60%;
+              border-radius: 100px;
+              & a{
+                text-decoration: none;
+                color: $mainWhiteColor;
+                font-size: 18px;
+              }
+            }
+          }
+          .edit__area{
+            margin-bottom: 20px;
+            text-align: center;
+            &--btn{
+              line-height: 48px;
+              background: $mainBlueColor;
+              box-decoration-break: 1px solid $mainBlueColor;
+              width: 60%;
+              border-radius: 100px;
+              & a{
+                text-decoration: none;
+                color: $mainWhiteColor;
+                font-size: 18px;
+              }
+            }
+          }
+          .notbuy__area{
+            margin-bottom: 20px;
+            text-align: center;
+            &--btn{
+              line-height: 48px;
+              background: #888;
+              box-decoration-break: 1px solid $mainBlueColor;
+              width: 60%;
+              border-radius: 100px;
+              cursor: not-allowed;
+              margin: 0 auto;
+              p{
+                text-decoration: none;
+                color: $mainWhiteColor;
+                font-size: 18px;
+              }
+            }
+          }
+          .delete__area{
+            margin-bottom: 20px;
+            text-align: center;
+            &--btn{
+              line-height: 48px;
+              background: $mainBlueColor;
+              box-decoration-break: 1px solid $mainBlueColor;
+              width: 60%;
+              border-radius: 100px;
+              & a{
+                text-decoration: none;
+                color: $mainWhiteColor;
+                font-size: 18px;
+              }
+            }
+          }
+          .or__area{
+            text-align: center;
+            margin-top: -10px;
+            margin-bottom: 10px;
           }
           .info__table{
             margin-bottom: 20px;
@@ -177,9 +289,10 @@ $mainBlackColor     : #333;
           text-align: center;
           .new__comment{
             &--body{
-              width: 100%;
+              width: 628px;
               min-height: 104px;
               padding: 10px;
+              align-items: center;
             }
             .note__message{
               padding: 8px;
@@ -206,6 +319,9 @@ $mainBlackColor     : #333;
       .item__link{
         & li{
           float: left;
+          .fa{
+            color :$mainBlueColor;
+          }
           & a{
             text-decoration: none;
             color: $mainBlueColor;

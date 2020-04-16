@@ -5,5 +5,7 @@
     %p.appBanner__inner--text
       今すぐ無料ダウンロード！
     .appBanner__inner--btn
-      = link_to image_tag(src="/assets/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg", class: "appBtn"), "#"
-      = link_to image_tag(src="/assets/google-play-badge.png", class: "googleBtn"), "#"
+      = link_to '#' do
+        = image_tag asset_path('Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg'), class: "appBtn"
+      = link_to '#' do
+        = image_tag asset_path('google-play-badge.png'), class: "googleBtn"

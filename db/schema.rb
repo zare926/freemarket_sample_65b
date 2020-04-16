@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_07_073512) do
+ActiveRecord::Schema.define(version: 2020_04_12_104649) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "postcode", null: false
-    t.integer "user"
+    t.string "address_family_name", null: false
+    t.string "address_first_name", null: false
+    t.string "address_family_name_kana", null: false
+    t.string "address_first_name_kana", null: false
+    t.string "postcode", null: false
+    t.string "prefecture", null: false
+    t.string "address_city", null: false
+    t.string "address_block", null: false
+    t.string "address_building"
+    t.string "phone_number"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -27,9 +37,17 @@ ActiveRecord::Schema.define(version: 2020_03_07_073512) do
     t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "item_id"
+    t.string "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user", null: false
-    t.integer "item", null: false
+    t.integer "user_id", null: false
+    t.integer "item_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "image"
@@ -50,6 +68,7 @@ ActiveRecord::Schema.define(version: 2020_03_07_073512) do
     t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "size"
     t.index ["name"], name: "index_items_on_name"
   end
 
