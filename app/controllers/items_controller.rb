@@ -71,7 +71,7 @@ class ItemsController < ApplicationController
                                   :category_id,
                                   :price,
                                   :size,
-                                  item_images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id,status: 0)
+                                  images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id,status: 0)
   end
 
   def category_params

@@ -98,7 +98,7 @@
               = link_to item_path(i.id) do
                 .productList
                   %figure.productList--image
-                    = image_tag i.images[0].image, class: "img"
+                    = image_tag i.images[0].image.url, class: "img"
                     - if i.status == 1
                       .sold
                         .sold__area
@@ -125,7 +125,7 @@
                 = link_to item_path(i.id) do
                   .productList
                     %figure.productList--image
-                      = image_tag i.images[0].image, class: "img"
+                      = image_tag i.images[0].image.url, class: "img"
                       - if i.status == 1
                         .sold
                           .sold__area
