@@ -9,8 +9,8 @@ describe Item, type: :model do
         expect(item).to be_valid
       end
 
-      it "name,status,description,state,postage,prefecture,shipping_date,price,user_id,category_idがあれば更新できる" do
-        expect(build(:item, brand: "")).to be_valid
+      it "name,status,description,state,postage,prefecture,shipping_date,price,category_idがあれば更新できる" do
+        expect(build(:item, brand: "", size: "")).to be_valid
       end
 
       it "priceが300円以上であれば更新できる" do
@@ -70,33 +70,27 @@ describe Item, type: :model do
       end
   
       it "priceが入らないと更新できない" do
-        item = build(:item, price: 100)
+        item = build(:item, price: "")
         item.valid?
-        expect(item.errors[:price]).to include("入力してください")
+        expect(item.errors[:price]).to include("must be less than or equal to 300", "is not a number")
       end
 
       it "priceが299円以下であれば更新できない" do
         item = build(:item, price: 299)
         item.valid?
-        expect(item.errors[:price]).to include("は300円以上入力してください")
+        expect(item.errors[:price]).to include("must be greater than or equal to 300")
       end
 
       it "priceが10,000,000円以上であれば更新できない" do
         item = build(:item, price: 10000000)
         item.valid?
-        expect(item.errors[:price]).to include("は9,999,999円以下入力してください")
+        expect(item.errors[:price]).to include("must be less than or equal to 9999999")
       end
 
       it "categoryが入らないと更新できない" do
         item = build(:item, category_id: "")
         item.valid?
         expect(item.errors[:category_id]).to include("選択してください")
-      end
-
-      it "user_idがないと更新できない" do
-        item = build(:item, user_id: "")
-        item.valid?
-        expect(item.errors[:user_id]).to include("を入力してください")
       end
     end
   end

@@ -10,8 +10,9 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :prefecture, null: false
       t.integer :shipping_date, null: false
       t.integer :price, null: false
-      t.integer :user, null: false
-      t.integer :category
+      t.string :size
+      t.integer :user_id, null: false
+      t.integer :category_id
       t.timestamps
     end
   end
