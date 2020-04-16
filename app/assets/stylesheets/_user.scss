@@ -17,10 +17,10 @@ $maypageMainColor   : #f5f5f5;
 
 .mypage-main{
   background-color: $maypageMainColor;
+  padding: 70px;
   .mypage-contents {
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
-    margin: 70px;
 
     .side-content{
       width: 20%;

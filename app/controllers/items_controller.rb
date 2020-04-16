@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show]
+  before_action :set_item, only: [:show,:edit]
+  before_action :move_to_index, except: [:index, :show]
+  
   def index
     @items = Item.where(status: false).limit(3).order("created_at DESC")
     @items_brand = Item.where(status: false).where(brand: "Off-White").limit(3).order("created_at DESC")
@@ -11,22 +13,19 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.new
-    @category_parent_array = ["選択してください"]
-      Category.where(ancestry: nil).each do |parent|
-        @category_parent_array << parent.name
-      end
+    @category = Category.all.order("id ASC").limit(1)
   end
 
   def create
     @item = Item.new(item_params)
     respond_to do |format|
-      format.html { redirect_to :root }
-      format.json { render json: @item}
+      format.html
+      format.json
     end
     if @item.save
-      redirect_to root_path
+      redirect_to root_path and return
     else
-      render :new
+      redirect_to new_item_path and return
     end
   end
 
@@ -37,6 +36,8 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    item = Item.find(params[:id])
+    item.destroy
   end
 
   def show
@@ -48,11 +49,11 @@ class ItemsController < ApplicationController
   end
 
   def get_category_children
-    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+    @category_children = Category.find(params[:productcategory]).children
   end
 
   def get_category_grandchildren
-    @category_grandchildren = Category.find("#{params[:child_id]}").children
+    @category_grandchildren = Category.find(params[:productcategory]).children
   end
 
   private
@@ -63,12 +64,13 @@ class ItemsController < ApplicationController
                                   :description,
                                   :brand,
                                   :state,
-                                  :status,
                                   :postage,
+                                  :prefecture,
                                   :shipping_date,
-                                  :category,
+                                  :category_id,
                                   :price,
-                                  item_images_attributes: [:src, :_destroy, :id]).marge(id: current_user.id,status: 0)
+                                  :size,
+                                  item_images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id,status: 0)
   end
 
   def category_params
@@ -77,5 +79,9 @@ class ItemsController < ApplicationController
   
   def set_item
     @items = Item.find(params[:id])
+  end
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
   end
 end

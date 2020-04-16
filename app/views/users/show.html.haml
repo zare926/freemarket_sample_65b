@@ -1,4 +1,20 @@
+.mypage-header
+  = render "shared/search"
+%nav.kind__list
+  %ul
+    %li
+      = link_to root_path do
+        FURIMA
+    %li
+      %i.fa.fa-angle-right
+    %li
+      マイページ
+
 .mypage-main
   .mypage-contents
     = render "side_content"
     = render "right_content"
+
+.mypage-fotter
+  = render "shared/banner"
+  = render "shared/overview" 

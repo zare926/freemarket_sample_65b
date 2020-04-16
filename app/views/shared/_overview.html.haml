@@ -36,9 +36,8 @@
     .p ©︎ FURIMA
 
 -if user_signed_in?
-  .exhibitionCamera
-    = link_to ""
-    %span.exhibitionCamera__text
-      出品する
+  = link_to new_item_path do
+    .exhibitionCamera
+      %span.exhibitionCamera__text
+        出品する
       = image_tag asset_path('icon_camera.png'), class: "exhibitionCamera__icon"
-      

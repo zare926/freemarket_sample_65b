@@ -102,6 +102,9 @@
 .top__main{
   width: 100vw;
   background-color: $mainWhiteColor;
+  .new_item{
+    margin: 0 auto;
+  }
   &__center{
     width: 700px;
     background-color: purple;
@@ -135,26 +138,24 @@
         height: 248px;
         margin-bottom: 16px;
         position: relative;
-        .new_item{
-          .form__box{
-            position: relative;
-            &--image{
-              .item__image{
-                display: none;
-              }
+        .form__box{
+          position: relative;
+          &--image{
+            .item__image{
+              display: none;
             }
-            #previews{
-              font-size: 0;
-              .preview{
-                position: relative;
-                display: inline-block;
-                .item__image-remove{
-                  position: absolute;
-                  top: 0px;
-                  left: 100px;
-                  font-size: 20px;
-                  cursor: pointer;
-                }
+          }
+          #previews{
+            font-size: 0;
+            .preview{
+              position: relative;
+              display: inline-block;
+              .item__image-remove{
+                position: absolute;
+                top: 0px;
+                left: 100px;
+                font-size: 20px;
+                cursor: pointer;
               }
             }
           }
@@ -180,6 +181,7 @@
       background-color: $mainGrayColor;
       @include bottomLine;
       @include box;
+      margin: auto;
       &__box__name-box{
         @include name-box;
         display: flex;
@@ -257,6 +259,7 @@
       background-color: $mainGrayColor;
       @include bottomLine;
       @include box;
+      margin: auto;
       &__title{
         color:  rgb(136, 136, 136);
         @include name-box;
@@ -301,6 +304,7 @@
       background-color: $mainGrayColor;
       margin-bottom: 100px;
       @include box;
+      margin: auto;
       &__box{
         margin-bottom: 40px;
         &__money{
