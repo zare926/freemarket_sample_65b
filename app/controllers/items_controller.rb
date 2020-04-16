@@ -21,7 +21,6 @@ class ItemsController < ApplicationController
     respond_to do |format|
       format.html
       format.json
-      binding.pry
     end
     if @item.save
       redirect_to root_path and return
