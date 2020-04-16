@@ -22,8 +22,7 @@ class ItemsController < ApplicationController
       format.html
       format.json
     end
-    binding.pry
-    if @item.save!
+    if @item.save
       redirect_to root_path and return
     else
       redirect_to new_item_path and return
