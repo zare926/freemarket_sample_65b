@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_item, only: [:show, :signout, :payment]
   def index
   end
 
@@ -24,6 +25,12 @@ class UsersController < ApplicationController
   end
 
   def payment
+    
+  end
+
+  private
+  def set_item
+    @categories = Category.all
   end
   
 end

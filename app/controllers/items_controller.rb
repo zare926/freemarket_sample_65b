@@ -1,7 +1,15 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:show,:edit]
+  before_action :move_to_index, except: [:index, :show]
+  
   def index
+    @items = Item.where(status: false).limit(3).order("created_at DESC")
+    @items_brand = Item.where(status: false).where(brand: "Off-White").limit(3).order("created_at DESC")
+    @images = Image.all
+    @categories = Category.all
   end
 
+  
   def new
     @item = Item.new
   end
@@ -22,7 +30,8 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @items = Item.find(params[:id])
+    @images = @items.images
+    @categories = Category.all
   end
 
   def confirm
@@ -33,5 +42,16 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name, :description, :brand, :state, :status, :postage, :shipping_date, :category)
   end
+
+  def category_params
+    params.require(:category).permit(:name)
+  end
   
+  def set_item
+    @items = Item.find(params[:id])
+  end
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
+  end
 end

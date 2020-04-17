@@ -1,0 +1,115 @@
+$mainWhiteColor     : #FFF;
+$mainGrayColor      : #f8f8f8;
+$mainBlueColor      : #48D1CC;
+$fontSizeBig        : 20px;
+$fontSizeMiddle     : 15px;
+$fontSizeSmall      : 12px;
+$fontSizeVerySmall  : 10px;
+
+@mixin body {
+  width : 300px;
+  padding: 0px 150px;
+  background-color: $mainGrayColor;
+  margin:  0 auto; 
+}
+
+@mixin bottomLine {
+  border: solid 1px $mainBlueColor;
+  border-width:0 0 1px 0;
+}
+
+.header{
+  height: 80px;
+  width : 100vw;
+  text-align: center;
+  background-color: $mainWhiteColor;
+  padding-top: 30px;
+}
+
+.contents {
+  height: 800px;
+  width : 100vw;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: $mainWhiteColor;
+  &__head{
+    @include body;
+    @include bottomLine;
+    height: 100px;
+    line-height: 100px;
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
+  }
+  &__item{
+    @include body;
+    @include bottomLine;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    &__image{
+      width : 50%;
+      margin-top: 40px;
+      text-align: center;
+    }
+    &__info{
+      height: 130px;
+      width : 50%;
+      margin: 30px 0 0 20px;
+      &__name{
+        width : 100%;
+        font-size: $fontSizeMiddle;
+        margin-top: 30px;
+        text-align: center;
+      }
+      &__price{
+        width : 100%;
+        font-size: $fontSizeSmall;
+        font-weight: bold;
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+  .buy-contents__form {
+    @include body;
+    height: 80px;
+    padding-bottom: 30px;
+    text-align: center;
+    @include bottomLine;
+    display: flex;
+    &__amount {
+      width : 100%;
+      padding: 40px 0px 30px 0;
+      font-size: 20px;
+      font-weight: 600;
+    }
+    &__price {
+      width : 100%;
+      padding: 40px 0px 30px 0;
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+  .buy-content__user-info {
+    @include body;
+    height: 80px;
+    padding-bottom: 30px;
+    text-align: center;
+    &__submit {
+      height: 50px;
+      width : 100%;
+      padding: 30px 0 15px 0px;
+      line-height: 50px;
+      text-align: center;
+      &__button {
+        font-size: 15px;
+        padding: 18px 50px;
+        font-weight: bold;
+        color: $mainWhiteColor;
+        background-color: $mainBlueColor;
+        text-decoration: none;
+      }
+    }
+  }
+}

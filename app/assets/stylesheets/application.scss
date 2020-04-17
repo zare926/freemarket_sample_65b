@@ -1,7 +1,13 @@
 @import "./base/reset";
 @import "./item";
+@import "./user";
 @import "./confirm";
-@import "./users";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "./new";
+@import "./register";
+@import "./card/new.scss";
+@import "./card/show.scss";
+@import "./purchase/index.scss";
+@import "./purchase/done.scss";
+
