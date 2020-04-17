@@ -2,7 +2,7 @@ class CardController < ApplicationController
   require "payjp"
 
   def new
-    card = Card.find_by(user_id: current_user.id)
+    card = Card.where(user_id: current_user.id)
     redirect_to action: "show" if card.exists?
   end
 

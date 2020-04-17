@@ -15,14 +15,14 @@
   margin: 0 auto;
   background-color: $mainWhiteColor;
 
-  .creditCard__head {
+  &__head {
     padding: 12px 10%;
     border-bottom: 1px solid $mainBlueColor;
     text-align: center;
     font-size: 18px;
     font-weight: bold;
   }
-  .creditCard__inner--form {
+  &__inner--form {
     padding: 24px 16px 40px;
     border-top: 1px solid $mainBlueColor;
     margin-bottom: 100px;

@@ -13,7 +13,7 @@
   height: 500px;
   margin: 0 auto;
   background-color: $mainWhiteColor;
-  .chapter__head {
+  &__head {
     font-size: 18px;
     padding: 10px 24px;
     text-align: center;
@@ -23,7 +23,7 @@
   .payment__main {
     padding: 64px;
     border-top: 1px;
-    .payment__list {
+    &__list {
       text-align: center;
       .card__number__view {
         font-size: 20px;
