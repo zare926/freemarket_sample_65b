@@ -1,0 +1,81 @@
+.header
+  .header__logo
+    = image_tag asset_path('logo.png'), size: "140x40", alt: "test"
+
+.mypage-main
+  .mypage-contents
+    = render partial: 'users/side_content'
+
+    %section.creditCard
+      %h2.creditCard__head
+        クレジットカード情報入力
+      = form_tag(pay_card_index_path, method: :post, class: "creditCard__inner--form", id: 'charge-form',  name: "inputForm") do
+        .creditCard__inner--content
+          .formGroup
+            %label カード番号
+            %span.form-require 必須
+            = text_field_tag "number", "", class: "input-default", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+            %ul.signup-card-list
+              %li
+                = image_tag asset_path('credit-card_22.png'), class: "image", size: "49x27"
+              %li
+                = image_tag asset_path('credit-card_9.png'), class: "image", size: "49x27"
+              %li
+                = image_tag asset_path('credit-card_26.png'), class: "image", size: "49x27"
+              %li
+                = image_tag asset_path('credit-card_28.png'), class: "image", size: "49x27"
+              %li
+                = image_tag asset_path('credit-card_19.png'), class: "image", size: "49x27"
+              %li
+                = image_tag asset_path('credit-card_31.png'), class: "image", size: "49x27"
+              %li
+                = image_tag asset_path('credit-card_15.png'), class: "image", size: "49x27"
+          .formGroup.signup-form-expire
+            %label 有効期限
+            %span.form-require 必須
+            .select-wrap.half
+              %select#exp_month{class: "select", name: "exp_month", type: "text"}
+                %option{value: ""} --
+                %option{value: "1"}01
+                %option{value: "2"}02
+                %option{value: "3"}03
+                %option{value: "4"}04
+                %option{value: "5"}05
+                %option{value: "6"}06
+                %option{value: "7"}07
+                %option{value: "8"}08
+                %option{value: "9"}09
+                %option{value: "10"}10
+                %option{value: "11"}11
+                %option{value: "12"}12
+              %i.icon-arrow-bottom
+              %span 月/
+              %select#exp_year{name: "exp_year", type: "text"}
+                %option{value: ""} --
+                %option{value: "2019"}19
+                %option{value: "2020"}20
+                %option{value: "2021"}21
+                %option{value: "2022"}22
+                %option{value: "2023"}23
+                %option{value: "2024"}24
+                %option{value: "2025"}25
+                %option{value: "2026"}26
+                %option{value: "2027"}27
+                %option{value: "2028"}28
+                %option{value: "2029"}29
+              %i.icon-arrow-bottom
+              %span 年
+          .formGroup
+            %label CVC
+            %sapan.form-require  必須
+            = text_field_tag "cvc", "", class: "input-default", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
+            %ul.signup-seqcode
+              .signup-seqcode__text
+                %span.form-question
+                カード背面の番号とは？
+            #card_token
+            = submit_tag "追加する", id: "token_submit", class: "btn"
+.fotter
+  = render "shared/banner"
+  = render "shared/overview"
+
