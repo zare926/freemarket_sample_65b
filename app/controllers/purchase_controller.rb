@@ -5,7 +5,7 @@ class PurchaseController < ApplicationController
   before_action :set_address, only: [:index]
 
   def index
-    card = Card.where(user_id: current_user.id).first
+    card = Card.find_by(user_id: current_user.id).first
     if card.blank?
       redirect_to controller: "card", action: "new"
     else
@@ -16,7 +16,7 @@ class PurchaseController < ApplicationController
   end
 
   def pay
-    card = Card.where(user_id: current_user.id).first
+    card = Card.find_by(user_id: current_user.id).first
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
     :amount => @items.price,
