@@ -25,6 +25,7 @@ class UsersController < ApplicationController
   end
 
   def payment
+    
   end
 
   private

@@ -1,0 +1,28 @@
+.header
+  .header__logo
+    = image_tag asset_path('logo.png'), size: "140x40", alt: "test"
+.contents
+  .contents__head
+    発送までお待ちください
+  .contents__item
+    .contents__item__image
+      = image_tag @images[0].image, size: "100x100", alt: "test"
+    .contents__item__info
+      .contents__item__info__name
+        = @items.name
+      .contents__item__info__price
+        .contents__item__info__price__amount
+          = "#{@items.price}円"
+        .contents__item__info__price__shippingFee
+          (税込) 送料込み
+  .buy-contents__form
+    .buy-contents__form__amount
+      支払金額
+    .buy-contents__form__price
+      = "#{@items.price}円"
+  .buy-content__user-info
+    .buy-content__user-info__submit
+      = link_to "トップページへ戻る", items_path, class: 'buy-content__user-info__submit__button'
+.fotter
+  = render "shared/banner"
+  = render "shared/overview"
