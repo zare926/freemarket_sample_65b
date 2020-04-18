@@ -22,7 +22,7 @@ $(document).on('turbolinks:load', ()=> {
 
   $('.hidden-destroy').hide();
 
-  // input隠す奴
+  input隠す奴
   $('.image__uplode--btn').on('mousedown',function(){
     const count = $('#previews').find('.item__image-remove').length
     if ( count <= 9 ){
@@ -71,17 +71,26 @@ $(function(){
     return (value != '選択して下さい');
 }, "選択して下さい");
 
-  $.validator.addMethod('my_rule', function(value, element) {
-    // お決まりの定型文
-    // 検証対象の要素にこのルールが設定されているか
-    if ( this.optional( element ) ) {
-        return true;
+$('#items1').each(function() {
+  $(this).rules('images_attributes', {
+    required: true,
+    messages: {
+      required: 'itemを入力してください'
     }
-    if (value != "選択してください") {
-        return true;
+  });
+  $(this).rules('image', {
+    required: true,
+    messages: {
+      required: 'itemを入力してください'
     }
-      return false;
-  }, '選択してください');
+  });
+  $(this).rules('1', {
+    required: true,
+    messages: {
+      required: 'itemを入力してください'
+    }
+  });
+});
 
   //フォーム指定
 
@@ -91,6 +100,18 @@ $(function(){
       "item[name]": {
         required: true,
         maxlength: 40
+      },
+      "item[images_attributes]": {
+        required: true,
+        url: true,
+        accept: "gif|jpeg|jpg|png",
+        step: 10,
+      },
+      "item[image]": {
+        required: true,
+        url: true,
+        accept: "gif|jpeg|jpg|png",
+        step: 10,
       },
       "item[description]": {
         required: true,
@@ -115,6 +136,9 @@ $(function(){
       "item[price]": {
         range : [300,9999999]
       },
+      "item[images_attributes][0][image]":{
+        required: true
+      }
     },
 
 
@@ -139,12 +163,36 @@ $(function(){
     errorElement: "p", 
     validClass: "valid", 
   });
+    jQuery('.item__image').each(function() {
+      jQuery(this).rules("add", {
+          accept: "png|jpe?g",
+          required:true,
+          messages: {
+              required: "画像を選択して下さい",
+              accept: "Only jpeg, jpg or png images"
+            },
+            errorClass: "invalid",
+            errorElement: "p", 
+            validClass: "valid", 
+        });
+    });
+//     $('button[type="button"]').on('click', function(event) {
+//       var result = validator.form();
+//     });
 
 
-  $("#item_name, #item_description, #item_brand, #input, #select2,.top__main__center__deta__box__input-box__form__select").blur(function () {
+// $('#upload_chat_button').click(function(){
+//   $('#file').click();
+//   return false;
+// });
+
+
+
+
+  $("#item_name, #item_description, #item_brand, #input, #select2,.top__main__center__deta__box__input-box__form__select,.item__image").blur(function () {
     $(this).valid();
   });
-  $("#select1,#child_category,#grandchild_category").on("change",function(event){
+  $("#select1,#child_category,#grandchild_category,.item__image").on("change","onclick",function(event){
     $(this).valid();
 });
   $("#input").on("keyup keydown change",function(event){

@@ -199,9 +199,6 @@
           &__text.invalid { // バリデーションNGの場合に枠線を赤色に変更
             border: #ea352d 1px solid;
           }
-          &__text.valid {
-            border: seagreen 1px solid; // バリデーションNGの場合に枠線を緑色に変更
-          }
           &__text{
             @include input-text;
           }
@@ -226,9 +223,6 @@
           margin-top: 16px;
           &__text-area.invalid { // バリデーションNGの場合に枠線を赤色に変更
             border: #ea352d 1px solid;
-          }
-          &__text-area.valid {
-            border: seagreen 1px solid; // バリデーションNGの場合に枠線を緑色に変更
           }
           &__text-area{
             border: 1px solid #ccc;
@@ -285,9 +279,6 @@
         &__input-box__form{
           &__select.invalid { // バリデーションNGの場合に枠線を赤色に変更
             border: #ea352d 1px solid;
-          }
-          &__select.valid {
-            border: seagreen 1px solid; // バリデーションNGの場合に枠線を緑色に変更
           }
           &__select{
             @include input-text;
