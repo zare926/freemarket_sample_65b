@@ -29,14 +29,13 @@
           .payment_content__body__head__list
 
         .payment_content__body__cardAdd
-          = link_to '#', class: "payment_content__body__cardAdd__btn" do
+          = link_to card_index_path, class: "payment_content__body__cardAdd__btn" do
             = icon("far", "credit-card", class: 'payment_content__body__cardAdd__btn--icon')
             クレジットカードを追加する
         .payment_content__body__paymentGuide
           = link_to '#', class: "payment_content__body__paymentGuide__btn" do
             支払いについて
             = icon('fas', 'chevron-right', class: 'payment_content__body__paymentGuide__btn--icon')
-
-.mypage-fotter
   = render "shared/banner"
-  = render "shared/overview" 
+  = render "shared/overview"
+  = render "shared/iconCamera"

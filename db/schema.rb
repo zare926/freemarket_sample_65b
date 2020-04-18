@@ -29,6 +29,14 @@ ActiveRecord::Schema.define(version: 2020_04_14_142022) do
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
+  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "ancestry"
@@ -53,9 +61,9 @@ ActiveRecord::Schema.define(version: 2020_04_14_142022) do
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "item_id", null: false
+    t.text "image", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "image"
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -70,10 +78,20 @@ ActiveRecord::Schema.define(version: 2020_04_14_142022) do
     t.integer "price", null: false
     t.integer "user_id", null: false
     t.integer "category_id"
+    t.integer "buyer_id"
+    t.string "size"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "size"
     t.index ["name"], name: "index_items_on_name"
+  end
+
+  create_table "purchases", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "item_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_purchases_on_item_id"
+    t.index ["user_id"], name: "index_purchases_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -82,7 +100,7 @@ ActiveRecord::Schema.define(version: 2020_04_14_142022) do
     t.string "first_name", null: false
     t.string "family_name_kana", null: false
     t.string "first_name_kana", null: false
-    t.date "birthday", null: false
+    t.date "birthday"
     t.string "encrypted_password", default: "", null: false
     t.string "email", default: "", null: false
     t.string "reset_password_token"
@@ -94,4 +112,6 @@ ActiveRecord::Schema.define(version: 2020_04_14_142022) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "purchases", "items"
+  add_foreign_key "purchases", "users"
 end

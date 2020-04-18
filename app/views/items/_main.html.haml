@@ -99,10 +99,9 @@
                 .productList
                   %figure.productList--image
                     = image_tag i.images[0].image.url, class: "img"
-                    - if i.status == 1
-                      .sold
-                        .sold__area
-                          SOLD
+                      - if i.buyer_id.present?
+                      .items-box_photo__sold
+                        .items-box_photo__sold__inner SOLD
                   .productDetail
                     %h3.productDetail__name
                       = i.name
@@ -126,10 +125,9 @@
                   .productList
                     %figure.productList--image
                       = image_tag i.images[0].image.url, class: "img"
-                      - if i.status == 1
-                        .sold
-                          .sold__area
-                            SOLD
+                        - if @items.buyer_id.present?
+                        .items-box_photo__sold
+                          .items-box_photo__sold__inner SOLD
                     .productDetail
                       %h3.productDetail__name
                         = i.name

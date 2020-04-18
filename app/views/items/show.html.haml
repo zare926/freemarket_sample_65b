@@ -37,6 +37,9 @@
               %ul
                 %li
                   = image_tag @images[0].image.url
+                    - if @items.buyer_id.present?
+                    .items-box_photo__sold
+                      .items-box_photo__sold__inner SOLD
                   %ul
                     - @images.each do |i|
                       %li
@@ -54,26 +57,27 @@
                 %span 送料込み
             .item__detail
               = simple_format(@items.description)
-            - if user_signed_in? && @items.user.id != current_user.id and @items.status == 0
-              .buy__area
-                %button.buy__area--btn
-                  = link_to "購入する" ,confirm_items_path ,method: :get
-            - if user_signed_in? && @items.user.id == current_user.id and @items.status == 0
-              .edit__area
-                %button.edit__area--btn
-                  = link_to "編集する" ,edit_item_path(params[:id]),method: :get
-              .or__area or
-              .delete__area
-                %button.delete__area--btn
-                  = link_to "削除する", "/items/#{@items.id}", method: :delete
-            - if user_signed_in? && @items.status == 1
+            - if @items.buyer_id.present?
               .notbuy__area
                 .notbuy__area--btn
                   %p 売り切れました
-            - unless user_signed_in?
-              .guide__area
-                %button.guide__area--btn
-                  = link_to "ログインする", new_user_session_path, method: :get
+            - else
+              - if user_signed_in? && @items.user.id != current_user.id and @items.status == 0
+                .buy__area
+                  %button.buy__area--btn
+                    = link_to "購入する" ,purchase_index_path(items_id: @items) ,method: :get
+              - if user_signed_in? && @items.user.id == current_user.id
+                .edit__area
+                  %button.edit__area--btn
+                    = link_to "編集する" ,purchase_index_path(params[:id]),method: :get
+                .or__area or
+                .delete__area
+                  %button.delete__area--btn
+                    = link_to "削除する", "/items/#{@items.id}", method: :delete
+              - unless user_signed_in?
+                .guide__area
+                  %button.guide__area--btn
+                    = link_to "ログインする", new_user_session_path, method: :get
             .info__table
               %table
                 %tbody
