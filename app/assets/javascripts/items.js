@@ -22,7 +22,7 @@ $(document).on('turbolinks:load', ()=> {
 
   $('.hidden-destroy').hide();
 
-  input隠す奴
+  //input隠す奴
   $('.image__uplode--btn').on('mousedown',function(){
     const count = $('#previews').find('.item__image-remove').length
     if ( count <= 9 ){
@@ -71,8 +71,8 @@ $(function(){
     return (value != '選択して下さい');
 }, "選択して下さい");
 
-$('#items1').each(function() {
-  $(this).rules('images_attributes', {
+$('#items1').on("rules",function() {
+  ('item[image_attributes][0][src]', {
     required: true,
     messages: {
       required: 'itemを入力してください'
@@ -163,6 +163,8 @@ $('#items1').each(function() {
     errorElement: "p", 
     validClass: "valid", 
   });
+
+  
     jQuery('.item__image').each(function() {
       jQuery(this).rules("add", {
           accept: "png|jpe?g",
