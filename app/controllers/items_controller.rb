@@ -14,6 +14,7 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.images.new
     @category = Category.all.order("id ASC").limit(1)
+    
   end
 
   def create
@@ -22,6 +23,7 @@ class ItemsController < ApplicationController
       format.html
       format.json
     end
+    binding.pry
     if @item.save
       redirect_to root_path and return
     else
