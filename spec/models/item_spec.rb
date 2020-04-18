@@ -22,7 +22,6 @@ describe Item, type: :model do
         item = build(:item, price: 9999999)
         expect(item).to be_valid
       end
-
     end
 
     context "更新できない場合" do
@@ -92,12 +91,16 @@ describe Item, type: :model do
         item.valid?
         expect(item.errors[:category_id]).to include("選択してください")
       end
+    end
+  end
+end
+
 describe Item do
   describe '#show' do
     it "itemの中には必ず、nameが入らないといけない" do
-     item = build(:item, name: "")
-     item.valid?
-     expect(item.errors[:name]).to include("入力してください")
+    item = build(:item, name: "")
+    item.valid?
+    expect(item.errors[:name]).to include("入力してください")
     end
 
     it "itemの中には必ず、statusが入らないといけない" do
