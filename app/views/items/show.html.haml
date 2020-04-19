@@ -36,14 +36,14 @@
             .item__box--top-body
               %ul
                 %li
-                  = image_tag @images[0].image.url
+                  = image_tag @images[0].image
                     - if @items.buyer_id.present?
                     .items-box_photo__sold
                       .items-box_photo__sold__inner SOLD
                   %ul
                     - @images.each do |i|
                       %li
-                        = image_tag i.image.url
+                        = image_tag i.image
             - if @items.status == 1
               .sold__area
                 %div
