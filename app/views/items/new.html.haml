@@ -2,7 +2,7 @@
   .top__header
     = link_to image_tag("logo.png",class:"image_logo"),root_path, class: "top__header__btn" 
 
-= form_for [@item], html: {id: 'items1'} do |i|
+= form_for @item do |i|
   .top__main
     .top__main__center
       .top__main__center__img-uplode
@@ -151,6 +151,7 @@
             .top__main__center__price__box__bottom__sale
               販売利益
               .top__main__center__price__box__bottom__sale__form#items9
+                = i.number_field :price, class: 'top__main__center__price__box__bottom__sale__form__input', id: "price"
             .top__main__center__price__box__bottom__minus
               ー
         .top__main__center__price__footer
