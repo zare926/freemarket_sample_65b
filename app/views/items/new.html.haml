@@ -19,18 +19,18 @@
                   .preview
                     - if @item.persisted?
                       - @item.images.each_with_index do |image, i|
-                        = image_tag image.src.url, data: { index: i }, width: "124", height: '124'
+                        = image_tag image.image.url, data: { index: i }, width: "124", height: '124'
                   = i.fields_for :images do |image|
                     .form__box--image{"data-index" => "#{image.index}"}
-                      = image.file_field :src, class: 'item__image', id: "file"
+                      = image.file_field :image, class: 'item__image'
                     - if @item.persisted?
                       = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
                   - if @item.persisted?
                     .item__image--group{"data-index" => "#{@item.images.count}"}
-                      = file_field_tag :src, name: "item[images_attributes][#{@item.images.count}][src]", class: 'js-file'
+                      = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file'
                       .item__image-remove 削除
-              .image__uplode--btn
-                画像を選択
+            .image__uplode--btn
+              画像を選択
           .top__main__center__deta__box__warning 
 
       .top__main__center__items
@@ -54,7 +54,6 @@
             =i.text_area :description, class: 'top__main__center__items__text-box__form__text-area', placeholder: text_placeholder
           .top__main__center__items__text-box__word-count
             0/1000
-
 
       .top__main__center__deta
         %p.top__main__center__deta__title
@@ -94,11 +93,7 @@
               必須
           .top__main__center__deta__box__input-box
             .top__main__center__deta__box__input-box__form#items5
-              = i.select :state, [["選択して下さい",""],["新品、未使用", 1], ["未使用に近い", 2], ["目立った傷や汚れなし", 3], ["やや傷や汚れあり", 4], ["傷や汚れあり", 5], ["全体的に状態が悪い", 6]], {}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select2'}
-
-
-
-            
+              = i.select :state, [["選択して下さい", 0],["新品、未使用", 1], ["未使用に近い", 2], ["目立った傷や汚れなし", 3], ["やや傷や汚れあり", 4], ["傷や汚れあり", 5], ["全体的に状態が悪い", 6]], {}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select2'}
       .top__main__center__deta
         %p.top__main__center__deta__title
           配送料の負担
@@ -110,7 +105,7 @@
               必須
           .top__main__center__deta__box__input-box
             .top__main__center__deta__box__input-box__form#items6
-              = i.select :postage, [["選択して下さい", ""],["送料込み(出品者負担)", 1], ["着払い(購入者負担)", 2]], {}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select3'}
+              = i.select :postage, [["選択して下さい", 0],["送料込み(出品者負担)", 1], ["着払い(購入者負担)", 2]], {}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select3'}
         .top__main__center__deta__box
           .top__main__center__deta__box__what
             .top__main__center__deta__box__what__product
@@ -128,7 +123,7 @@
               必須
           .top__main__center__deta__box__input-box
             .top__main__center__deta__box__input-box__form#items8
-              = i.select :shipping_date, [["選択して下さい",""],["1~2日で発送", 1], ["2~3日で発送", 2], ["4~7日で発送", 3]], {}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select5'}
+              = i.select :shipping_date, [["選択して下さい"],["1~2日で発送", 1], ["2~3日で発送", 2], ["4~7日で発送", 3]], {}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select5'}
 
 
 
@@ -161,7 +156,6 @@
         .top__main__center__price__footer
           = i.submit '出品', class: "top__main__center__price__footer__btn", id: "id_value"
           = link_to "戻る" ,root_path, class: "top__main__center__price__footer__return"  
-
 .fotter
   = render "shared/banner"
   = render "shared/overview"
