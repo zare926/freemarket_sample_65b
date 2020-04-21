@@ -31,7 +31,11 @@ $(document).on('turbolinks:load', ()=> {
     }else{
       $(this).text("画像は10枚迄です");
     }
+    
   });
+
+  
+  
 
   $('.form__box').on('change', '.item__image', function(e) {
     const targetIndex = $(this).parent().data('index');

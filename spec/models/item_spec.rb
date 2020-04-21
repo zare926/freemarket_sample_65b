@@ -49,7 +49,7 @@ describe Item do
       expect(item.errors[:price]).to include("must be greater than or equal to 300")
     end
   end
-  describe '#new' do
+  describe '#create' do
     it "itemの中には必ず、nameが入らないといけない" do
      item = build(:item, name: "")
      item.valid?
@@ -80,12 +80,6 @@ describe Item do
       expect(item.errors[:postage]).to include("選択してください")
     end
 
-    it "itemの中には必ず、prefectureが入らないといけない" do
-      item = build(:item, prefecture: "")
-      item.valid?
-      expect(item.errors[:prefecture]).to include("選択してください")
-    end
-
     it "itemの中には必ず、shipping_dateが入らないといけない" do
       item = build(:item, shipping_date: "")
       item.valid?
@@ -93,9 +87,9 @@ describe Item do
     end
 
     it "itemの中には必ず、priceが入らないといけない" do
-      item = build(:item, price: 100)
+      item = build(:item, price: "")
       item.valid?
-      expect(item.errors[:price]).to include("must be greater than or equal to 300")
+      expect(item.errors[:price]).to include("must be less than or equal to 300")
     end
   end
 end
