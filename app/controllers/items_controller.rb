@@ -19,7 +19,6 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     respond_to do |format|
-      binding.pry
       format.html
       format.json
     end
