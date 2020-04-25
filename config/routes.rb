@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
   end
 
-  resources :items, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
+  resources :items do
     collection do
       get 'confirm'
     end
