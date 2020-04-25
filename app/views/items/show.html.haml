@@ -73,7 +73,7 @@
                 .or__area or
                 .delete__area
                   %button.delete__area--btn
-                    = link_to "削除する", "/items/#{@items.id}", method: :delete
+                    = link_to "削除する", item_path(@items.id), method: :delete
               - unless user_signed_in?
                 .guide__area
                   %button.guide__area--btn
