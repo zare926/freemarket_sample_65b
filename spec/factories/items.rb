@@ -10,9 +10,8 @@ FactoryBot.define do
     prefecture        {"東京都"}
     shipping_date     {1}
     price             {900}
-    user_id           {1}
+    user
     category_id       {11}
-    size              {"M"}
   end
 
 end
