@@ -98,7 +98,7 @@
               = link_to item_path(i.id) do
                 .productList
                   %figure.productList--image
-                    = image_tag i.images[0].image.url, class: "img"
+                    = image_tag i.images[0].image, class: "img"
                       - if i.buyer_id.present?
                       .items-box_photo__sold
                         .items-box_photo__sold__inner SOLD
@@ -124,7 +124,7 @@
                 = link_to item_path(i.id) do
                   .productList
                     %figure.productList--image
-                      = image_tag i.images[0].image.url, class: "img"
+                      = image_tag i.images[0].image, class: "img"
                         - if @items.buyer_id.present?
                         .items-box_photo__sold
                           .items-box_photo__sold__inner SOLD
