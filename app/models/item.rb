@@ -34,7 +34,7 @@ class Item < ApplicationRecord
 
   validates :price,
     presence: true,
-    acceptance: true,
+    # acceptance: true,
     numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 },
     presence: { message: "must be less than or equal to 300" }
 
