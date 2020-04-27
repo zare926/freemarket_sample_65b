@@ -22,7 +22,7 @@ $(document).on('turbolinks:load', ()=> {
 
   $('.hidden-destroy').hide();
 
-  //input隠す奴
+  // input隠す奴
   $('.image__uplode--btn').on('mousedown',function(){
     const count = $('#previews').find('.item__image-remove').length
     if ( count <= 9 ){
@@ -31,7 +31,11 @@ $(document).on('turbolinks:load', ()=> {
     }else{
       $(this).text("画像は10枚迄です");
     }
+    
   });
+
+  
+  
 
   $('.form__box').on('change', '.item__image', function(e) {
     const targetIndex = $(this).parent().data('index');
