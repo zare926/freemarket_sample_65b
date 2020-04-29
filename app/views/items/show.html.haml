@@ -69,7 +69,7 @@
               - if user_signed_in? && @items.user.id == current_user.id
                 .edit__area
                   %button.edit__area--btn
-                    = link_to "編集する" ,purchase_index_path(params[:id]),method: :get
+                    = link_to "編集する" ,edit_item_path,method: :get
                 .or__area or
                 .delete__area
                   %button.delete__area--btn
