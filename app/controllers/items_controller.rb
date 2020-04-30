@@ -23,7 +23,7 @@ class ItemsController < ApplicationController
       format.html
       format.json
     end
-    if @item.save!
+    if @item.save
       redirect_to root_path and return
     else
       redirect_to new_item_path and return
@@ -52,9 +52,6 @@ class ItemsController < ApplicationController
   def show
     @images = @items.images
     @categories = Category.all
-  end
-
-  def confirm
   end
 
   def get_category_children
