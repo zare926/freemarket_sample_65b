@@ -14,4 +14,5 @@ class User < ApplicationRecord
   has_one :address
   has_many :creditcards
   has_many :items
+  has_many :images
 end
