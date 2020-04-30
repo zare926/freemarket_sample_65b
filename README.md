@@ -46,11 +46,6 @@ Basic認証をかけているため、以下のID/PASSを入力してくださ�
 ### 新規会員登録・ログイン機能
 ### ユーザーマイページ機能
 
-## 製作
-65期チームB
-
-# 
-
 # DB設計
 ## usersテーブル
 |Column|Type|Options|
@@ -131,9 +126,8 @@ Basic認証をかけているため、以下のID/PASSを入力してくださ�
 |Column|Type|Options|
 |------|----|-------|
 |image|text|null: false|
-|items_id|integer|null: false|
+|item_id|integer|null: false|
 ### Association
-- belongs_to :user
 - belongs_to :item
 
 ## addressesテーブル
@@ -154,5 +148,5 @@ Basic認証をかけているため、以下のID/PASSを入力してくださ�
 - belongs_to :user
 
 ## ER図
-[ER図](https://gyazo.com/eeb977c4e264ef5e7fc327e2766553b3)
+![](https://i.gyazo.com/1f1ab7c8e654507625070e4b34633b82.png)
 - 使用ソフトウェア：Lucidchart
