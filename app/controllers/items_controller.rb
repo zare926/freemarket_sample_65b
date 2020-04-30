@@ -31,6 +31,11 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @category = Category.all.order("id ASC").limit(1)
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def update
