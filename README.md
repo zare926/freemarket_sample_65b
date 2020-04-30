@@ -64,6 +64,9 @@ Basic認証をかけているため、以下のID/PASSを入力してくださ�
 |password|string|null: false|
 |email|string|null:false, default: ""|
 ### Association
+- has_one :address
+- has_many :items
+- has_many :images
 
 ## itemsテーブル(商品出品テーブル)
 |Column|Type|Options|
@@ -82,6 +85,12 @@ Basic認証をかけているため、以下のID/PASSを入力してくださ�
 |buyer_id|integer||
 |category_id|integer||
 ### Association
+- has_many :images
+- has_many :comments
+- has_many :purchases
+- belongs_to :user
+- belongs_to :category
+- accepts_nested_attributes_for :images, allow_destroy: true
 
 ## Purchasesテーブル(商品購入テーブル)
 |Column|Type|Options|
@@ -89,6 +98,8 @@ Basic認証をかけているため、以下のID/PASSを入力してくださ�
 |user_id|references|null: false, foreign_key: true|
 |item_id|references|null: false, foreign_key: true|
 ### Association
+- belongs_to :user
+- belongs_to :item
 
 ## categoriesテーブル(商品カテゴリーテーブル)
 |Column|Type|Options|
@@ -96,6 +107,8 @@ Basic認証をかけているため、以下のID/PASSを入力してくださ�
 |name|string||
 |ancestry|string||
 ### Association
+- has_many :items
+- has_ancestry
 
 ## commentsテーブル
 |Column|Type|Options|
@@ -104,6 +117,8 @@ Basic認証をかけているため、以下のID/PASSを入力してくださ�
 |item_id|integer||
 |user_id|integer||
 ### Association
+- belongs_to :user
+- belongs_to :item
 
 ## cardsテーブル(ユーザーのクレジットカード情報)
 |Column|Type|Options|
@@ -111,7 +126,6 @@ Basic認証をかけているため、以下のID/PASSを入力してくださ�
 |user_id|integer|null: false|
 |customer_id|string|null: false|
 |card_id|string|null: false|
-### Association
 
 ## imagesテーブル(商品プレビューテーブル)
 |Column|Type|Options|
@@ -119,6 +133,8 @@ Basic認証をかけているため、以下のID/PASSを入力してくださ�
 |image|text|null: false|
 |items_id|integer|null: false|
 ### Association
+- belongs_to :user
+- belongs_to :item
 
 ## addressesテーブル
 |Column|Type|Options|
@@ -135,6 +151,7 @@ Basic認証をかけているため、以下のID/PASSを入力してくださ�
 |phone_number|string||
 |user_id|references|null: false|
 ### Association
+- belongs_to :user
 
 ## ER図
 [ER図](https://gyazo.com/eeb977c4e264ef5e7fc327e2766553b3)
