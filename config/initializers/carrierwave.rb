@@ -14,9 +14,7 @@ CarrierWave.configure do |config|
       aws_secret_access_key: Rails.application.credentials.aws[:secret_access_key],  #credentails.ymlに鍵の本体があります
       region: 'ap-northeast-1'#'AWSで設定した地域（おそらく'ap-northeast-1') '
     }
-  
-
-  config.fog_directory  = 'freemarket1000/images'
-  config.asset_host = 'https://freemarket1000.s3-ap-northeast-1.amazonaws.com'
+    config.fog_directory  = 'freemarket1000/images'
+    config.asset_host = 'https://freemarket1000.s3-ap-northeast-1.amazonaws.com'
   end
 end
