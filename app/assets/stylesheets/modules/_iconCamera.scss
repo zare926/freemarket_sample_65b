@@ -1,0 +1,24 @@
+.exhibitionCamera {
+  width: 120px;
+  background-color: $mainBlueColor;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+  cursor: pointer;
+  a {
+    text-decoration: none;
+  }
+  &__text {
+    color: $mainWhiteColor;
+    display: block;
+    font-size: 18px;
+    margin-bottom: 5px;
+    padding-bottom: 2px;
+  }
+  &__icon {
+    width: 60%;
+  }
+}
