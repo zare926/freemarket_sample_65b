@@ -6,7 +6,7 @@
     発送までお待ちください
   .contents__item
     .contents__item__image
-      = image_tag @images[0].image, size: "100x100", alt: "test"
+      = image_tag @images[0].image.url, size: "100x100", alt: "test"
     .contents__item__info
       .contents__item__info__name
         = @items.name
