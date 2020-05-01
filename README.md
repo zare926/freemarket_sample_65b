@@ -39,12 +39,43 @@ Basic認証をかけているため、以下のID/PASSを入力してくださ�
 
 ## 機能の詳細
 ### トップページ
+/ 画像が出たら貼り付ける予定です /
+
 ### 商品出品機能
+View
+[![Screenshot from Gyazo](https://gyazo.com/82469034c317dea5cf6eb6cb4fc64779/raw)](https://gyazo.com/82469034c317dea5cf6eb6cb4fc64779)
+
 ### 商品詳細機能
+View
+[![Screenshot from Gyazo](https://gyazo.com/f03053da0c2b5d7df0d4c1b60b399186/raw)](https://gyazo.com/f03053da0c2b5d7df0d4c1b60b399186)
+
 ### 商品購入確認機能
-### 商品情報編集機能
+[![Screenshot from Gyazo](https://gyazo.com/f0ee18bae5aa0d4662d562b20d84a7aa/raw)](https://gyazo.com/f0ee18bae5aa0d4662d562b20d84a7aa)
+
+### 商品情報編集・削除機能
+編集
+[![Screenshot from Gyazo](https://gyazo.com/b928a1a2d6bd8c12d9a46f646ca5dc55/raw)](https://gyazo.com/b928a1a2d6bd8c12d9a46f646ca5dc55)
+
+削除
+[![Screenshot from Gyazo](https://gyazo.com/d2f307508d37b7b71bf1ff2c2f7cae39/raw)](https://gyazo.com/d2f307508d37b7b71bf1ff2c2f7cae39)
+
+
 ### 新規会員登録・ログイン機能
+新規会員登録
+[![Screenshot from Gyazo](https://gyazo.com/1b31b0bfa1205f20a17fbca29aff05ef/raw)](https://gyazo.com/1b31b0bfa1205f20a17fbca29aff05ef)
+
+新規会員登録2
+[![Screenshot from Gyazo](https://gyazo.com/01307aae2789a6dc6930af4c50c6b2a7/raw)](https://gyazo.com/01307aae2789a6dc6930af4c50c6b2a7)
+
+ログイン
+[![Screenshot from Gyazo](https://gyazo.com/cc652a8664b3673cddc652ec0a3d3da0/raw)](https://gyazo.com/cc652a8664b3673cddc652ec0a3d3da0)
+
 ### ユーザーマイページ機能
+View
+[![Screenshot from Gyazo](https://gyazo.com/95f7d9e808e25bda0389174a1c32524e/raw)](https://gyazo.com/95f7d9e808e25bda0389174a1c32524e)
+
+ログアウト
+[![Screenshot from Gyazo](https://gyazo.com/daebf0d2fa6898568535ad635f653410/raw)](https://gyazo.com/daebf0d2fa6898568535ad635f653410)
 
 # DB設計
 ## usersテーブル
