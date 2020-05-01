@@ -1,10 +1,10 @@
-# FURIMA(メルカリコピーサイト)
+# :package: FURIMA(メルカリコピーサイト)
 [![Screenshot from Gyazo](https://gyazo.com/d395cd316aef2e7cd587d6124d108052/raw)](https://gyazo.com/d395cd316aef2e7cd587d6124d108052)
 
-# 概要
+# :blue_book: 概要
 プログラミングスクールTECH::CAMP65期チームBによる最終課題製作物。スクラムによるアジャイル開発により製作致しました。
 
-# リンク
+# :blue_book: リンク
 ### URL：http://18.176.226.77/
 
 Basic認証をかけているため、以下のID/PASSを入力してください。
@@ -13,7 +13,7 @@ Basic認証をかけているため、以下のID/PASSを入力してくださ�
 - ID：admin
 - PASS：2222
 
-# テスト用アカウント
+# :blue_book: テスト用アカウント
 ## 購入者アカウント
 - メール：buyer_user@gmail.com
 - パスワード：buyer_user
@@ -27,19 +27,19 @@ Basic認証をかけているため、以下のID/PASSを入力してくださ�
 - メール：saller_user@gmail.com
 - パスワード：saller_user
 
-# 詳細
+# :blue_book: 詳細
 - アプリ名：FURIMA
 - 開発人数：6名
 - 製作チーム：65期チームB
 - 作業期間：約10週間
 
-## 使用技術
+## :iphone: 使用技術
 - 言語・フレームワーク等：HTML(Haml)/CSS(scss)/Ruby/Ruby on Rails/JavaScript/jQuery/MySQL/Github/AWS/Visual Studio Code
 - タスク管理：Trello
 
 ## 機能の詳細
 ### トップページ
-/ 画像が出たら貼り付ける予定です /
+[![Screenshot from Gyazo](https://gyazo.com/d1f887088f30a687f059fbdb529e6caa/raw)](https://gyazo.com/d1f887088f30a687f059fbdb529e6caa)
 
 ### 商品出品機能
 View
@@ -77,7 +77,7 @@ View
 ログアウト
 [![Screenshot from Gyazo](https://gyazo.com/daebf0d2fa6898568535ad635f653410/raw)](https://gyazo.com/daebf0d2fa6898568535ad635f653410)
 
-# DB設計
+# :minidisc: DB設計
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
