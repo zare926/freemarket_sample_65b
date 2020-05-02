@@ -10,7 +10,7 @@
 
 .chapter__container {
   width: 700px;
-  height: 500px;
+  height: 600px;
   margin: 0 auto;
   background-color: $mainWhiteColor;
   &__head {
@@ -42,24 +42,33 @@
         margin-top: 4px;
         font-size: 22px;
         text-align: center;
-        form {
-          padding-top: 24px;
-          text-align: center;
-          button {
-          width: 140px;
-          height: 50px;
-          margin-top: 40px;
-          color: $mainWhiteColor;
-          font-size: 14px;
-          font-weight: bold;
-          background-color: $mainBlueColor;
-          border: 1px solid $mainBlueColor;
-          }
+      }
+      form {
+        padding: 24px 24px;
+        text-align: center;
+        button {
+        width: 160px;
+        height: 55px;
+        margin: 40px;
+        color: $mainWhiteColor;
+        font-size: 14px;
+        font-weight: bold;
+        background-color: $mainBlueColor;
+        border: 1px solid $mainBlueColor;
         }
       }
-    }
-    .how__not__regist {
-      text-align: center;
+      .to_top {
+        padding: 18px;
+      }
+      a {
+        margin-top: 40px;
+        color: $mainWhiteColor;
+        font-size: 14px;
+        font-weight: bold;
+        background-color: $mainBlueColor;
+        border: 1px solid $mainBlueColor;
+        text-decoration: none;
+        }
     }
   }
 }
