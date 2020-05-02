@@ -31,9 +31,14 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @category = Category.all.order("id ASC").limit(1)
   end
 
   def update
+    respond_to do |format|
+      format.html
+      format.json
+    end
     if @item.update(item_params)
       redirect_to item_path(@item.id)
     else
