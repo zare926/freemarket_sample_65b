@@ -44,7 +44,7 @@
       .contents__form__shipping__postcode
         = "〒#{@addresses.postcode}"
       .contents__form__shipping__address
-        = @addresses.address_city + @addresses.address_block
+        = @addresses.prefecture + @addresses.address_city + @addresses.address_block
       .contents__form__shipping__name
         = @addresses.address_family_name + @addresses.address_first_name
     .contents__form__submit
