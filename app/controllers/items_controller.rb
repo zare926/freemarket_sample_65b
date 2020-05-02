@@ -93,7 +93,7 @@ class ItemsController < ApplicationController
   end
 
   def edit_item
-    @item = Item.find(1)
+    @item = Item.find(params[:id])
   end
 
   def move_to_index
