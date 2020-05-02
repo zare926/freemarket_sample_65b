@@ -16,7 +16,7 @@ CarrierWave.configure do |config|
     }
   
 
-  config.fog_directory  = 'freemarket1000/images'
+  config.fog_directory  = 'freemarket1000'
   config.asset_host = 'https://freemarket1000.s3-ap-northeast-1.amazonaws.com'
   end
 end
