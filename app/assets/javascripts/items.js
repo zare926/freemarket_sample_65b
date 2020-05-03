@@ -1,5 +1,5 @@
 // フォーム複製
-$(document).on('turbolinks:load', ()=> {
+$(function() {
   const buildFileField = (index)=> {
     const html = `<div class="form__box--image" data-index="${index}">
                     <input class="item__image" type="file"
@@ -138,6 +138,7 @@ $('#items1').each(function() {
         required: true
       },
       "item[price]": {
+        required: true,
         range : [300,9999999]
       },
       "item[images_attributes][0][image]":{
@@ -202,11 +203,6 @@ $('#items1').each(function() {
   $("#input").on("keyup keydown change",function(event){
     $(this).valid();
 });
-
-  $('button').click(function() {
-    var value = $('select').val();
-    console.log(value);
-  })
   
   
   $('#input').on('input', function(){   //リアルタイムで表示したいのでinputを使う｡入力の度にイベントが発火するようになる｡
@@ -217,7 +213,6 @@ $('#items1').each(function() {
     $('.top__main__center__price__box__center__minus').prepend('¥') // 手数料の前に¥マークを付けたいので
     $('.top__main__center__price__box__bottom__minus').html(profit)
     $('.top__main__center__price__box__bottom__minus').prepend('¥')
-    $('#price').val(profit) // 計算結果を格納用フォームに追加｡もし､入力値を追加したいのなら､今回はdataを引数に持たせる｡
     if(profit == '') {   // もし､計算結果が''なら表示も消す｡
     $('.top__main__center__price__box__bottom__minus').html('');
     $('.top__main__center__price__box__bottom__minus').html('');
