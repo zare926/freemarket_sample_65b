@@ -34,8 +34,6 @@ $(function() {
     
   });
 
-  
-  
 
   $('.form__box').on('change', '.item__image', function(e) {
     const targetIndex = $(this).parent().data('index');
