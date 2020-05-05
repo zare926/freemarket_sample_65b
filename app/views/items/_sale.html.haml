@@ -18,19 +18,19 @@
             .form__box
               .image__remove-field
                 #previews
-                  .preview
-                    - if @item.persisted?
-                      - @item.images.each_with_index do |image, i|
+                  - @item.images.each_with_index do |image, i|
+                    .preview
+                      - if @item.persisted?
                         = image_tag image.image.url, data: { index: i }, width: "124", height: '124'
+                        .item__image-remove{data: {index: i}} ×
                   = i.fields_for :images do |image|
-                    .form__box--image{"data-index" => "#{image.index}"}
+                    .preview{"data-index" => "#{image.index}"}
                       = image.file_field :image, class: 'item__image'
                     - if @item.persisted?
                       = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
                   - if @item.persisted?
                     .item__image--group{"data-index" => "#{@item.images.count}"}
-                      = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file'
-                      .item__image-remove 削除
+                      = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'item__image'
             .image__uplode--btn
               画像を選択
           .top__main__center__deta__box__warning 
