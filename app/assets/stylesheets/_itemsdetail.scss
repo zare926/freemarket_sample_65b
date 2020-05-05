@@ -77,8 +77,8 @@
                 position: relative;
                 & img{
                   object-fit: cover;
-                  height: 346px;
-                  width: 560px;
+                  height: 540px;
+                  width: 580px;
                 }
                 .items-box_photo__sold{
                   width: 0;
@@ -108,10 +108,11 @@
             & ul>li ul{
               display: flex;
               position: relative;
+              flex-wrap: wrap;
               margin-top: 10;
             }
             & ul> li ul li{
-              width: 25%;
+              width: 15%;
               margin-right: 10px;
             }
             & ul> li ul li img{
