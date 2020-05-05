@@ -90,6 +90,9 @@ $(function () {
       $('#brand_wrapper').remove();
     }
   });
+  $('.top__main__center__deta__box__input-box__form-category').on('change','#child_category',function(){
+    $('.top__main__center__deta__box__input-box__form__select1').remove();
+  });
 
   var key = ""
   $(function () {

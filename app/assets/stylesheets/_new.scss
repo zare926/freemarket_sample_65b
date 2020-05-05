@@ -284,6 +284,11 @@
             box-sizing: border-box;
             color: $mainBlackColor;
           }
+          &__select1{
+            @include input-text;
+            box-sizing: border-box;
+            color: $mainBlackColor;
+          }
       }
       }
         
