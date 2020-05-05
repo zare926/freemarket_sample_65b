@@ -414,3 +414,9 @@
 .item__image--group {
   display: none;
 }
+
+#item_category_id {
+  @include input-text;
+  box-sizing: border-box;
+  color: $mainBlackColor;
+}

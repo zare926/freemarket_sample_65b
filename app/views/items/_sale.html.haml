@@ -96,6 +96,15 @@
           .top__main__center__deta__box__input-box
             .top__main__center__deta__box__input-box__form#items5
               = i.select :state, [["選択して下さい", ""],["新品、未使用", 1], ["未使用に近い", 2], ["目立った傷や汚れなし", 3], ["やや傷や汚れあり", 4], ["傷や汚れあり", 5], ["全体的に状態が悪い", 6]], {}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select2'}
+        .top__main__center__deta__box
+          .top__main__center__deta__box__what
+            .top__main__center__deta__box__what__product
+              サイズ
+            .top__main__center__deta__box__what__any
+              任意
+          .top__main__center__deta__box__input-box
+            .top__main__center__deta__box__input-box__form#items4
+              = i.text_field :size, class: 'top__main__center__items__box__input-box__form__text'
       .top__main__center__deta
         %p.top__main__center__deta__title
           配送料の負担

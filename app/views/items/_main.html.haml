@@ -95,23 +95,24 @@
           = link_to "新規投稿商品", "#", class: "text"
           .productLists
             - @items.each do |i|
-              = link_to item_path(i.id) do
-                .productList
-                  %figure.productList--image
-                    = image_tag i.images[0].image.url,class: "img"
-                      - if i.buyer_id.present?
-                      .items-box_photo__sold
-                        .items-box_photo__sold__inner SOLD
-                  .productDetail
-                    %h3.productDetail__name
-                      = i.name
-                    %ul.productDetail__price
-                      %li
-                        = i.price
-                      %i.likeIcon
-                        = icon("fas fa-star", "image", class: 'icon')
-                        0
-                    %p (税込)
+              - if i.buyer_id == nil
+                = link_to item_path(i.id) do
+                  .productList
+                    %figure.productList--image
+                      = image_tag i.images[0].image.url,class: "img"
+                        - if i.buyer_id.present?
+                        .items-box_photo__sold
+                          .items-box_photo__sold__inner SOLD
+                    .productDetail
+                      %h3.productDetail__name
+                        = i.name
+                      %ul.productDetail__price
+                        %li
+                          = i.price
+                        %i.likeIcon
+                          = icon("fas fa-star", "image", class: 'icon')
+                          0
+                      %p (税込)
     %section.productListFunction
       %h2.head
         ピックアップブランド
@@ -120,7 +121,7 @@
           = link_to "新規投稿商品", "#", class: "text"
           .productLists
             - @items_brand.each do |i|
-              - if i.brand == "Off-White"
+              - if i.brand == "Off-White" and i.buyer_id == nil
                 = link_to item_path(i.id) do
                   .productList
                     %figure.productList--image
