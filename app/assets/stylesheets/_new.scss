@@ -145,6 +145,11 @@
               display: none;
             }
           }
+          .preview{
+            .item__image{
+              display: none;
+            }
+          }
           #previews{
             font-size: 0;
             .preview{
