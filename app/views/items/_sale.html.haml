@@ -70,7 +70,13 @@
               必須
           .top__main__center__deta__box__input-box
             .top__main__center__deta__box__input-box__form-category#items3
-              = i.collection_select :category_id, @category, :id, :name,{prompt: "選択して下さい"}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select1'}
+              - if @item.new_record?
+                = i.collection_select :category_id, @category, :id, :name,{prompt: "選択して下さい"}, {class: 'top__main__center__deta__box__input-box__form__select', id: 'select1'}
+              - if @item.category_id.present?
+                = i.label :category_id do
+                  = i.select :category_id, @category_parent_array, {selected:@item.category.parent.parent.name}, id: 'select1'
+                  = i.select :category_id, options_for_select(@category_children_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, selected: @item.category.parent.id), {}, id: 'select1'
+                  = i.select :category_id, options_for_select(@category_grandchildren_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, selected: @item.category.id), {}, id: 'select1'
         .top__main__center__deta__box
           .top__main__center__deta__box__what
             .top__main__center__deta__box__what__product
