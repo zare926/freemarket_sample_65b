@@ -31,7 +31,23 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @category = Category.all.order("id ASC").limit(1)
+    grandchild_category = @item.category # 孫のレコード取得
+    child_category = grandchild_category.parent # 子のレコードを取得
+
+    @category_parent_array = [] # 空の親の配列を作成
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+
+    @category_children_array = [] # 空の子の配列を作成
+    Category.where(ancestry: child_category.ancestry).each do |child|
+      @category_children_array << child
+    end
+
+    @category_grandchildren_array = [] # 空の孫の配列を作成
+    Category.where(ancestry: grandchild_category.ancestry).each do |grandchild|
+      @category_grandchildren_array << grandchild
+    end
   end
 
   def update
@@ -82,10 +98,6 @@ class ItemsController < ApplicationController
                                   :price,
                                   :size,
                                   images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id,status: 0)
-  end
-
-  def category_params
-    params.require(:category).permit(:name)
   end
   
   def set_item
