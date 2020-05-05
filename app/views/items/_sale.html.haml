@@ -31,7 +31,6 @@
                   - if @item.persisted?
                     .item__image--group{"data-index" => "#{@item.images.count}"}
                       = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'item__image'
-                      .item__image-remove 削除
             .image__uplode--btn
               画像を選択
           .top__main__center__deta__box__warning 
