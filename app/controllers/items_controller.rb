@@ -4,8 +4,8 @@ class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
   
   def index
-    @items = Item.where(buyer_id: nil).limit(3).order("created_at DESC")
-    @items_brand = Item.where(buyer_id: nil).where(brand: "Off-White").limit(3).order("created_at DESC")
+    @items = Item.limit(3).order("created_at DESC")
+    @items_brand = Item.where(brand: "Off-White").limit(3).order("created_at DESC")
     @images = Image.all
     @categories = Category.all
   end
