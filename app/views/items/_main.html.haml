@@ -125,7 +125,7 @@
                   .productList
                     %figure.productList--image
                       = image_tag i.images[0].image.url, class: "img"
-                        - if @items.buyer_id.present?
+                        - if i.buyer_id.present?
                         .items-box_photo__sold
                           .items-box_photo__sold__inner SOLD
                     .productDetail
