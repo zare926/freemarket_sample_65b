@@ -15,7 +15,7 @@ Basic認証をかけているため、以下のID/PASSを入力してくださ�
 
 # :blue_book: テスト用アカウント
 ## 購入者アカウント
-- メール：buyer_user@gmail.com
+- メール：buyeruser@gmail.com
 - パスワード：buyeruser1
 
 ## 購入用カード情報
@@ -24,7 +24,7 @@ Basic認証をかけているため、以下のID/PASSを入力してくださ�
 - セキュリティコード：123
 
 ## 出品者用アカウント
-- メール：saller_user@gmail.com
+- メール：salleruser@gmail.com
 - パスワード：salleruser1
 
 # :blue_book: 詳細
