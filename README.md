@@ -25,7 +25,7 @@ Basic認証をかけているため、以下のID/PASSを入力してくださ�
 
 ## 出品者用アカウント
 - メール：saller_user@gmail.com
-- パスワード：saller_user
+- パスワード：salleruser1
 
 # :blue_book: 詳細
 - アプリ名：FURIMA
