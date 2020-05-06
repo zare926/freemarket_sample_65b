@@ -52,4 +52,7 @@ class Item < ApplicationRecord
   belongs_to :user
   belongs_to :category
   accepts_nested_attributes_for :images, allow_destroy: true
+
+  validates_associated :images
+  validates :images, presence: true
 end
