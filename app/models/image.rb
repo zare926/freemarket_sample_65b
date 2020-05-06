@@ -4,5 +4,5 @@ class Image < ApplicationRecord
 
   validates :image,
     presence: true,
-    presence: { message: "画像がありません" }
+    length: {manimum: 1, maximum: 10}
 end
