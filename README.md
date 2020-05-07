@@ -15,17 +15,17 @@ Basic認証をかけているため、以下のID/PASSを入力してくださ�
 
 # :blue_book: テスト用アカウント
 ## 購入者アカウント
-- メール：buyeruser@gmail.com
-- パスワード：buyeruser1
+- メール：buyeruser0507@gmail.com
+- パスワード：buyeruser0507
 
 ## 購入用カード情報
-- 番号：6011111111111117
-- 期限：07/27
+- 番号：30569309025904
+- 期限：07/24
 - セキュリティコード：123
 
 ## 出品者用アカウント
-- メール：salleruser@gmail.com
-- パスワード：salleruser1
+- メール：salleruser0507@gmail.com
+- パスワード：salleruser0507
 
 # :blue_book: 詳細
 - アプリ名：FURIMA
