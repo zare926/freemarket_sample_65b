@@ -34,7 +34,7 @@ Basic認証をかけているため、以下のID/PASSを入力してくださ�
 - 作業期間：約10週間
 
 ## :iphone: 使用技術
-- HTML(Haml)/CSS(scss)/Ruby/Ruby on Rails/JavaScript/jQuery/MySQL/Github/AWS/Visual Studio Code
+- 言語・フレームワーク等：HTML(Haml)/CSS(scss)/Ruby/Ruby on Rails/JavaScript/jQuery/MySQL/Github/AWS/Visual Studio Code
 - タスク管理：Trello
 
 ## 機能の詳細
